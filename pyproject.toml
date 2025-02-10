@@ -1,0 +1,16 @@
+[project]
+name = "ict305-projects"
+version = "0.1.0"
+description = "An investigation into the economic viability of living in Singapore"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "jupyterlab>=4.3.5",
+    "matplotlib>=3.10.0",
+    "numpy>=2.2.2",
+    "pandas>=2.2.3",
+    "seaborn>=0.13.2",
+]
+
+[tool.uv]
+package = false
