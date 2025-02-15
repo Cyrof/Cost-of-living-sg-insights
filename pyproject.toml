@@ -13,6 +13,7 @@ dependencies = [
     "pandas>=2.2.3",
     "plotly>=6.0.0",
     "seaborn>=0.13.2",
+    "wbdata>=1.0.0",
 ]
 
 [tool.uv]
