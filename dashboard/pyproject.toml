@@ -1,0 +1,18 @@
+[project]
+name = "ict305-project-dashboard"
+version = "0.1.0"
+description = "An investigation into the economic viability of living in Singapore"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "dash>=2.18.2",
+    "plotly>=6.0.0",
+    "numpy>=2.2.2",
+    "pandas>=2.2.3",
+]
+
+[project.scripts]
+dashboard = "dashboard.run:main"
+
+[tool.uv]
+package = true
