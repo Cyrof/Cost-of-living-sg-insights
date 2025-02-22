@@ -1,17 +1,24 @@
-import plotly.express as px
+import dash
 from dash import Dash, dcc, html
 
-app = Dash()
+app = Dash(use_pages=True, pages_folder="pages")
 
-test_data: dict[str, list[int]] = {
-    "x": list(range(0, 10)),
-    "y": list(range(0, 10)),
-}
-
-app.layout = [
-    html.H1(children="Title of Dash App", style={"textAlign": "center"}),
-    dcc.Graph(id="graph-content", figure=px.line(test_data, x="x", y="y")),
-]
+app.layout = html.Div(
+    [
+        html.H1(
+            "An Analysis of the Cost of Living in Singapore",
+            style={"textAlign": "center"},
+        ),
+        html.Div(
+            [
+                html.Div(dcc.Link(f"{page["name"]}", href=page["relative_path"]))
+                for page in dash.page_registry.values()
+                if page["name"] != "Not found 404"  # Filter out the 404 page.
+            ]
+        ),
+        dash.page_container,
+    ]
+)
 
 
 def main():
