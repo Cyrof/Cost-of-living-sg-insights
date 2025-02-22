@@ -12,7 +12,7 @@ dependencies = [
 ]
 
 [project.scripts]
-dashboard = "dashboard.run:main"
+dashboard = "dashboard.app:main"
 
 [tool.uv]
 package = true
