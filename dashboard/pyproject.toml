@@ -1,20 +1,18 @@
 [project]
-name = "ict305-projects"
+name = "ict305-project-dashboard"
 version = "0.1.0"
 description = "An investigation into the economic viability of living in Singapore"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "anywidget>=0.9.13",
-    "jupyterlab>=4.3.5",
-    "kaleido<=0.2.1",
-    "matplotlib>=3.10.0",
+    "dash>=2.18.2",
+    "plotly>=6.0.0",
     "numpy>=2.2.2",
     "pandas>=2.2.3",
-    "plotly>=6.0.0",
-    "seaborn>=0.13.2",
-    "wbdata>=1.0.0",
 ]
 
+[project.scripts]
+dashboard = "dashboard.run:main"
+
 [tool.uv]
-package = false
+package = true

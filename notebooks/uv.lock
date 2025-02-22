@@ -465,7 +465,7 @@ wheels = [
 ]
 
 [[package]]
-name = "ict305-projects"
+name = "ict305-project-notebooks"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
