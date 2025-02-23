@@ -14,6 +14,7 @@ dependencies = [
     "plotly>=6.0.0",
     "seaborn>=0.13.2",
     "wbdata>=1.0.0",
+    "ict305-project-parser", # Provided by the workspace.
 ]
 
 [tool.uv]
