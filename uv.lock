@@ -738,6 +738,7 @@ version = "0.1.0"
 source = { virtual = "packages/notebooks" }
 dependencies = [
     { name = "anywidget" },
+    { name = "ict305-project-parser" },
     { name = "jupyterlab" },
     { name = "kaleido" },
     { name = "matplotlib" },
@@ -751,6 +752,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "anywidget", specifier = ">=0.9.13" },
+    { name = "ict305-project-parser", editable = "packages/parser" },
     { name = "jupyterlab", specifier = ">=4.3.5" },
     { name = "kaleido", specifier = "<=0.2.1" },
     { name = "matplotlib", specifier = ">=3.10.0" },
