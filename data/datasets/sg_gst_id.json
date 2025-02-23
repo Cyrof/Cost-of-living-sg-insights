@@ -1,0 +1,54 @@
+{
+  "help": "https://data.gov.sg/api/3/action/help_show?name=datastore_search",
+  "success": true,
+  "result": {
+    "resource_id": "d_2e65ed309aa8d449d1bd0c7ef7c7e4da",
+    "fields": [
+      {
+        "type": "text",
+        "id": "effective_from"
+      },
+      {
+        "type": "numeric",
+        "id": "tax_rate"
+      },
+      {
+        "type": "int4",
+        "id": "_id"
+      }
+    ],
+    "records": [
+      {
+        "_id": 1,
+        "effective_from": "2003-01-01",
+        "tax_rate": "4"
+      },
+      {
+        "_id": 2,
+        "effective_from": "2004-01-01",
+        "tax_rate": "5"
+      },
+      {
+        "_id": 3,
+        "effective_from": "2007-07-01",
+        "tax_rate": "7"
+      },
+      {
+        "_id": 4,
+        "effective_from": "2023-01-01",
+        "tax_rate": "8"
+      },
+      {
+        "_id": 5,
+        "effective_from": "2024-01-01",
+        "tax_rate": "9"
+      }
+    ],
+    "_links": {
+      "start": "/api/action/datastore_search?resource_id=d_2e65ed309aa8d449d1bd0c7ef7c7e4da&limit=10000000",
+      "next": "/api/action/datastore_search?resource_id=d_2e65ed309aa8d449d1bd0c7ef7c7e4da&offset=10000000&limit=10000000"
+    },
+    "total": 5,
+    "limit": 10000000
+  }
+}

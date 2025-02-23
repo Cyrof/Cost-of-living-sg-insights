@@ -1,0 +1,1065 @@
+{
+  "help": "https://data.gov.sg/api/3/action/help_show?name=datastore_search",
+  "success": true,
+  "result": {
+    "resource_id": "d_21e22578cabce897e8b27801e5596140",
+    "fields": [
+      {
+        "type": "text",
+        "id": "financial_year"
+      },
+      {
+        "type": "text",
+        "id": "tax_type"
+      },
+      {
+        "type": "text",
+        "id": "tax_collected"
+      },
+      {
+        "type": "int4",
+        "id": "_id"
+      }
+    ],
+    "records": [
+      {
+        "_id": 1,
+        "financial_year": "2002",
+        "tax_type": "Income Tax",
+        "tax_collected": "10876295"
+      },
+      {
+        "_id": 2,
+        "financial_year": "2002",
+        "tax_type": "Goods and Services Tax",
+        "tax_collected": "2166493"
+      },
+      {
+        "_id": 3,
+        "financial_year": "2002",
+        "tax_type": "Property Tax",
+        "tax_collected": "1232593"
+      },
+      {
+        "_id": 4,
+        "financial_year": "2002",
+        "tax_type": "Stamp Duty",
+        "tax_collected": "695437"
+      },
+      {
+        "_id": 5,
+        "financial_year": "2002",
+        "tax_type": "Betting Taxes",
+        "tax_collected": "1549545"
+      },
+      {
+        "_id": 6,
+        "financial_year": "2002",
+        "tax_type": "Estate Duty",
+        "tax_collected": "75607"
+      },
+      {
+        "_id": 7,
+        "financial_year": "2003",
+        "tax_type": "Income Tax - Corporate Income Tax",
+        "tax_collected": "5923741"
+      },
+      {
+        "_id": 8,
+        "financial_year": "2003",
+        "tax_type": "Income Tax - Individual Income Tax and Withholding Tax",
+        "tax_collected": "3865164"
+      },
+      {
+        "_id": 9,
+        "financial_year": "2003",
+        "tax_type": "Goods and Services Tax",
+        "tax_collected": "2958598"
+      },
+      {
+        "_id": 10,
+        "financial_year": "2003",
+        "tax_type": "Property Tax",
+        "tax_collected": "1331566"
+      },
+      {
+        "_id": 11,
+        "financial_year": "2003",
+        "tax_type": "Stamp Duty",
+        "tax_collected": "742874"
+      },
+      {
+        "_id": 12,
+        "financial_year": "2003",
+        "tax_type": "Betting Taxes",
+        "tax_collected": "1524135"
+      },
+      {
+        "_id": 13,
+        "financial_year": "2003",
+        "tax_type": "Estate Duty",
+        "tax_collected": "181791"
+      },
+      {
+        "_id": 14,
+        "financial_year": "2004",
+        "tax_type": "Income Tax - Corporate Income Tax",
+        "tax_collected": "6108599"
+      },
+      {
+        "_id": 15,
+        "financial_year": "2004",
+        "tax_type": "Income Tax - Individual Income Tax and Withholding Tax",
+        "tax_collected": "3959460"
+      },
+      {
+        "_id": 16,
+        "financial_year": "2004",
+        "tax_type": "Goods and Services Tax",
+        "tax_collected": "3471884"
+      },
+      {
+        "_id": 17,
+        "financial_year": "2004",
+        "tax_type": "Property Tax",
+        "tax_collected": "1701983"
+      },
+      {
+        "_id": 18,
+        "financial_year": "2004",
+        "tax_type": "Stamp Duty",
+        "tax_collected": "815369"
+      },
+      {
+        "_id": 19,
+        "financial_year": "2004",
+        "tax_type": "Betting Taxes",
+        "tax_collected": "1534031"
+      },
+      {
+        "_id": 20,
+        "financial_year": "2004",
+        "tax_type": "Estate Duty",
+        "tax_collected": "356612"
+      },
+      {
+        "_id": 21,
+        "financial_year": "2005",
+        "tax_type": "Income Tax - Corporate Income Tax",
+        "tax_collected": "7340767"
+      },
+      {
+        "_id": 22,
+        "financial_year": "2005",
+        "tax_type": "Income Tax - Individual Income Tax",
+        "tax_collected": "3428132"
+      },
+      {
+        "_id": 23,
+        "financial_year": "2005",
+        "tax_type": "Income Tax - Withholding Tax",
+        "tax_collected": "898432"
+      },
+      {
+        "_id": 24,
+        "financial_year": "2005",
+        "tax_type": "Goods and Services Tax",
+        "tax_collected": "3816618"
+      },
+      {
+        "_id": 25,
+        "financial_year": "2005",
+        "tax_type": "Property Tax",
+        "tax_collected": "1829177"
+      },
+      {
+        "_id": 26,
+        "financial_year": "2005",
+        "tax_type": "Stamp Duty",
+        "tax_collected": "966677"
+      },
+      {
+        "_id": 27,
+        "financial_year": "2005",
+        "tax_type": "Betting Taxes",
+        "tax_collected": "1500586"
+      },
+      {
+        "_id": 28,
+        "financial_year": "2005",
+        "tax_type": "Estate Duty",
+        "tax_collected": "80687"
+      },
+      {
+        "_id": 29,
+        "financial_year": "2006",
+        "tax_type": "Income Tax - Corporate Income Tax",
+        "tax_collected": "8476655"
+      },
+      {
+        "_id": 30,
+        "financial_year": "2006",
+        "tax_type": "Income Tax - Individual Income Tax",
+        "tax_collected": "3745458"
+      },
+      {
+        "_id": 31,
+        "financial_year": "2006",
+        "tax_type": "Income Tax - Withholding Tax",
+        "tax_collected": "963982"
+      },
+      {
+        "_id": 32,
+        "financial_year": "2006",
+        "tax_type": "Goods and Services Tax",
+        "tax_collected": "3978553"
+      },
+      {
+        "_id": 33,
+        "financial_year": "2006",
+        "tax_type": "Property Tax",
+        "tax_collected": "2014471"
+      },
+      {
+        "_id": 34,
+        "financial_year": "2006",
+        "tax_type": "Stamp Duty",
+        "tax_collected": "2015038"
+      },
+      {
+        "_id": 35,
+        "financial_year": "2006",
+        "tax_type": "Betting Taxes",
+        "tax_collected": "1571149"
+      },
+      {
+        "_id": 36,
+        "financial_year": "2006",
+        "tax_type": "Estate Duty",
+        "tax_collected": "98031"
+      },
+      {
+        "_id": 37,
+        "financial_year": "2007",
+        "tax_type": "Income Tax - Corporate Income Tax",
+        "tax_collected": "9273070"
+      },
+      {
+        "_id": 38,
+        "financial_year": "2007",
+        "tax_type": "Income Tax - Individual Income Tax",
+        "tax_collected": "4550289"
+      },
+      {
+        "_id": 39,
+        "financial_year": "2007",
+        "tax_type": "Income Tax - Withholding Tax",
+        "tax_collected": "1150270"
+      },
+      {
+        "_id": 40,
+        "financial_year": "2007",
+        "tax_type": "Goods and Services Tax",
+        "tax_collected": "6166601"
+      },
+      {
+        "_id": 41,
+        "financial_year": "2007",
+        "tax_type": "Property Tax",
+        "tax_collected": "2428533"
+      },
+      {
+        "_id": 42,
+        "financial_year": "2007",
+        "tax_type": "Stamp Duty",
+        "tax_collected": "3676667"
+      },
+      {
+        "_id": 43,
+        "financial_year": "2007",
+        "tax_type": "Betting Taxes",
+        "tax_collected": "1713491"
+      },
+      {
+        "_id": 44,
+        "financial_year": "2007",
+        "tax_type": "Estate Duty",
+        "tax_collected": "153682"
+      },
+      {
+        "_id": 45,
+        "financial_year": "2008",
+        "tax_type": "Income Tax - Corporate Income Tax",
+        "tax_collected": "10599444"
+      },
+      {
+        "_id": 46,
+        "financial_year": "2008",
+        "tax_type": "Income Tax - Individual Income Tax",
+        "tax_collected": "5430482"
+      },
+      {
+        "_id": 47,
+        "financial_year": "2008",
+        "tax_type": "Income Tax - Withholding Tax",
+        "tax_collected": "1175956"
+      },
+      {
+        "_id": 48,
+        "financial_year": "2008",
+        "tax_type": "Goods and Services Tax",
+        "tax_collected": "6488202"
+      },
+      {
+        "_id": 49,
+        "financial_year": "2008",
+        "tax_type": "Property Tax",
+        "tax_collected": "2856505"
+      },
+      {
+        "_id": 50,
+        "financial_year": "2008",
+        "tax_type": "Stamp Duty",
+        "tax_collected": "1431620"
+      },
+      {
+        "_id": 51,
+        "financial_year": "2008",
+        "tax_type": "Betting Taxes",
+        "tax_collected": "1771028"
+      },
+      {
+        "_id": 52,
+        "financial_year": "2008",
+        "tax_type": "Estate Duty",
+        "tax_collected": "47438"
+      },
+      {
+        "_id": 53,
+        "financial_year": "2009",
+        "tax_type": "Income Tax - Corporate Income Tax",
+        "tax_collected": "9589477"
+      },
+      {
+        "_id": 54,
+        "financial_year": "2009",
+        "tax_type": "Income Tax - Individual Income Tax",
+        "tax_collected": "6128687"
+      },
+      {
+        "_id": 55,
+        "financial_year": "2009",
+        "tax_type": "Income Tax - Withholding Tax",
+        "tax_collected": "1137220"
+      },
+      {
+        "_id": 56,
+        "financial_year": "2009",
+        "tax_type": "Goods and Services Tax",
+        "tax_collected": "6914786"
+      },
+      {
+        "_id": 57,
+        "financial_year": "2009",
+        "tax_type": "Property Tax",
+        "tax_collected": "1979434"
+      },
+      {
+        "_id": 58,
+        "financial_year": "2009",
+        "tax_type": "Stamp Duty",
+        "tax_collected": "2386217"
+      },
+      {
+        "_id": 59,
+        "financial_year": "2009",
+        "tax_type": "Betting Taxes",
+        "tax_collected": "1727049"
+      },
+      {
+        "_id": 60,
+        "financial_year": "2009",
+        "tax_type": "Estate Duty",
+        "tax_collected": "8196"
+      },
+      {
+        "_id": 61,
+        "financial_year": "2010",
+        "tax_type": "Income Tax - Corporate Income Tax",
+        "tax_collected": "10725754"
+      },
+      {
+        "_id": 62,
+        "financial_year": "2010",
+        "tax_type": "Income Tax - Individual Income Tax",
+        "tax_collected": "6489742"
+      },
+      {
+        "_id": 63,
+        "financial_year": "2010",
+        "tax_type": "Income Tax - Withholding Tax",
+        "tax_collected": "957394"
+      },
+      {
+        "_id": 64,
+        "financial_year": "2010",
+        "tax_type": "Goods and Services Tax",
+        "tax_collected": "8199540"
+      },
+      {
+        "_id": 65,
+        "financial_year": "2010",
+        "tax_type": "Property Tax",
+        "tax_collected": "2798590"
+      },
+      {
+        "_id": 66,
+        "financial_year": "2010",
+        "tax_type": "Stamp Duty",
+        "tax_collected": "3276535"
+      },
+      {
+        "_id": 67,
+        "financial_year": "2010",
+        "tax_type": "Betting Taxes",
+        "tax_collected": "2278659"
+      },
+      {
+        "_id": 68,
+        "financial_year": "2010",
+        "tax_type": "Estate Duty",
+        "tax_collected": "5170"
+      },
+      {
+        "_id": 69,
+        "financial_year": "2011",
+        "tax_type": "Income Tax - Corporate Income Tax",
+        "tax_collected": "12149134"
+      },
+      {
+        "_id": 70,
+        "financial_year": "2011",
+        "tax_type": "Income Tax - Individual Income Tax",
+        "tax_collected": "6893340"
+      },
+      {
+        "_id": 71,
+        "financial_year": "2011",
+        "tax_type": "Income Tax - Withholding Tax",
+        "tax_collected": "1258048"
+      },
+      {
+        "_id": 72,
+        "financial_year": "2011",
+        "tax_type": "Goods and Services Tax",
+        "tax_collected": "8689164"
+      },
+      {
+        "_id": 73,
+        "financial_year": "2011",
+        "tax_type": "Property Tax",
+        "tax_collected": "3899038"
+      },
+      {
+        "_id": 74,
+        "financial_year": "2011",
+        "tax_type": "Stamp Duty",
+        "tax_collected": "3175069"
+      },
+      {
+        "_id": 75,
+        "financial_year": "2011",
+        "tax_type": "Betting Taxes",
+        "tax_collected": "2373396"
+      },
+      {
+        "_id": 76,
+        "financial_year": "2011",
+        "tax_type": "Estate Duty",
+        "tax_collected": "2922"
+      },
+      {
+        "_id": 77,
+        "financial_year": "2012",
+        "tax_type": "Income Tax - Corporate Income Tax",
+        "tax_collected": "12848677"
+      },
+      {
+        "_id": 78,
+        "financial_year": "2012",
+        "tax_type": "Income Tax - Individual Income Tax",
+        "tax_collected": "7734969"
+      },
+      {
+        "_id": 79,
+        "financial_year": "2012",
+        "tax_type": "Income Tax - Withholding Tax",
+        "tax_collected": "1337325"
+      },
+      {
+        "_id": 80,
+        "financial_year": "2012",
+        "tax_type": "Goods and Services Tax",
+        "tax_collected": "9040201"
+      },
+      {
+        "_id": 81,
+        "financial_year": "2012",
+        "tax_type": "Property Tax",
+        "tax_collected": "3777240"
+      },
+      {
+        "_id": 82,
+        "financial_year": "2012",
+        "tax_type": "Stamp Duty",
+        "tax_collected": "4309493"
+      },
+      {
+        "_id": 83,
+        "financial_year": "2012",
+        "tax_type": "Betting Taxes",
+        "tax_collected": "2304850"
+      },
+      {
+        "_id": 84,
+        "financial_year": "2012",
+        "tax_type": "Estate Duty",
+        "tax_collected": "8156"
+      },
+      {
+        "_id": 85,
+        "financial_year": "2013",
+        "tax_type": "Income Tax - Corporate Income Tax",
+        "tax_collected": "12705235"
+      },
+      {
+        "_id": 86,
+        "financial_year": "2013",
+        "tax_type": "Income Tax - Individual Income Tax",
+        "tax_collected": "7703800"
+      },
+      {
+        "_id": 87,
+        "financial_year": "2013",
+        "tax_type": "Income Tax - Withholding Tax",
+        "tax_collected": "1152449"
+      },
+      {
+        "_id": 88,
+        "financial_year": "2013",
+        "tax_type": "Goods and Services Tax",
+        "tax_collected": "9515522"
+      },
+      {
+        "_id": 89,
+        "financial_year": "2013",
+        "tax_type": "Property Tax",
+        "tax_collected": "4178867"
+      },
+      {
+        "_id": 90,
+        "financial_year": "2013",
+        "tax_type": "Stamp Duty",
+        "tax_collected": "3929920"
+      },
+      {
+        "_id": 91,
+        "financial_year": "2013",
+        "tax_type": "Betting Taxes",
+        "tax_collected": "2378764"
+      },
+      {
+        "_id": 92,
+        "financial_year": "2013",
+        "tax_type": "Estate Duty",
+        "tax_collected": "3087"
+      },
+      {
+        "_id": 93,
+        "financial_year": "2014",
+        "tax_type": "Income Tax - Corporate Income Tax",
+        "tax_collected": "13392911"
+      },
+      {
+        "_id": 94,
+        "financial_year": "2014",
+        "tax_type": "Income Tax - Individual Income Tax",
+        "tax_collected": "8936919"
+      },
+      {
+        "_id": 95,
+        "financial_year": "2014",
+        "tax_type": "Income Tax - Withholding Tax",
+        "tax_collected": "1125970"
+      },
+      {
+        "_id": 96,
+        "financial_year": "2014",
+        "tax_type": "Goods and Services Tax",
+        "tax_collected": "10217395"
+      },
+      {
+        "_id": 97,
+        "financial_year": "2014",
+        "tax_type": "Property Tax",
+        "tax_collected": "4340218"
+      },
+      {
+        "_id": 98,
+        "financial_year": "2014",
+        "tax_type": "Stamp Duty",
+        "tax_collected": "2783570"
+      },
+      {
+        "_id": 99,
+        "financial_year": "2014",
+        "tax_type": "Betting Taxes",
+        "tax_collected": "2590983"
+      },
+      {
+        "_id": 100,
+        "financial_year": "2014",
+        "tax_type": "Estate Duty",
+        "tax_collected": "450"
+      },
+      {
+        "_id": 101,
+        "financial_year": "2015",
+        "tax_type": "Income Tax - Corporate Income Tax",
+        "tax_collected": "13834219"
+      },
+      {
+        "_id": 102,
+        "financial_year": "2015",
+        "tax_type": "Income Tax - Individual Income Tax",
+        "tax_collected": "9244265"
+      },
+      {
+        "_id": 103,
+        "financial_year": "2015",
+        "tax_type": "Income Tax - Withholding Tax",
+        "tax_collected": "1402014"
+      },
+      {
+        "_id": 104,
+        "financial_year": "2015",
+        "tax_type": "Goods and Services Tax",
+        "tax_collected": "10347372"
+      },
+      {
+        "_id": 105,
+        "financial_year": "2015",
+        "tax_type": "Property Tax",
+        "tax_collected": "4455710"
+      },
+      {
+        "_id": 106,
+        "financial_year": "2015",
+        "tax_type": "Stamp Duty",
+        "tax_collected": "2768922"
+      },
+      {
+        "_id": 107,
+        "financial_year": "2015",
+        "tax_type": "Betting Taxes",
+        "tax_collected": "2718988"
+      },
+      {
+        "_id": 108,
+        "financial_year": "2015",
+        "tax_type": "Estate Duty",
+        "tax_collected": "-582"
+      },
+      {
+        "_id": 109,
+        "financial_year": "2016",
+        "tax_type": "Income Tax - Corporate Income Tax",
+        "tax_collected": "13615180"
+      },
+      {
+        "_id": 110,
+        "financial_year": "2016",
+        "tax_type": "Income Tax - Individual Income Tax",
+        "tax_collected": "10535172"
+      },
+      {
+        "_id": 111,
+        "financial_year": "2016",
+        "tax_type": "Income Tax - Withholding Tax",
+        "tax_collected": "1474071"
+      },
+      {
+        "_id": 112,
+        "financial_year": "2016",
+        "tax_type": "Goods and Services Tax",
+        "tax_collected": "11082015"
+      },
+      {
+        "_id": 113,
+        "financial_year": "2016",
+        "tax_type": "Property Tax",
+        "tax_collected": "4361025"
+      },
+      {
+        "_id": 114,
+        "financial_year": "2016",
+        "tax_type": "Stamp Duty",
+        "tax_collected": "3278472"
+      },
+      {
+        "_id": 115,
+        "financial_year": "2016",
+        "tax_type": "Betting Taxes",
+        "tax_collected": "2682044"
+      },
+      {
+        "_id": 116,
+        "financial_year": "2016",
+        "tax_type": "Estate Duty",
+        "tax_collected": "327"
+      },
+      {
+        "_id": 117,
+        "financial_year": "2017",
+        "tax_type": "Income Tax - Corporate Income Tax",
+        "tax_collected": "14964174"
+      },
+      {
+        "_id": 118,
+        "financial_year": "2017",
+        "tax_type": "Income Tax - Individual Income Tax",
+        "tax_collected": "10732223"
+      },
+      {
+        "_id": 119,
+        "financial_year": "2017",
+        "tax_type": "Income Tax - Withholding Tax",
+        "tax_collected": "1531643"
+      },
+      {
+        "_id": 120,
+        "financial_year": "2017",
+        "tax_type": "Goods and Services Tax",
+        "tax_collected": "10962571"
+      },
+      {
+        "_id": 121,
+        "financial_year": "2017",
+        "tax_type": "Property Tax",
+        "tax_collected": "4442164"
+      },
+      {
+        "_id": 122,
+        "financial_year": "2017",
+        "tax_type": "Stamp Duty",
+        "tax_collected": "4905062"
+      },
+      {
+        "_id": 123,
+        "financial_year": "2017",
+        "tax_type": "Betting Taxes",
+        "tax_collected": "2688270"
+      },
+      {
+        "_id": 124,
+        "financial_year": "2017",
+        "tax_type": "Estate Duty",
+        "tax_collected": "37"
+      },
+      {
+        "_id": 125,
+        "financial_year": "2018",
+        "tax_type": "Income Tax - Corporate Income Tax",
+        "tax_collected": "16060029"
+      },
+      {
+        "_id": 126,
+        "financial_year": "2018",
+        "tax_type": "Income Tax - Individual Income Tax",
+        "tax_collected": "11716204"
+      },
+      {
+        "_id": 127,
+        "financial_year": "2018",
+        "tax_type": "Income Tax - Withholding Tax",
+        "tax_collected": "1589898"
+      },
+      {
+        "_id": 128,
+        "financial_year": "2018",
+        "tax_type": "Goods and Services Tax",
+        "tax_collected": "11140464"
+      },
+      {
+        "_id": 129,
+        "financial_year": "2018",
+        "tax_type": "Property Tax",
+        "tax_collected": "4648982"
+      },
+      {
+        "_id": 130,
+        "financial_year": "2018",
+        "tax_type": "Stamp Duty",
+        "tax_collected": "4606949"
+      },
+      {
+        "_id": 131,
+        "financial_year": "2018",
+        "tax_type": "Betting Taxes",
+        "tax_collected": "2663868"
+      },
+      {
+        "_id": 132,
+        "financial_year": "2018",
+        "tax_type": "Estate Duty",
+        "tax_collected": "247"
+      },
+      {
+        "_id": 133,
+        "financial_year": "2019",
+        "tax_type": "Income Tax - Corporate Income Tax",
+        "tax_collected": "16747821"
+      },
+      {
+        "_id": 134,
+        "financial_year": "2019",
+        "tax_type": "Income Tax - Individual Income Tax",
+        "tax_collected": "12378808"
+      },
+      {
+        "_id": 135,
+        "financial_year": "2019",
+        "tax_type": "Income Tax - Withholding Tax",
+        "tax_collected": "1637344"
+      },
+      {
+        "_id": 136,
+        "financial_year": "2019",
+        "tax_type": "Goods and Services Tax",
+        "tax_collected": "11165440"
+      },
+      {
+        "_id": 137,
+        "financial_year": "2019",
+        "tax_type": "Property Tax",
+        "tax_collected": "4761472"
+      },
+      {
+        "_id": 138,
+        "financial_year": "2019",
+        "tax_type": "Stamp Duty",
+        "tax_collected": "4198997"
+      },
+      {
+        "_id": 139,
+        "financial_year": "2019",
+        "tax_type": "Betting Taxes",
+        "tax_collected": "2619937"
+      },
+      {
+        "_id": 140,
+        "financial_year": "2019",
+        "tax_type": "Estate Duty",
+        "tax_collected": "262"
+      },
+      {
+        "_id": 141,
+        "financial_year": "2020",
+        "tax_type": "Income Tax - Corporate Income Tax",
+        "tax_collected": "16126448"
+      },
+      {
+        "_id": 142,
+        "financial_year": "2020",
+        "tax_type": "Income Tax - Individual Income Tax",
+        "tax_collected": "12752673"
+      },
+      {
+        "_id": 143,
+        "financial_year": "2020",
+        "tax_type": "Income Tax - Withholding Tax",
+        "tax_collected": "1618316"
+      },
+      {
+        "_id": 144,
+        "financial_year": "2020",
+        "tax_type": "Goods and Services Tax",
+        "tax_collected": "10346454"
+      },
+      {
+        "_id": 145,
+        "financial_year": "2020",
+        "tax_type": "Property Tax",
+        "tax_collected": "3128250"
+      },
+      {
+        "_id": 146,
+        "financial_year": "2020",
+        "tax_type": "Stamp Duty",
+        "tax_collected": "3895732"
+      },
+      {
+        "_id": 147,
+        "financial_year": "2020",
+        "tax_type": "Betting Taxes",
+        "tax_collected": "1721730"
+      },
+      {
+        "_id": 148,
+        "financial_year": "2020",
+        "tax_type": "Estate Duty",
+        "tax_collected": "-378"
+      },
+      {
+        "_id": 149,
+        "financial_year": "2021",
+        "tax_type": "Income Tax - Corporate Income Tax",
+        "tax_collected": "18215944"
+      },
+      {
+        "_id": 150,
+        "financial_year": "2021",
+        "tax_type": "Income Tax - Individual Income Tax",
+        "tax_collected": "14227986"
+      },
+      {
+        "_id": 151,
+        "financial_year": "2021",
+        "tax_type": "Income Tax - Withholding Tax",
+        "tax_collected": "1858611"
+      },
+      {
+        "_id": 152,
+        "financial_year": "2021",
+        "tax_type": "Goods and Services Tax",
+        "tax_collected": "12628595"
+      },
+      {
+        "_id": 153,
+        "financial_year": "2021",
+        "tax_type": "Property Tax",
+        "tax_collected": "4671730"
+      },
+      {
+        "_id": 154,
+        "financial_year": "2021",
+        "tax_type": "Stamp Duty",
+        "tax_collected": "6762309"
+      },
+      {
+        "_id": 155,
+        "financial_year": "2021",
+        "tax_type": "Betting Taxes",
+        "tax_collected": "2313285"
+      },
+      {
+        "_id": 156,
+        "financial_year": "2021",
+        "tax_type": "Estate Duty",
+        "tax_collected": "493"
+      },
+      {
+        "_id": 157,
+        "financial_year": "2022",
+        "tax_type": "Income Tax - Corporate Income Tax",
+        "tax_collected": "23099110"
+      },
+      {
+        "_id": 158,
+        "financial_year": "2022",
+        "tax_type": "Income Tax - Individual Income Tax",
+        "tax_collected": "15529780"
+      },
+      {
+        "_id": 159,
+        "financial_year": "2022",
+        "tax_type": "Income Tax - Withholding Tax",
+        "tax_collected": "2107550"
+      },
+      {
+        "_id": 160,
+        "financial_year": "2022",
+        "tax_type": "Goods and Services Tax",
+        "tax_collected": "14095003"
+      },
+      {
+        "_id": 161,
+        "financial_year": "2022",
+        "tax_type": "Property Tax",
+        "tax_collected": "5095413"
+      },
+      {
+        "_id": 162,
+        "financial_year": "2022",
+        "tax_type": "Stamp Duty",
+        "tax_collected": "5950199"
+      },
+      {
+        "_id": 163,
+        "financial_year": "2022",
+        "tax_type": "Betting Taxes",
+        "tax_collected": "2766056"
+      },
+      {
+        "_id": 164,
+        "financial_year": "2022",
+        "tax_type": "Estate Duty",
+        "tax_collected": "-88"
+      },
+      {
+        "_id": 165,
+        "financial_year": "2023",
+        "tax_type": "Income Tax - Corporate Income Tax",
+        "tax_collected": "29007073"
+      },
+      {
+        "_id": 166,
+        "financial_year": "2023",
+        "tax_type": "Income Tax - Individual Income Tax",
+        "tax_collected": "17515932"
+      },
+      {
+        "_id": 167,
+        "financial_year": "2023",
+        "tax_type": "Income Tax - Withholding Tax",
+        "tax_collected": "2190415"
+      },
+      {
+        "_id": 168,
+        "financial_year": "2023",
+        "tax_type": "Goods and Services Tax",
+        "tax_collected": "16649753"
+      },
+      {
+        "_id": 169,
+        "financial_year": "2023",
+        "tax_type": "Property Tax",
+        "tax_collected": "5936970"
+      },
+      {
+        "_id": 170,
+        "financial_year": "2023",
+        "tax_type": "Stamp Duty",
+        "tax_collected": "5806281"
+      },
+      {
+        "_id": 171,
+        "financial_year": "2023",
+        "tax_type": "Betting Taxes",
+        "tax_collected": "3174032"
+      },
+      {
+        "_id": 172,
+        "financial_year": "2023",
+        "tax_type": "Estate Duty",
+        "tax_collected": "588"
+      }
+    ],
+    "_links": {
+      "start": "/api/action/datastore_search?resource_id=d_21e22578cabce897e8b27801e5596140&limit=10000000",
+      "next": "/api/action/datastore_search?resource_id=d_21e22578cabce897e8b27801e5596140&offset=10000000&limit=10000000"
+    },
+    "total": 172,
+    "limit": 10000000
+  }
+}

@@ -1,0 +1,1247 @@
+{
+  "Data": {
+    "id": "M810501",
+    "title": "Life Expectancy By Sex, Annual",
+    "footnote": "Refer to Singapore residents (citizens and permanent residents) from 1980.  Prior to 1980, figures refer to total population.  Data for the latest available year is preliminary.  Life expectancies in 2020-2023 have been affected by higher mortality rates, particularly those observed in 2021 and 2022, arising from the COVID-19 pandemic.  It may not accurately represent the number of years that individuals can expect to live if mortality rates return to pre-pandemic levels.  For more information, please refer to the 'Complete Life Tables for Singapore Resident Population' publication (www.singstat.gov.sg/publications/population/complete-life-table) and Information Paper on 'Complete Life Tables 2003-2006 for Singapore Resident Population' (www.singstat.gov.sg/find-data/search-by-theme/population/death-and-life-expectancy/publications-and-methodology).",
+    "frequency": "Annual",
+    "datasource": "SINGAPORE DEPARTMENT OF STATISTICS",
+    "generatedBy": "SingStat Table Builder",
+    "dataLastUpdated": "06/06/2024",
+    "dateGenerated": "23/02/2025",
+    "offset": null,
+    "limit": "10000000",
+    "sortBy": null,
+    "timeFilter": null,
+    "between": null,
+    "search": null,
+    "row": [
+      {
+        "seriesNo": "1",
+        "rowText": "Total Life Expectancy At Birth (Residents)",
+        "uoM": "Years",
+        "footnote": "",
+        "columns": [
+          {
+            "key": "1957",
+            "value": "61.1"
+          },
+          {
+            "key": "1960",
+            "value": "62.9"
+          },
+          {
+            "key": "1965",
+            "value": "64.5"
+          },
+          {
+            "key": "1970",
+            "value": "65.8"
+          },
+          {
+            "key": "1975",
+            "value": "66.8"
+          },
+          {
+            "key": "1980",
+            "value": "72.1"
+          },
+          {
+            "key": "1981",
+            "value": "72.5"
+          },
+          {
+            "key": "1982",
+            "value": "72.6"
+          },
+          {
+            "key": "1983",
+            "value": "73"
+          },
+          {
+            "key": "1984",
+            "value": "73.3"
+          },
+          {
+            "key": "1985",
+            "value": "73.9"
+          },
+          {
+            "key": "1986",
+            "value": "74.2"
+          },
+          {
+            "key": "1987",
+            "value": "74.5"
+          },
+          {
+            "key": "1988",
+            "value": "74.7"
+          },
+          {
+            "key": "1989",
+            "value": "74.9"
+          },
+          {
+            "key": "1990",
+            "value": "75.3"
+          },
+          {
+            "key": "1991",
+            "value": "75.6"
+          },
+          {
+            "key": "1992",
+            "value": "75.9"
+          },
+          {
+            "key": "1993",
+            "value": "76.1"
+          },
+          {
+            "key": "1994",
+            "value": "76.2"
+          },
+          {
+            "key": "1995",
+            "value": "76.3"
+          },
+          {
+            "key": "1996",
+            "value": "76.6"
+          },
+          {
+            "key": "1997",
+            "value": "76.9"
+          },
+          {
+            "key": "1998",
+            "value": "77.3"
+          },
+          {
+            "key": "1999",
+            "value": "77.6"
+          },
+          {
+            "key": "2000",
+            "value": "78"
+          },
+          {
+            "key": "2001",
+            "value": "78.3"
+          },
+          {
+            "key": "2002",
+            "value": "78.6"
+          },
+          {
+            "key": "2003",
+            "value": "79.1"
+          },
+          {
+            "key": "2004",
+            "value": "79.6"
+          },
+          {
+            "key": "2005",
+            "value": "80.1"
+          },
+          {
+            "key": "2006",
+            "value": "80.3"
+          },
+          {
+            "key": "2007",
+            "value": "80.6"
+          },
+          {
+            "key": "2008",
+            "value": "80.9"
+          },
+          {
+            "key": "2009",
+            "value": "81.4"
+          },
+          {
+            "key": "2010",
+            "value": "81.7"
+          },
+          {
+            "key": "2011",
+            "value": "81.9"
+          },
+          {
+            "key": "2012",
+            "value": "82.1"
+          },
+          {
+            "key": "2013",
+            "value": "82.4"
+          },
+          {
+            "key": "2014",
+            "value": "82.6"
+          },
+          {
+            "key": "2015",
+            "value": "82.9"
+          },
+          {
+            "key": "2016",
+            "value": "83"
+          },
+          {
+            "key": "2017",
+            "value": "83.2"
+          },
+          {
+            "key": "2018",
+            "value": "83.4"
+          },
+          {
+            "key": "2019",
+            "value": "83.7"
+          },
+          {
+            "key": "2020",
+            "value": "83.7"
+          },
+          {
+            "key": "2021",
+            "value": "83.2"
+          },
+          {
+            "key": "2022",
+            "value": "83"
+          },
+          {
+            "key": "2023",
+            "value": "83"
+          }
+        ]
+      },
+      {
+        "seriesNo": "1.1",
+        "rowText": "Male Life Expectancy At Birth (Residents)",
+        "uoM": "Years",
+        "footnote": "",
+        "columns": [
+          {
+            "key": "1957",
+            "value": "59.4"
+          },
+          {
+            "key": "1960",
+            "value": "61.2"
+          },
+          {
+            "key": "1965",
+            "value": "62.8"
+          },
+          {
+            "key": "1970",
+            "value": "64.1"
+          },
+          {
+            "key": "1975",
+            "value": "65.1"
+          },
+          {
+            "key": "1980",
+            "value": "69.8"
+          },
+          {
+            "key": "1981",
+            "value": "70.1"
+          },
+          {
+            "key": "1982",
+            "value": "70.2"
+          },
+          {
+            "key": "1983",
+            "value": "70.5"
+          },
+          {
+            "key": "1984",
+            "value": "70.9"
+          },
+          {
+            "key": "1985",
+            "value": "71.5"
+          },
+          {
+            "key": "1986",
+            "value": "72.1"
+          },
+          {
+            "key": "1987",
+            "value": "72.5"
+          },
+          {
+            "key": "1988",
+            "value": "72.6"
+          },
+          {
+            "key": "1989",
+            "value": "72.8"
+          },
+          {
+            "key": "1990",
+            "value": "73.1"
+          },
+          {
+            "key": "1991",
+            "value": "73.5"
+          },
+          {
+            "key": "1992",
+            "value": "73.8"
+          },
+          {
+            "key": "1993",
+            "value": "73.9"
+          },
+          {
+            "key": "1994",
+            "value": "74.1"
+          },
+          {
+            "key": "1995",
+            "value": "74.1"
+          },
+          {
+            "key": "1996",
+            "value": "74.4"
+          },
+          {
+            "key": "1997",
+            "value": "74.8"
+          },
+          {
+            "key": "1998",
+            "value": "75.3"
+          },
+          {
+            "key": "1999",
+            "value": "75.6"
+          },
+          {
+            "key": "2000",
+            "value": "76"
+          },
+          {
+            "key": "2001",
+            "value": "76.3"
+          },
+          {
+            "key": "2002",
+            "value": "76.6"
+          },
+          {
+            "key": "2003",
+            "value": "76.6"
+          },
+          {
+            "key": "2004",
+            "value": "77.1"
+          },
+          {
+            "key": "2005",
+            "value": "77.6"
+          },
+          {
+            "key": "2006",
+            "value": "77.8"
+          },
+          {
+            "key": "2007",
+            "value": "78.1"
+          },
+          {
+            "key": "2008",
+            "value": "78.4"
+          },
+          {
+            "key": "2009",
+            "value": "78.9"
+          },
+          {
+            "key": "2010",
+            "value": "79.2"
+          },
+          {
+            "key": "2011",
+            "value": "79.5"
+          },
+          {
+            "key": "2012",
+            "value": "79.8"
+          },
+          {
+            "key": "2013",
+            "value": "80.1"
+          },
+          {
+            "key": "2014",
+            "value": "80.3"
+          },
+          {
+            "key": "2015",
+            "value": "80.5"
+          },
+          {
+            "key": "2016",
+            "value": "80.7"
+          },
+          {
+            "key": "2017",
+            "value": "80.9"
+          },
+          {
+            "key": "2018",
+            "value": "81.2"
+          },
+          {
+            "key": "2019",
+            "value": "81.4"
+          },
+          {
+            "key": "2020",
+            "value": "81.3"
+          },
+          {
+            "key": "2021",
+            "value": "80.8"
+          },
+          {
+            "key": "2022",
+            "value": "80.7"
+          },
+          {
+            "key": "2023",
+            "value": "80.7"
+          }
+        ]
+      },
+      {
+        "seriesNo": "1.2",
+        "rowText": "Female Life Expectancy At Birth (Residents)",
+        "uoM": "Years",
+        "footnote": "",
+        "columns": [
+          {
+            "key": "1957",
+            "value": "63.2"
+          },
+          {
+            "key": "1960",
+            "value": "65"
+          },
+          {
+            "key": "1965",
+            "value": "66.6"
+          },
+          {
+            "key": "1970",
+            "value": "67.8"
+          },
+          {
+            "key": "1975",
+            "value": "68.8"
+          },
+          {
+            "key": "1980",
+            "value": "74.7"
+          },
+          {
+            "key": "1981",
+            "value": "75.2"
+          },
+          {
+            "key": "1982",
+            "value": "75.3"
+          },
+          {
+            "key": "1983",
+            "value": "75.7"
+          },
+          {
+            "key": "1984",
+            "value": "75.8"
+          },
+          {
+            "key": "1985",
+            "value": "76.4"
+          },
+          {
+            "key": "1986",
+            "value": "76.5"
+          },
+          {
+            "key": "1987",
+            "value": "76.7"
+          },
+          {
+            "key": "1988",
+            "value": "76.9"
+          },
+          {
+            "key": "1989",
+            "value": "77.2"
+          },
+          {
+            "key": "1990",
+            "value": "77.6"
+          },
+          {
+            "key": "1991",
+            "value": "77.9"
+          },
+          {
+            "key": "1992",
+            "value": "78.2"
+          },
+          {
+            "key": "1993",
+            "value": "78.3"
+          },
+          {
+            "key": "1994",
+            "value": "78.4"
+          },
+          {
+            "key": "1995",
+            "value": "78.6"
+          },
+          {
+            "key": "1996",
+            "value": "78.9"
+          },
+          {
+            "key": "1997",
+            "value": "79.1"
+          },
+          {
+            "key": "1998",
+            "value": "79.4"
+          },
+          {
+            "key": "1999",
+            "value": "79.6"
+          },
+          {
+            "key": "2000",
+            "value": "80"
+          },
+          {
+            "key": "2001",
+            "value": "80.3"
+          },
+          {
+            "key": "2002",
+            "value": "80.6"
+          },
+          {
+            "key": "2003",
+            "value": "81.6"
+          },
+          {
+            "key": "2004",
+            "value": "82"
+          },
+          {
+            "key": "2005",
+            "value": "82.5"
+          },
+          {
+            "key": "2006",
+            "value": "82.6"
+          },
+          {
+            "key": "2007",
+            "value": "82.9"
+          },
+          {
+            "key": "2008",
+            "value": "83.3"
+          },
+          {
+            "key": "2009",
+            "value": "83.7"
+          },
+          {
+            "key": "2010",
+            "value": "84"
+          },
+          {
+            "key": "2011",
+            "value": "84.1"
+          },
+          {
+            "key": "2012",
+            "value": "84.3"
+          },
+          {
+            "key": "2013",
+            "value": "84.5"
+          },
+          {
+            "key": "2014",
+            "value": "84.8"
+          },
+          {
+            "key": "2015",
+            "value": "85.1"
+          },
+          {
+            "key": "2016",
+            "value": "85.1"
+          },
+          {
+            "key": "2017",
+            "value": "85.4"
+          },
+          {
+            "key": "2018",
+            "value": "85.5"
+          },
+          {
+            "key": "2019",
+            "value": "85.9"
+          },
+          {
+            "key": "2020",
+            "value": "85.9"
+          },
+          {
+            "key": "2021",
+            "value": "85.5"
+          },
+          {
+            "key": "2022",
+            "value": "85.2"
+          },
+          {
+            "key": "2023",
+            "value": "85.2"
+          }
+        ]
+      },
+      {
+        "seriesNo": "2",
+        "rowText": "Total Life Expectancy At Age 65 Years (Residents)",
+        "uoM": "Years",
+        "footnote": "",
+        "columns": [
+          {
+            "key": "1957",
+            "value": "8.1"
+          },
+          {
+            "key": "1960",
+            "value": "8.3"
+          },
+          {
+            "key": "1965",
+            "value": "8.3"
+          },
+          {
+            "key": "1970",
+            "value": "8.4"
+          },
+          {
+            "key": "1975",
+            "value": "8.5"
+          },
+          {
+            "key": "1980",
+            "value": "14"
+          },
+          {
+            "key": "1981",
+            "value": "14.2"
+          },
+          {
+            "key": "1982",
+            "value": "14.2"
+          },
+          {
+            "key": "1983",
+            "value": "14.4"
+          },
+          {
+            "key": "1984",
+            "value": "14.6"
+          },
+          {
+            "key": "1985",
+            "value": "14.9"
+          },
+          {
+            "key": "1986",
+            "value": "15.1"
+          },
+          {
+            "key": "1987",
+            "value": "15.3"
+          },
+          {
+            "key": "1988",
+            "value": "15.4"
+          },
+          {
+            "key": "1989",
+            "value": "15.5"
+          },
+          {
+            "key": "1990",
+            "value": "15.7"
+          },
+          {
+            "key": "1991",
+            "value": "15.9"
+          },
+          {
+            "key": "1992",
+            "value": "15.9"
+          },
+          {
+            "key": "1993",
+            "value": "15.9"
+          },
+          {
+            "key": "1994",
+            "value": "15.9"
+          },
+          {
+            "key": "1995",
+            "value": "16"
+          },
+          {
+            "key": "1996",
+            "value": "16.1"
+          },
+          {
+            "key": "1997",
+            "value": "16.3"
+          },
+          {
+            "key": "1998",
+            "value": "16.5"
+          },
+          {
+            "key": "1999",
+            "value": "16.6"
+          },
+          {
+            "key": "2000",
+            "value": "16.9"
+          },
+          {
+            "key": "2001",
+            "value": "17.1"
+          },
+          {
+            "key": "2002",
+            "value": "17.3"
+          },
+          {
+            "key": "2003",
+            "value": "18"
+          },
+          {
+            "key": "2004",
+            "value": "18.4"
+          },
+          {
+            "key": "2005",
+            "value": "18.7"
+          },
+          {
+            "key": "2006",
+            "value": "18.9"
+          },
+          {
+            "key": "2007",
+            "value": "19"
+          },
+          {
+            "key": "2008",
+            "value": "19.3"
+          },
+          {
+            "key": "2009",
+            "value": "19.6"
+          },
+          {
+            "key": "2010",
+            "value": "19.8"
+          },
+          {
+            "key": "2011",
+            "value": "20"
+          },
+          {
+            "key": "2012",
+            "value": "20.2"
+          },
+          {
+            "key": "2013",
+            "value": "20.4"
+          },
+          {
+            "key": "2014",
+            "value": "20.6"
+          },
+          {
+            "key": "2015",
+            "value": "20.8"
+          },
+          {
+            "key": "2016",
+            "value": "20.8"
+          },
+          {
+            "key": "2017",
+            "value": "21"
+          },
+          {
+            "key": "2018",
+            "value": "21.2"
+          },
+          {
+            "key": "2019",
+            "value": "21.4"
+          },
+          {
+            "key": "2020",
+            "value": "21.3"
+          },
+          {
+            "key": "2021",
+            "value": "20.9"
+          },
+          {
+            "key": "2022",
+            "value": "20.7"
+          },
+          {
+            "key": "2023",
+            "value": "20.7"
+          }
+        ]
+      },
+      {
+        "seriesNo": "2.1",
+        "rowText": "Male Life Expectancy At Age 65 Years (Residents)",
+        "uoM": "Years",
+        "footnote": "",
+        "columns": [
+          {
+            "key": "1957",
+            "value": "7.5"
+          },
+          {
+            "key": "1960",
+            "value": "7.8"
+          },
+          {
+            "key": "1965",
+            "value": "7.8"
+          },
+          {
+            "key": "1970",
+            "value": "8"
+          },
+          {
+            "key": "1975",
+            "value": "8.2"
+          },
+          {
+            "key": "1980",
+            "value": "12.6"
+          },
+          {
+            "key": "1981",
+            "value": "12.7"
+          },
+          {
+            "key": "1982",
+            "value": "12.8"
+          },
+          {
+            "key": "1983",
+            "value": "13"
+          },
+          {
+            "key": "1984",
+            "value": "13.2"
+          },
+          {
+            "key": "1985",
+            "value": "13.6"
+          },
+          {
+            "key": "1986",
+            "value": "13.9"
+          },
+          {
+            "key": "1987",
+            "value": "14.1"
+          },
+          {
+            "key": "1988",
+            "value": "14.1"
+          },
+          {
+            "key": "1989",
+            "value": "14.3"
+          },
+          {
+            "key": "1990",
+            "value": "14.5"
+          },
+          {
+            "key": "1991",
+            "value": "14.6"
+          },
+          {
+            "key": "1992",
+            "value": "14.7"
+          },
+          {
+            "key": "1993",
+            "value": "14.6"
+          },
+          {
+            "key": "1994",
+            "value": "14.6"
+          },
+          {
+            "key": "1995",
+            "value": "14.6"
+          },
+          {
+            "key": "1996",
+            "value": "14.7"
+          },
+          {
+            "key": "1997",
+            "value": "14.9"
+          },
+          {
+            "key": "1998",
+            "value": "15.2"
+          },
+          {
+            "key": "1999",
+            "value": "15.3"
+          },
+          {
+            "key": "2000",
+            "value": "15.6"
+          },
+          {
+            "key": "2001",
+            "value": "15.9"
+          },
+          {
+            "key": "2002",
+            "value": "16.1"
+          },
+          {
+            "key": "2003",
+            "value": "16.2"
+          },
+          {
+            "key": "2004",
+            "value": "16.5"
+          },
+          {
+            "key": "2005",
+            "value": "16.9"
+          },
+          {
+            "key": "2006",
+            "value": "17.1"
+          },
+          {
+            "key": "2007",
+            "value": "17.2"
+          },
+          {
+            "key": "2008",
+            "value": "17.5"
+          },
+          {
+            "key": "2009",
+            "value": "17.8"
+          },
+          {
+            "key": "2010",
+            "value": "18"
+          },
+          {
+            "key": "2011",
+            "value": "18.1"
+          },
+          {
+            "key": "2012",
+            "value": "18.4"
+          },
+          {
+            "key": "2013",
+            "value": "18.6"
+          },
+          {
+            "key": "2014",
+            "value": "18.8"
+          },
+          {
+            "key": "2015",
+            "value": "18.9"
+          },
+          {
+            "key": "2016",
+            "value": "19"
+          },
+          {
+            "key": "2017",
+            "value": "19.2"
+          },
+          {
+            "key": "2018",
+            "value": "19.4"
+          },
+          {
+            "key": "2019",
+            "value": "19.5"
+          },
+          {
+            "key": "2020",
+            "value": "19.5"
+          },
+          {
+            "key": "2021",
+            "value": "19.1"
+          },
+          {
+            "key": "2022",
+            "value": "19"
+          },
+          {
+            "key": "2023",
+            "value": "19"
+          }
+        ]
+      },
+      {
+        "seriesNo": "2.2",
+        "rowText": "Female Life Expectancy At Age 65 Years (Residents)",
+        "uoM": "Years",
+        "footnote": "",
+        "columns": [
+          {
+            "key": "1957",
+            "value": "8.6"
+          },
+          {
+            "key": "1960",
+            "value": "8.8"
+          },
+          {
+            "key": "1965",
+            "value": "8.8"
+          },
+          {
+            "key": "1970",
+            "value": "8.9"
+          },
+          {
+            "key": "1975",
+            "value": "8.9"
+          },
+          {
+            "key": "1980",
+            "value": "15.4"
+          },
+          {
+            "key": "1981",
+            "value": "15.6"
+          },
+          {
+            "key": "1982",
+            "value": "15.6"
+          },
+          {
+            "key": "1983",
+            "value": "15.8"
+          },
+          {
+            "key": "1984",
+            "value": "15.9"
+          },
+          {
+            "key": "1985",
+            "value": "16.2"
+          },
+          {
+            "key": "1986",
+            "value": "16.3"
+          },
+          {
+            "key": "1987",
+            "value": "16.5"
+          },
+          {
+            "key": "1988",
+            "value": "16.6"
+          },
+          {
+            "key": "1989",
+            "value": "16.7"
+          },
+          {
+            "key": "1990",
+            "value": "16.9"
+          },
+          {
+            "key": "1991",
+            "value": "17.1"
+          },
+          {
+            "key": "1992",
+            "value": "17.2"
+          },
+          {
+            "key": "1993",
+            "value": "17.2"
+          },
+          {
+            "key": "1994",
+            "value": "17.2"
+          },
+          {
+            "key": "1995",
+            "value": "17.2"
+          },
+          {
+            "key": "1996",
+            "value": "17.4"
+          },
+          {
+            "key": "1997",
+            "value": "17.5"
+          },
+          {
+            "key": "1998",
+            "value": "17.7"
+          },
+          {
+            "key": "1999",
+            "value": "17.9"
+          },
+          {
+            "key": "2000",
+            "value": "18.1"
+          },
+          {
+            "key": "2001",
+            "value": "18.3"
+          },
+          {
+            "key": "2002",
+            "value": "18.5"
+          },
+          {
+            "key": "2003",
+            "value": "19.6"
+          },
+          {
+            "key": "2004",
+            "value": "20"
+          },
+          {
+            "key": "2005",
+            "value": "20.4"
+          },
+          {
+            "key": "2006",
+            "value": "20.4"
+          },
+          {
+            "key": "2007",
+            "value": "20.6"
+          },
+          {
+            "key": "2008",
+            "value": "20.8"
+          },
+          {
+            "key": "2009",
+            "value": "21.2"
+          },
+          {
+            "key": "2010",
+            "value": "21.4"
+          },
+          {
+            "key": "2011",
+            "value": "21.6"
+          },
+          {
+            "key": "2012",
+            "value": "21.7"
+          },
+          {
+            "key": "2013",
+            "value": "21.9"
+          },
+          {
+            "key": "2014",
+            "value": "22.1"
+          },
+          {
+            "key": "2015",
+            "value": "22.3"
+          },
+          {
+            "key": "2016",
+            "value": "22.4"
+          },
+          {
+            "key": "2017",
+            "value": "22.6"
+          },
+          {
+            "key": "2018",
+            "value": "22.7"
+          },
+          {
+            "key": "2019",
+            "value": "23"
+          },
+          {
+            "key": "2020",
+            "value": "23"
+          },
+          {
+            "key": "2021",
+            "value": "22.6"
+          },
+          {
+            "key": "2022",
+            "value": "22.3"
+          },
+          {
+            "key": "2023",
+            "value": "22.2"
+          }
+        ]
+      }
+    ]
+  },
+  "DataCount": 1,
+  "StatusCode": 200,
+  "Message": ""
+}
