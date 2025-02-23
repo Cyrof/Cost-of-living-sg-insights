@@ -1,9 +1,11 @@
+import asyncio
+import functools
 import json
 from collections.abc import Sequence
 from datetime import datetime
 from typing import TypeAlias
 
-import requests
+import aiohttp
 import wbdata
 
 BASE_DATA_GOV_URL: str = "https://data.gov.sg/api/action/datastore_search"
@@ -15,41 +17,45 @@ DEFAULT_LIMIT: int = 10_000_000
 JSON: TypeAlias = dict[str, "JSON"] | list["JSON"] | str | int | float | bool | None
 
 
-def fetch_datagov_dataset(dataset_id: str, limit: int = DEFAULT_LIMIT) -> JSON:
-    response = requests.get(
-        BASE_DATA_GOV_URL,
-        params={
-            "resource_id": dataset_id,
-            "limit": str(limit),
-        },
-    )
+async def fetch_datagov_dataset(dataset_id: str, limit: int = DEFAULT_LIMIT) -> JSON:
+    async with aiohttp.ClientSession() as session:
+        async with session.get(
+            BASE_DATA_GOV_URL,
+            params={
+                "resource_id": dataset_id,
+                "limit": str(limit),
+            },
+        ) as response:
+            if not response.ok:
+                raise Exception(
+                    f"Failed to fetch DataGov dataset ({dataset_id}): {response}."
+                )
 
-    if not response.ok:
-        raise Exception(f"Failed to fetch DataGov dataset ({dataset_id}): {response}.")
-
-    return response.json()
-
-
-def fetch_singstat_dataset(dataset_id: str, limit: int = DEFAULT_LIMIT) -> JSON:
-    response = requests.get(
-        f"{BASE_SINGSTAT_URL}/{dataset_id}",
-        params={
-            "limit": str(limit),
-        },
-        headers={
-            "Accept": "application/json",
-            # Need to fake the user agent because SingStat blocks `python-requests`.
-            "User-Agent": "curl/8.11.1",
-        },
-    )
-
-    if not response.ok:
-        raise Exception(f"Failed to fetch SingStat dataset ({dataset_id}): {response}.")
-
-    return response.json()
+            return await response.json()
 
 
-def fetch_worldbank_dataset(
+async def fetch_singstat_dataset(dataset_id: str, limit: int = DEFAULT_LIMIT) -> JSON:
+    async with aiohttp.ClientSession() as session:
+        async with session.get(
+            f"{BASE_SINGSTAT_URL}/{dataset_id}",
+            params={
+                "limit": str(limit),
+            },
+            headers={
+                "Accept": "application/json",
+                # Need to fake the user agent because SingStat blocks `python-requests`.
+                "User-Agent": "curl/8.11.1",
+            },
+        ) as response:
+            if not response.ok:
+                raise Exception(
+                    f"Failed to fetch SingStat dataset ({dataset_id}): {response}."
+                )
+
+            return await response.json()
+
+
+def fetch_worldbank_dataset_sync(
     indicators: dict[str, str],
     country: str | Sequence[str] = "all",
     date: str | datetime | tuple[str | datetime, str | datetime] | None = None,
@@ -73,3 +79,10 @@ def fetch_worldbank_dataset(
     df_json_string: str = df.to_json(orient="split")
     df_json: JSON = json.loads(df_json_string)
     return df_json
+
+
+async def fetch_worldbank_dataset(*args, **kwargs) -> JSON:
+    loop = asyncio.get_event_loop()
+    return await loop.run_in_executor(
+        None, functools.partial(fetch_worldbank_dataset_sync, *args, **kwargs)
+    )

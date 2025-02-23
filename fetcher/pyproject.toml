@@ -5,14 +5,19 @@ description = "Command-line tool to fetch datasets for the analysis."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "requests>=2.32.3",
     "wbdata>=1.0.0",
-    "types-requests>=2.32.0.20241016",
     "pandas>=2.2.3",
+    "aiohttp>=3.11.12",
+    "aiofiles>=24.1.0",
 ]
 
 [project.scripts]
-fetch = "fetcher.run:main"
+fetch = "fetcher.run:entry"
 
 [tool.uv]
 package = true
+
+[dependency-groups]
+dev = [
+    "types-aiofiles>=24.1.0.20241221",
+]

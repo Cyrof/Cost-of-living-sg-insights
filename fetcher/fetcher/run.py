@@ -1,7 +1,10 @@
+import asyncio
 import json
 import os.path
 from argparse import ArgumentParser, Namespace
-from typing import Optional
+from typing import Awaitable, Optional
+
+import aiofiles
 
 import fetcher.fetch
 from fetcher.datasets import DEFAULT_DATASETS, Dataset, Source
@@ -41,43 +44,48 @@ def parse_args() -> Namespace:
     return parser.parse_args()
 
 
-def fetch_single(dataset: Dataset, output_path: Optional[str] = None) -> None:
+async def fetch_single(dataset: Dataset, output_path: Optional[str] = None) -> None:
     if not output_path:
         output_path = f"{dataset.id}.json"
 
     data = (
-        fetcher.fetch.fetch_datagov_dataset(dataset.id)
+        await fetcher.fetch.fetch_datagov_dataset(dataset.id)
         if dataset.source == Source.DataGov
         else (
-            fetcher.fetch.fetch_singstat_dataset(dataset.id)
+            await fetcher.fetch.fetch_singstat_dataset(dataset.id)
             if dataset.source == Source.SingStat
-            else fetcher.fetch.fetch_worldbank_dataset({dataset.id: dataset.id})
+            else await fetcher.fetch.fetch_worldbank_dataset({dataset.id: dataset.id})
         )
     )
 
-    with open(output_path, "w") as file:
-        json.dump(data, file, indent=2)
+    async with aiofiles.open(output_path, "w") as file:
+        json_str: str = json.dumps(data, indent=2)
+        await file.write(json_str)
         print(f"Data successfully written to: {output_path}")
 
 
-def fetch_default(output_dir: Optional[str] = None) -> None:
+async def fetch_default(output_dir: Optional[str] = None) -> None:
     if not output_dir:
         output_dir = "default-datasets"
 
     if not os.path.isdir(output_dir):
         os.makedirs(output_dir)
 
+    tasks: list[Awaitable] = []
     for name, dataset in DEFAULT_DATASETS.items():
-        fetch_single(
+        task = fetch_single(
             dataset,
             output_path=os.path.join(output_dir, f"{name}.json"),
         )
+        tasks.append(task)
+
+    await asyncio.gather(*tasks)
 
 
-def main() -> None:
+async def main() -> None:
     args = parse_args()
     if args.operation == "default":
-        fetch_default(output_dir=args.output_dir)
+        await fetch_default(output_dir=args.output_dir)
     else:
         source: Source = (
             Source.DataGov
@@ -85,4 +93,8 @@ def main() -> None:
             else (Source.SingStat if args.source == "singstat" else Source.WorldBank)
         )
         dataset: Dataset = Dataset(source, args.dataset_id)
-        fetch_single(dataset, output_path=args.output)
+        await fetch_single(dataset, output_path=args.output)
+
+
+def entry() -> None:
+    asyncio.run(main())
