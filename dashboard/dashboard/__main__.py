@@ -1,7 +1,7 @@
 import sys
 
-import dashboard.run
+import dashboard.app
 
 if __name__ == "__main__":
-    dashboard.run.main()
+    dashboard.app.main()
     sys.exit()
