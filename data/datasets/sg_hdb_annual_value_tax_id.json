@@ -1,0 +1,601 @@
+{
+  "help": "https://data.gov.sg/api/3/action/help_show?name=datastore_search",
+  "success": true,
+  "result": {
+    "resource_id": "d_48143be392f1ed22f0700835212e5a60",
+    "fields": [
+      {
+        "type": "numeric",
+        "id": "financial_year"
+      },
+      {
+        "type": "text",
+        "id": "type_of_hdb"
+      },
+      {
+        "type": "numeric",
+        "id": "no_of_cases"
+      },
+      {
+        "type": "numeric",
+        "id": "median_annual_value"
+      },
+      {
+        "type": "numeric",
+        "id": "property_tax_collection"
+      },
+      {
+        "type": "int4",
+        "id": "_id"
+      }
+    ],
+    "records": [
+      {
+        "_id": 1,
+        "financial_year": "2010",
+        "type_of_hdb": "1 or 2 Room",
+        "no_of_cases": "8632",
+        "median_annual_value": "4500",
+        "property_tax_collection": "190"
+      },
+      {
+        "_id": 2,
+        "financial_year": "2010",
+        "type_of_hdb": "3 Room",
+        "no_of_cases": "213865",
+        "median_annual_value": "6300",
+        "property_tax_collection": "16259"
+      },
+      {
+        "_id": 3,
+        "financial_year": "2010",
+        "type_of_hdb": "4 Room",
+        "no_of_cases": "339721",
+        "median_annual_value": "8100",
+        "property_tax_collection": "45089"
+      },
+      {
+        "_id": 4,
+        "financial_year": "2010",
+        "type_of_hdb": "5 Room",
+        "no_of_cases": "209210",
+        "median_annual_value": "9000",
+        "property_tax_collection": "37936"
+      },
+      {
+        "_id": 5,
+        "financial_year": "2010",
+        "type_of_hdb": "Executive & Others",
+        "no_of_cases": "64613",
+        "median_annual_value": "9300",
+        "property_tax_collection": "13046"
+      },
+      {
+        "_id": 6,
+        "financial_year": "2011",
+        "type_of_hdb": "1 or 2 Room",
+        "no_of_cases": "9310",
+        "median_annual_value": "5400",
+        "property_tax_collection": "242"
+      },
+      {
+        "_id": 7,
+        "financial_year": "2011",
+        "type_of_hdb": "3 Room",
+        "no_of_cases": "214311",
+        "median_annual_value": "7800",
+        "property_tax_collection": "15120"
+      },
+      {
+        "_id": 8,
+        "financial_year": "2011",
+        "type_of_hdb": "4 Room",
+        "no_of_cases": "347111",
+        "median_annual_value": "9600",
+        "property_tax_collection": "41575"
+      },
+      {
+        "_id": 9,
+        "financial_year": "2011",
+        "type_of_hdb": "5 Room",
+        "no_of_cases": "212018",
+        "median_annual_value": "10800",
+        "property_tax_collection": "35677"
+      },
+      {
+        "_id": 10,
+        "financial_year": "2011",
+        "type_of_hdb": "Executive & Others",
+        "no_of_cases": "64858",
+        "median_annual_value": "11100",
+        "property_tax_collection": "11929"
+      },
+      {
+        "_id": 11,
+        "financial_year": "2012",
+        "type_of_hdb": "1 or 2 Room",
+        "no_of_cases": "10465",
+        "median_annual_value": "5400",
+        "property_tax_collection": "301"
+      },
+      {
+        "_id": 12,
+        "financial_year": "2012",
+        "type_of_hdb": "3 Room",
+        "no_of_cases": "215381",
+        "median_annual_value": "8700",
+        "property_tax_collection": "25037"
+      },
+      {
+        "_id": 13,
+        "financial_year": "2012",
+        "type_of_hdb": "4 Room",
+        "no_of_cases": "353814",
+        "median_annual_value": "10500",
+        "property_tax_collection": "58422"
+      },
+      {
+        "_id": 14,
+        "financial_year": "2012",
+        "type_of_hdb": "5 Room",
+        "no_of_cases": "214028",
+        "median_annual_value": "11400",
+        "property_tax_collection": "45548"
+      },
+      {
+        "_id": 15,
+        "financial_year": "2012",
+        "type_of_hdb": "Executive & Others",
+        "no_of_cases": "64953",
+        "median_annual_value": "12000",
+        "property_tax_collection": "15107"
+      },
+      {
+        "_id": 16,
+        "financial_year": "2013",
+        "type_of_hdb": "1 or 2 Room",
+        "no_of_cases": "12729",
+        "median_annual_value": "5400",
+        "property_tax_collection": "328"
+      },
+      {
+        "_id": 17,
+        "financial_year": "2013",
+        "type_of_hdb": "3 Room",
+        "no_of_cases": "218383",
+        "median_annual_value": "8940",
+        "property_tax_collection": "26535"
+      },
+      {
+        "_id": 18,
+        "financial_year": "2013",
+        "type_of_hdb": "4 Room",
+        "no_of_cases": "361255",
+        "median_annual_value": "10800",
+        "property_tax_collection": "60632"
+      },
+      {
+        "_id": 19,
+        "financial_year": "2013",
+        "type_of_hdb": "5 Room",
+        "no_of_cases": "215881",
+        "median_annual_value": "11700",
+        "property_tax_collection": "47061"
+      },
+      {
+        "_id": 20,
+        "financial_year": "2013",
+        "type_of_hdb": "Executive & Others",
+        "no_of_cases": "65006",
+        "median_annual_value": "12000",
+        "property_tax_collection": "15602"
+      },
+      {
+        "_id": 21,
+        "financial_year": "2014",
+        "type_of_hdb": "1 or 2 Room",
+        "no_of_cases": "16938",
+        "median_annual_value": "5400",
+        "property_tax_collection": "356"
+      },
+      {
+        "_id": 22,
+        "financial_year": "2014",
+        "type_of_hdb": "3 Room",
+        "no_of_cases": "222563",
+        "median_annual_value": "8640",
+        "property_tax_collection": "23150"
+      },
+      {
+        "_id": 23,
+        "financial_year": "2014",
+        "type_of_hdb": "4 Room",
+        "no_of_cases": "373416",
+        "median_annual_value": "10440",
+        "property_tax_collection": "57919"
+      },
+      {
+        "_id": 24,
+        "financial_year": "2014",
+        "type_of_hdb": "5 Room",
+        "no_of_cases": "221702",
+        "median_annual_value": "11340",
+        "property_tax_collection": "44686"
+      },
+      {
+        "_id": 25,
+        "financial_year": "2014",
+        "type_of_hdb": "Executive & Others",
+        "no_of_cases": "65005",
+        "median_annual_value": "11640",
+        "property_tax_collection": "14175"
+      },
+      {
+        "_id": 26,
+        "financial_year": "2015",
+        "type_of_hdb": "1 or 2 Room",
+        "no_of_cases": "19041",
+        "median_annual_value": "5400",
+        "property_tax_collection": "364"
+      },
+      {
+        "_id": 27,
+        "financial_year": "2015",
+        "type_of_hdb": "3 Room",
+        "no_of_cases": "226485",
+        "median_annual_value": "8340",
+        "property_tax_collection": "20880"
+      },
+      {
+        "_id": 28,
+        "financial_year": "2015",
+        "type_of_hdb": "4 Room",
+        "no_of_cases": "384906",
+        "median_annual_value": "10080",
+        "property_tax_collection": "55798"
+      },
+      {
+        "_id": 29,
+        "financial_year": "2015",
+        "type_of_hdb": "5 Room",
+        "no_of_cases": "226932",
+        "median_annual_value": "10920",
+        "property_tax_collection": "43592"
+      },
+      {
+        "_id": 30,
+        "financial_year": "2015",
+        "type_of_hdb": "Executive & Others",
+        "no_of_cases": "65001",
+        "median_annual_value": "11220",
+        "property_tax_collection": "13623"
+      },
+      {
+        "_id": 31,
+        "financial_year": "2016",
+        "type_of_hdb": "1 or 2 Room",
+        "no_of_cases": "20925",
+        "median_annual_value": "5400",
+        "property_tax_collection": "418"
+      },
+      {
+        "_id": 32,
+        "financial_year": "2016",
+        "type_of_hdb": "3 Room",
+        "no_of_cases": "229746",
+        "median_annual_value": "7860",
+        "property_tax_collection": "18514"
+      },
+      {
+        "_id": 33,
+        "financial_year": "2016",
+        "type_of_hdb": "4 Room",
+        "no_of_cases": "395335",
+        "median_annual_value": "9600",
+        "property_tax_collection": "50305"
+      },
+      {
+        "_id": 34,
+        "financial_year": "2016",
+        "type_of_hdb": "5 Room",
+        "no_of_cases": "232069",
+        "median_annual_value": "10380",
+        "property_tax_collection": "40927"
+      },
+      {
+        "_id": 35,
+        "financial_year": "2016",
+        "type_of_hdb": "Executive & Others",
+        "no_of_cases": "65014",
+        "median_annual_value": "10680",
+        "property_tax_collection": "12712"
+      },
+      {
+        "_id": 36,
+        "financial_year": "2017",
+        "type_of_hdb": "1 or 2 Room",
+        "no_of_cases": "25985",
+        "median_annual_value": "5400",
+        "property_tax_collection": "421"
+      },
+      {
+        "_id": 37,
+        "financial_year": "2017",
+        "type_of_hdb": "3 Room",
+        "no_of_cases": "234846",
+        "median_annual_value": "7860",
+        "property_tax_collection": "17748"
+      },
+      {
+        "_id": 38,
+        "financial_year": "2017",
+        "type_of_hdb": "4 Room",
+        "no_of_cases": "408310",
+        "median_annual_value": "9600",
+        "property_tax_collection": "48672"
+      },
+      {
+        "_id": 39,
+        "financial_year": "2017",
+        "type_of_hdb": "5 Room",
+        "no_of_cases": "237748",
+        "median_annual_value": "10380",
+        "property_tax_collection": "39115"
+      },
+      {
+        "_id": 40,
+        "financial_year": "2017",
+        "type_of_hdb": "Executive & Others",
+        "no_of_cases": "65028",
+        "median_annual_value": "10680",
+        "property_tax_collection": "11991"
+      },
+      {
+        "_id": 41,
+        "financial_year": "2018",
+        "type_of_hdb": "1 or 2 Room",
+        "no_of_cases": "30391",
+        "median_annual_value": "5100",
+        "property_tax_collection": "438"
+      },
+      {
+        "_id": 42,
+        "financial_year": "2018",
+        "type_of_hdb": "3 Room",
+        "no_of_cases": "237734",
+        "median_annual_value": "7860",
+        "property_tax_collection": "18181"
+      },
+      {
+        "_id": 43,
+        "financial_year": "2018",
+        "type_of_hdb": "4 Room",
+        "no_of_cases": "416389",
+        "median_annual_value": "9600",
+        "property_tax_collection": "49805"
+      },
+      {
+        "_id": 44,
+        "financial_year": "2018",
+        "type_of_hdb": "5 Room",
+        "no_of_cases": "240537",
+        "median_annual_value": "10380",
+        "property_tax_collection": "39760"
+      },
+      {
+        "_id": 45,
+        "financial_year": "2018",
+        "type_of_hdb": "Executive & Others",
+        "no_of_cases": "65042",
+        "median_annual_value": "10680",
+        "property_tax_collection": "11984"
+      },
+      {
+        "_id": 46,
+        "financial_year": "2019",
+        "type_of_hdb": "1 or 2 Room",
+        "no_of_cases": "33798",
+        "median_annual_value": "5100",
+        "property_tax_collection": "398"
+      },
+      {
+        "_id": 47,
+        "financial_year": "2019",
+        "type_of_hdb": "3 Room",
+        "no_of_cases": "239738",
+        "median_annual_value": "7860",
+        "property_tax_collection": "18515"
+      },
+      {
+        "_id": 48,
+        "financial_year": "2019",
+        "type_of_hdb": "4 Room",
+        "no_of_cases": "421494",
+        "median_annual_value": "9600",
+        "property_tax_collection": "50598"
+      },
+      {
+        "_id": 49,
+        "financial_year": "2019",
+        "type_of_hdb": "5 Room",
+        "no_of_cases": "242589",
+        "median_annual_value": "10380",
+        "property_tax_collection": "39968"
+      },
+      {
+        "_id": 50,
+        "financial_year": "2019",
+        "type_of_hdb": "Executive & Others",
+        "no_of_cases": "65052",
+        "median_annual_value": "10680",
+        "property_tax_collection": "11851"
+      },
+      {
+        "_id": 51,
+        "financial_year": "2020",
+        "type_of_hdb": "1 or 2 Room",
+        "no_of_cases": "36013",
+        "median_annual_value": "5100",
+        "property_tax_collection": "478"
+      },
+      {
+        "_id": 52,
+        "financial_year": "2020",
+        "type_of_hdb": "3 Room",
+        "no_of_cases": "240980",
+        "median_annual_value": "7860",
+        "property_tax_collection": "17922"
+      },
+      {
+        "_id": 53,
+        "financial_year": "2020",
+        "type_of_hdb": "4 Room",
+        "no_of_cases": "424832",
+        "median_annual_value": "9600",
+        "property_tax_collection": "49178"
+      },
+      {
+        "_id": 54,
+        "financial_year": "2020",
+        "type_of_hdb": "5 Room",
+        "no_of_cases": "244076",
+        "median_annual_value": "10380",
+        "property_tax_collection": "38451"
+      },
+      {
+        "_id": 55,
+        "financial_year": "2020",
+        "type_of_hdb": "Executive & Others",
+        "no_of_cases": "65057",
+        "median_annual_value": "10680",
+        "property_tax_collection": "11267"
+      },
+      {
+        "_id": 56,
+        "financial_year": "2021",
+        "type_of_hdb": "1 or 2 Room",
+        "no_of_cases": "38110",
+        "median_annual_value": "5340",
+        "property_tax_collection": "458"
+      },
+      {
+        "_id": 57,
+        "financial_year": "2021",
+        "type_of_hdb": "3 Room",
+        "no_of_cases": "242894",
+        "median_annual_value": "8220",
+        "property_tax_collection": "20085"
+      },
+      {
+        "_id": 58,
+        "financial_year": "2021",
+        "type_of_hdb": "4 Room",
+        "no_of_cases": "430904",
+        "median_annual_value": "10140",
+        "property_tax_collection": "57195"
+      },
+      {
+        "_id": 59,
+        "financial_year": "2021",
+        "type_of_hdb": "5 Room",
+        "no_of_cases": "246983",
+        "median_annual_value": "10980",
+        "property_tax_collection": "42837"
+      },
+      {
+        "_id": 60,
+        "financial_year": "2021",
+        "type_of_hdb": "Executive & Others",
+        "no_of_cases": "65069",
+        "median_annual_value": "11340",
+        "property_tax_collection": "12321"
+      },
+      {
+        "_id": 61,
+        "financial_year": "2022",
+        "type_of_hdb": "1 or 2 Room",
+        "no_of_cases": "43492",
+        "median_annual_value": "6540",
+        "property_tax_collection": "603"
+      },
+      {
+        "_id": 62,
+        "financial_year": "2022",
+        "type_of_hdb": "3 Room",
+        "no_of_cases": "244102",
+        "median_annual_value": "9900",
+        "property_tax_collection": "27507"
+      },
+      {
+        "_id": 63,
+        "financial_year": "2022",
+        "type_of_hdb": "4 Room",
+        "no_of_cases": "439429",
+        "median_annual_value": "12480",
+        "property_tax_collection": "75483"
+      },
+      {
+        "_id": 64,
+        "financial_year": "2022",
+        "type_of_hdb": "5 Room",
+        "no_of_cases": "250163",
+        "median_annual_value": "13500",
+        "property_tax_collection": "56101"
+      },
+      {
+        "_id": 65,
+        "financial_year": "2022",
+        "type_of_hdb": "Executive & Others",
+        "no_of_cases": "65077",
+        "median_annual_value": "14220",
+        "property_tax_collection": "16084"
+      },
+      {
+        "_id": 66,
+        "financial_year": "2023",
+        "type_of_hdb": "1 or 2 Room",
+        "no_of_cases": "48776",
+        "median_annual_value": "8040",
+        "property_tax_collection": "1000"
+      },
+      {
+        "_id": 67,
+        "financial_year": "2023",
+        "type_of_hdb": "3 Room",
+        "no_of_cases": "245723",
+        "median_annual_value": "12060",
+        "property_tax_collection": "38733"
+      },
+      {
+        "_id": 68,
+        "financial_year": "2023",
+        "type_of_hdb": "4 Room",
+        "no_of_cases": "447144",
+        "median_annual_value": "15540",
+        "property_tax_collection": "101175"
+      },
+      {
+        "_id": 69,
+        "financial_year": "2023",
+        "type_of_hdb": "5 Room",
+        "no_of_cases": "254411",
+        "median_annual_value": "16860",
+        "property_tax_collection": "74350"
+      },
+      {
+        "_id": 70,
+        "financial_year": "2023",
+        "type_of_hdb": "Executive & Others",
+        "no_of_cases": "65075",
+        "median_annual_value": "17460",
+        "property_tax_collection": "21513"
+      }
+    ],
+    "_links": {
+      "start": "/api/action/datastore_search?resource_id=d_48143be392f1ed22f0700835212e5a60&limit=10000000",
+      "next": "/api/action/datastore_search?resource_id=d_48143be392f1ed22f0700835212e5a60&offset=10000000&limit=10000000"
+    },
+    "total": 70,
+    "limit": 10000000
+  }
+}
