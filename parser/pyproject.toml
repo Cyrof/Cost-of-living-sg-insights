@@ -1,0 +1,12 @@
+[project]
+name = "ict305-project-parser"
+version = "0.1.0"
+description = "Small library to parse the JSON datasets."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pandas>=2.2.3",
+]
+
+[tool.uv]
+package = true
