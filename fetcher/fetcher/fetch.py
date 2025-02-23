@@ -76,7 +76,7 @@ def fetch_worldbank_dataset_sync(
         skip_cache=skip_cache,
     )
 
-    df_json_string: str = df.to_json(orient="split")
+    df_json_string: str = df.reset_index().to_json(orient="records")
     df_json: JSON = json.loads(df_json_string)
     return df_json
 
