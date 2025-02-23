@@ -6,7 +6,15 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "pandas>=2.2.3",
+    "aiofiles>=24.1.0",
+    "pydantic>=2.10.6",
 ]
 
 [tool.uv]
 package = true
+
+[dependency-groups]
+dev = [
+    "pandas-stubs>=2.2.3.241126",
+    "types-aiofiles>=24.1.0.20241221",
+]
