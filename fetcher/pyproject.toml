@@ -1,0 +1,18 @@
+[project]
+name = "ict305-project-fetcher"
+version = "0.1.0"
+description = "Command-line tool to fetch datasets for the analysis."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "requests>=2.32.3",
+    "wbdata>=1.0.0",
+    "types-requests>=2.32.0.20241016",
+    "pandas>=2.2.3",
+]
+
+[project.scripts]
+fetch = "fetcher.run:main"
+
+[tool.uv]
+package = true
