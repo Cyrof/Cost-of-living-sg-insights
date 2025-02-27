@@ -42,9 +42,9 @@ def update_sidebar_links(pathname: str) -> List[html.Li]:
     children = []
     for title, href in pages:
         if pathname == href:
-            class_str = "block px-5 py-2 text-[#00ff88] text-xl font-semibold"
+            class_str = "block px-5 py-3 text-[#00ff88] text-xl font-semibold"
         else:
-            class_str = "block px-5 py-2 hover:text-[#00ff88] text-xl text-gray-300 font-semibold"
+            class_str = "block px-5 py-3 hover:text-[#00ff88] text-xl text-gray-300 font-semibold"
         children.append(html.Li(html.A(title, href=href, className=class_str)))
     return children
 
@@ -58,14 +58,14 @@ def update_sidebar_links(pathname: str) -> List[html.Li]:
 def toggle_sidebar(open_clicks: int, close_clicks: int) -> str:
     ctx = dash.callback_context
     if not ctx.triggered: 
-        return "fixed left-0 top-0 w-64 h-full transform -translate-x-full transition-transform duration-300 ease-in-out"
+        return "fixed left-0 top-0 w-64 h-full transform -translate-x-full transition-all duration-300 ease-in-out z-50 shadow-lg"
 
     button_id: str = ctx.triggered[0]["prop_id"].split(".")[0]
 
     if button_id == "open-sidebar":
-        return "fixed left-0 top-0 w-64 h-full bg-[#5c5b75] transform translate-x-0 transition-transform duration-300 ease-in-out z-50 shadow-lg"
+        return "fixed left-0 top-0 w-64 h-full bg-[#403f52] transform translate-x-0 transition-all duration-300 ease-in-out z-50 shadow-lg"
 
-    return "fixed left-0 top-0 w-64 h-full transform -translate-x-full transition-transform duration-300 ease-in-out"
+    return "fixed left-0 top-0 w-64 h-full transform -translate-x-full transition-all duration-300 ease-in-out z-50 shadow-lg"
 
 
 def main():
