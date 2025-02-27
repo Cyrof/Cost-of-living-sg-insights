@@ -692,6 +692,7 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "dash" },
+    { name = "flask" },
     { name = "numpy" },
     { name = "pandas" },
     { name = "plotly" },
@@ -700,6 +701,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "dash", specifier = ">=2.18.2" },
+    { name = "flask", specifier = ">=3.0.3" },
     { name = "numpy", specifier = ">=2.2.2" },
     { name = "pandas", specifier = ">=2.2.3" },
     { name = "plotly", specifier = ">=6.0.0" },
