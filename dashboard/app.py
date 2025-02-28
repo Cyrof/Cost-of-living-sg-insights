@@ -2,7 +2,7 @@ from typing import List
 
 import dash
 from components.sidebar import sidebar
-from dash import Dash, dcc, html
+from dash import ClientsideFunction, Dash, clientside_callback, dcc, html
 from dash.dependencies import Input, Output
 
 app = Dash(
@@ -57,23 +57,13 @@ def update_sidebar_links(pathname: str) -> List[html.Li]:
     return children
 
 
-# sidebar toggle callback
-@app.callback(
+# Client-side callback for toggling the sidebar.
+clientside_callback(
+    ClientsideFunction(namespace="clientside", function_name="toggleSidebar"),
     Output("sidebar", "className"),
-    [Input("open-sidebar", "n_clicks"), Input("close-sidebar", "n_clicks")],
-    prevent_initial_call=True,
+    Input("open-sidebar", "n_clicks"),
+    Input("close-sidebar", "n_clicks"),
 )
-def toggle_sidebar(open_clicks: int, close_clicks: int) -> str:
-    ctx = dash.callback_context
-    if not ctx.triggered:
-        return "fixed left-0 top-0 w-64 h-full transform -translate-x-full transition-all duration-300 ease-in-out z-50 shadow-lg"
-
-    button_id: str = ctx.triggered[0]["prop_id"].split(".")[0]
-
-    if button_id == "open-sidebar":
-        return "fixed left-0 top-0 w-64 h-full bg-[#403f52] transform translate-x-0 transition-all duration-300 ease-in-out z-50 shadow-lg"
-
-    return "fixed left-0 top-0 w-64 h-full bg-[#403f52] transform -translate-x-full transition-all duration-300 ease-in-out z-50 shadow-lg"
 
 
 def main():
