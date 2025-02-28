@@ -1,5 +1,7 @@
-from typing import List, Tuple 
+from typing import List, Tuple
+
 from dash import html
+
 
 def sidebar(links: List[Tuple[str, str]]) -> html.Div:
     return html.Div(
@@ -12,21 +14,17 @@ def sidebar(links: List[Tuple[str, str]]) -> html.Div:
                     html.Button(
                         "✖",
                         id="close-sidebar",
-                        className="absolute top-2 right-2 text-lg p-2 text-gray-200"
+                        className="absolute top-2 right-2 text-lg p-2 text-gray-200",
                     ),
-                    html.H2("Dashboard", className="text-xl font-bold p-4 text-gray-200"),
+                    html.H2(
+                        "Dashboard", className="text-xl font-bold p-4 text-gray-200"
+                    ),
                 ],
             ),
-
             html.Ul(
                 id="sidebar-links",
                 className="mt-4",
-                children=[
-                    html.Li(
-                        html.A(title, href=href)
-                    ) for title, href in links
-                ],
+                children=[html.Li(html.A(title, href=href)) for title, href in links],
             ),
         ],
-    
     )
