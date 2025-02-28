@@ -1,4 +1,4 @@
-from dash import (ClientsideFunction, Input, Output, callback,
+from dash import (ClientsideFunction, Input, Output, State,
                   clientside_callback, dcc, html)
 
 # title: href
@@ -23,7 +23,6 @@ def _id_from_title(title: str) -> str:
 
 
 def sidebar() -> html.Div:
-
     return html.Div(
         id="sidebar",
         className="fixed left-0 top-0 w-64 bg-gray-800 h-full transform -translate-x-full transition-all duration-300 ease-in-out z-50 shadow-lg",
@@ -71,12 +70,11 @@ clientside_callback(
 
 
 # Update the sidebar link colours based on the current URL.
-@callback(
+clientside_callback(
+    ClientsideFunction(
+        namespace="clientside", function_name="updateSidebarLinkColours"
+    ),
     *(Output(_id_from_title(title), "className") for title in LINKS.keys()),
     Input("url", "pathname"),
+    *(State(_id_from_title(title), "href") for title in LINKS.keys()),
 )
-def update_sidebar_links(pathname: str) -> tuple[str, ...]:
-    return tuple(
-        LINK_CLASSES_CURRENT_PATH if href == pathname else LINK_CLASSES_DEFAULT
-        for href in LINKS.values()
-    )
