@@ -1,9 +1,6 @@
-from typing import List
-
 import dash
 from components.sidebar import sidebar
-from dash import ClientsideFunction, Dash, clientside_callback, dcc, html
-from dash.dependencies import Input, Output
+from dash import Dash, dcc, html
 
 app = Dash(
     __name__, use_pages=True, pages_folder="pages", suppress_callback_exceptions=True
@@ -34,16 +31,6 @@ app.layout = html.Div(
             ],
         ),
     ]
-)
-
-
-# Client-side callback for toggling the sidebar.
-clientside_callback(
-    ClientsideFunction(namespace="clientside", function_name="toggleSidebar"),
-    Output("sidebar", "className"),
-    Input("open-sidebar", "n_clicks"),
-    Input("close-sidebar", "n_clicks"),
-    Input("url", "pathname"),
 )
 
 

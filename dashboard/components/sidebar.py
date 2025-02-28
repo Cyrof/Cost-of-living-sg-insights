@@ -1,4 +1,5 @@
-from dash import Input, Output, callback, dcc, html
+from dash import (ClientsideFunction, Input, Output, callback,
+                  clientside_callback, dcc, html)
 
 # title: href
 LINKS: dict[str, str] = {
@@ -57,6 +58,16 @@ def sidebar() -> html.Div:
             ),
         ],
     )
+
+
+# Client-side callback for toggling the sidebar.
+clientside_callback(
+    ClientsideFunction(namespace="clientside", function_name="toggleSidebar"),
+    Output("sidebar", "className"),
+    Input("open-sidebar", "n_clicks"),
+    Input("close-sidebar", "n_clicks"),
+    Input("url", "pathname"),
+)
 
 
 # Update the sidebar link colours based on the current URL.
