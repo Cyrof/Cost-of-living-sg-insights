@@ -1,6 +1,6 @@
 from typing import List, Tuple
 
-from dash import html
+from dash import dcc, html
 
 
 def sidebar(links: List[Tuple[str, str]]) -> html.Div:
@@ -24,7 +24,7 @@ def sidebar(links: List[Tuple[str, str]]) -> html.Div:
             html.Ul(
                 id="sidebar-links",
                 className="mt-4",
-                children=[html.Li(html.A(title, href=href)) for title, href in links],
+                children=[html.Li(dcc.Link(title, href=href)) for title, href in links],
             ),
         ],
     )

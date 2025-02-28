@@ -53,7 +53,7 @@ def update_sidebar_links(pathname: str) -> List[html.Li]:
             class_str = "block px-5 py-3 text-[#00ff88] text-xl font-semibold"
         else:
             class_str = "block px-5 py-3 hover:text-[#00ff88] text-xl text-gray-300 font-semibold"
-        children.append(html.Li(html.A(title, href=href, className=class_str)))
+        children.append(html.Li(dcc.Link(title, href=href, className=class_str)))
     return children
 
 
