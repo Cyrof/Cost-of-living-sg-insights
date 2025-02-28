@@ -43,6 +43,7 @@ clientside_callback(
     Output("sidebar", "className"),
     Input("open-sidebar", "n_clicks"),
     Input("close-sidebar", "n_clicks"),
+    Input("url", "pathname"),
 )
 
 

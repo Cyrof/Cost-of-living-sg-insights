@@ -3,7 +3,7 @@ const BASE_CLASSES =
 
 window.dash_clientside = Object.assign({}, window.dash_clientside, {
     clientside: {
-        toggleSidebar: function(_open_clicks, _close_clicks) {
+        toggleSidebar: function() {
             if (dash_clientside.callback_context.triggered_id === "open-sidebar") {
                 return BASE_CLASSES + "bg-[#403f52] translate-x-0";
             }
