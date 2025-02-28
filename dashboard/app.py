@@ -65,7 +65,7 @@ def toggle_sidebar(open_clicks: int, close_clicks: int) -> str:
     if button_id == "open-sidebar":
         return "fixed left-0 top-0 w-64 h-full bg-[#403f52] transform translate-x-0 transition-all duration-300 ease-in-out z-50 shadow-lg"
 
-    return "fixed left-0 top-0 w-64 h-full transform -translate-x-full transition-all duration-300 ease-in-out z-50 shadow-lg"
+    return "fixed left-0 top-0 w-64 h-full bg-[#403f52] transform -translate-x-full transition-all duration-300 ease-in-out z-50 shadow-lg"
 
 
 def main():
