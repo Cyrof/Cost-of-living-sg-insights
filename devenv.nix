@@ -4,15 +4,9 @@
 }:
 
 {
-  languages = {
-    python = {
-      enable = true;
-      uv.enable = true;
-    };
-    javascript = {
-      enable = true;
-      pnpm.enable = true;
-    };
+  languages.python = {
+    enable = true;
+    uv.enable = true;
   };
 
   # Native dependency for NumPy.
