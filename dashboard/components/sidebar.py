@@ -1,9 +1,28 @@
-from typing import List, Tuple
+from dash import (ClientsideFunction, Input, Output, State,
+                  clientside_callback, dcc, html)
 
-from dash import html
+# title: href
+LINKS: dict[str, str] = {
+    "Introduction": "/",
+    "Taxes": "/taxes",
+    "Necessities": "/necessities",
+    "Healthcare": "/healthcare",
+    "Global": "/global",
+    "Conclusion": "/conclusion",
+}
+
+LINK_CLASSES_DEFAULT: str = (
+    "block px-5 py-3 hover:text-[#00ff88] text-xl text-gray-300 font-semibold "
+)
+
+LINK_CLASSES_CURRENT_PATH: str = "block px-5 py-3 text-[#00ff88] text-xl font-semibold "
 
 
-def sidebar(links: List[Tuple[str, str]]) -> html.Div:
+def _id_from_title(title: str) -> str:
+    return f"{title.lower()}-sidebar-link"
+
+
+def sidebar() -> html.Div:
     return html.Div(
         id="sidebar",
         className="fixed left-0 top-0 w-64 bg-gray-800 h-full transform -translate-x-full transition-all duration-300 ease-in-out z-50 shadow-lg",
@@ -24,7 +43,38 @@ def sidebar(links: List[Tuple[str, str]]) -> html.Div:
             html.Ul(
                 id="sidebar-links",
                 className="mt-4",
-                children=[html.Li(html.A(title, href=href)) for title, href in links],
+                children=[
+                    html.Li(
+                        dcc.Link(
+                            id=_id_from_title(title),
+                            href=href,
+                            children=title,
+                            className=LINK_CLASSES_DEFAULT,
+                        )
+                    )
+                    for title, href in LINKS.items()
+                ],
             ),
         ],
     )
+
+
+# Client-side callback for toggling the sidebar.
+clientside_callback(
+    ClientsideFunction(namespace="clientside", function_name="toggleSidebar"),
+    Output("sidebar", "className"),
+    Input("open-sidebar", "n_clicks"),
+    Input("close-sidebar", "n_clicks"),
+    Input("url", "pathname"),
+)
+
+
+# Update the sidebar link colours based on the current URL.
+clientside_callback(
+    ClientsideFunction(
+        namespace="clientside", function_name="updateSidebarLinkColours"
+    ),
+    *(Output(_id_from_title(title), "className") for title in LINKS.keys()),
+    Input("url", "pathname"),
+    *(State(_id_from_title(title), "href") for title in LINKS.keys()),
+)
