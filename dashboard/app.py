@@ -2,8 +2,16 @@ import dash
 from components.sidebar import sidebar
 from dash import Dash, dcc, html
 
+FA = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+TW = "https://cdn.tailwindcss.com"
+
 app = Dash(
-    __name__, use_pages=True, pages_folder="pages", suppress_callback_exceptions=True
+    __name__, 
+    use_pages=True, 
+    pages_folder="pages", 
+    suppress_callback_exceptions=True,
+    external_stylesheets=[FA],
+    external_scripts=[TW]
 )
 
 app.layout = html.Div(
