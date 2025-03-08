@@ -364,7 +364,7 @@ name = "click"
 version = "8.1.8"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "colorama", marker = "platform_system == 'Windows'" },
+    { name = "colorama", marker = "sys_platform == 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/b9/2e/0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8b/click-8.1.8.tar.gz", hash = "sha256:ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a", size = 226593 }
 wheels = [
@@ -481,6 +481,18 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/14/c6/957d5e83b620473eb3c8557a253fb01c6a817b10ca43d3ff9d31796f32a6/dash_html_components-2.0.0.tar.gz", hash = "sha256:8703a601080f02619a6390998e0b3da4a5daabe97a1fd7a9cebc09d015f26e50", size = 3840 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/75/65/1b16b853844ef59b2742a7de74a598f376ac0ab581f0dcc34db294e5c90e/dash_html_components-2.0.0-py3-none-any.whl", hash = "sha256:b42cc903713c9706af03b3f2548bda4be7307a7cf89b7d6eae3da872717d1b63", size = 4092 },
+]
+
+[[package]]
+name = "dash-mantine-components"
+version = "0.15.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "dash" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/7a/cc/6c65214304fbe970fb9ab5d7ce6d36d0e4eaa66e604fd22ac9a7b9f5e027/dash_mantine_components-0.15.3.tar.gz", hash = "sha256:265122b30370df46de2dabbe60824e3f0886085b04700677aa1713dfef0a549c", size = 946079 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a6/48/2fff4292687728de1a172ecb31c4bcf5a656d53fcf1e72f5b088490a2f56/dash_mantine_components-0.15.3-py3-none-any.whl", hash = "sha256:a8ad002ba36848adbca66570383f10203b0edb3e87bdf38209e12b01c52db379", size = 1260944 },
 ]
 
 [[package]]
@@ -692,6 +704,7 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "dash" },
+    { name = "dash-mantine-components" },
     { name = "flask" },
     { name = "numpy" },
     { name = "pandas" },
@@ -701,6 +714,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "dash", specifier = ">=2.18.2" },
+    { name = "dash-mantine-components", specifier = ">=0.15.3" },
     { name = "flask", specifier = ">=3.0.3" },
     { name = "numpy", specifier = ">=2.2.2" },
     { name = "pandas", specifier = ">=2.2.3" },
@@ -820,7 +834,7 @@ name = "ipykernel"
 version = "6.29.5"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "appnope", marker = "platform_system == 'Darwin'" },
+    { name = "appnope", marker = "sys_platform == 'darwin'" },
     { name = "comm" },
     { name = "debugpy" },
     { name = "ipython" },
@@ -2296,7 +2310,7 @@ name = "tzlocal"
 version = "5.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "tzdata", marker = "platform_system == 'Windows'" },
+    { name = "tzdata", marker = "sys_platform == 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/33/cc/11360404b20a6340b9b4ed39a3338c4af47bc63f87f6cea94dbcbde07029/tzlocal-5.3.tar.gz", hash = "sha256:2fafbfc07e9d8b49ade18f898d6bcd37ae88ce3ad6486842a2e4f03af68323d2", size = 30480 }
 wheels = [
