@@ -31,7 +31,7 @@ def sidebar() -> html.Div:
                 className="bg-[#343342]",
                 children=[
                     html.Button(
-                        "✖",
+                        html.I(className="fa-solid fa-xmark"),
                         id="close-sidebar",
                         className="absolute top-2 right-2 text-lg p-2 text-gray-200",
                     ),

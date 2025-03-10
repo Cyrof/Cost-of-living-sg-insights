@@ -1,36 +1,49 @@
+import os
+os.environ["REACT_VERSION"] = "18.2.0"
+
 import dash
 from components.sidebar import sidebar
+from components.topBar import topbar
 from dash import Dash, dcc, html
+import dash_mantine_components as dmc
+
+FA = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+TW = "https://cdn.tailwindcss.com"
 
 app = Dash(
-    __name__, use_pages=True, pages_folder="pages", suppress_callback_exceptions=True
+    __name__, 
+    use_pages=True, 
+    pages_folder="pages", 
+    suppress_callback_exceptions=True,
+    external_stylesheets=[FA] + dmc.styles.ALL,
+    external_scripts=[TW]
 )
 
-app.layout = html.Div(
+app.layout = dmc.MantineProvider(
     children=[
         # dcc.location to tracks the current url
         dcc.Location(id="url", refresh=False),
-        # Sidebar Toggle Button
-        html.Button(
-            "☰",
-            id="open-sidebar",
-            className="text-xl p-2 rounded fixed top-2 left-2 z-40",
-        ),
-        # sidebar
-        sidebar(),
-        # main content
+
         html.Div(
-            className="ml-4 mt-10",
+            className="min-h-screen flex flex-col",
             children=[
-                html.H1(
-                    "An Analysis of the Cost of Living in Singapore",
-                    className="text-2xl font-bold text-center",
+                html.Header(
+                    className="flex-none h-16",
+                    children=[
+                        topbar(),
+                        # sidebar
+                        sidebar(),
+                    ]
                 ),
-                # page container
-                html.Div(dash.page_container, className="p-4"),
-            ],
-        ),
-    ]
+                html.Main(
+                    children=[
+                        # page container
+                        html.Div(dash.page_container, className="p-4 bg-palette1"),
+                    ],
+                ),
+                ]
+            ),
+    ],
 )
 
 
