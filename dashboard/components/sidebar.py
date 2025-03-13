@@ -28,7 +28,7 @@ def sidebar() -> html.Div:
         className="fixed left-0 top-0 w-64 bg-gray-800 h-full transform -translate-x-full transition-all duration-300 ease-in-out z-50 shadow-lg",
         children=[
             html.Div(
-                className="bg-[#343342]",
+                className="bg-[#343342] h-16",
                 children=[
                     html.Button(
                         html.I(className="fa-solid fa-xmark"),
