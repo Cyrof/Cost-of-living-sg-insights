@@ -1,7 +1,7 @@
 import dash_mantine_components as dmc 
 from dash import html
 
-def topbar():
+def topbar() -> dmc.Box:
     return dmc.Box(
         className="fixed top-0 left-0 right-0 h-16 bg-palette2 z-50 flex items-center px-4",
         children = [
