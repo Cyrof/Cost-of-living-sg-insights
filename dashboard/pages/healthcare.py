@@ -63,14 +63,14 @@ def layout() -> Component:
                     ),
                     graphWrapper(
                         id="healthcare_cpi_vs_gross_monthly_income",
-                        figure=charts["life_expectancy_vs_healthcare_cpi"]
+                        figure=charts["healthcare_cpi_vs_gross_monthly_income"]
                     ),
                     dmc.Text(
                         "Life Expectancy vs Healthcare CPI text",
                         className="border border-orange-500"
                     ),
                     dmc.Text(
-                        "Healthcare CPI vs Income Growth (%) text",
+                        "Healthcare CPI vs Income Growth",
                         className="border border-green-500"
                     )
                 ],
@@ -85,7 +85,7 @@ def layout() -> Component:
                         figure=charts["percentage_change_in_healthcare_cpi_and_income"]
                     ),
                     dmc.Text(
-                        "Healthcare CPI vs Income Growth",
+                        "Healthcare CPI vs Income Growth (%) text",
                         className="border border-blue-500"
                     )
                 ],
