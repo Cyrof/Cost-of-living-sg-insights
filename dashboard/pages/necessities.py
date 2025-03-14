@@ -2,6 +2,8 @@ import dash
 from dash import dcc, html
 from dash.development.base_component import Component
 from plotly.graph_objects import Figure
+import dash_mantine_components as dmc
+from components.graphWrapper import graphWrapper
 
 import dashboard.utils
 
@@ -24,21 +26,60 @@ def load_charts() -> dict[str, Figure]:
 
 def layout() -> Component:
     charts: dict[str, Figure] = load_charts()
-
-    return html.Div(
+    return dmc.Stack(
         [
-            html.H1("Necessities"),
-            dcc.Graph(
-                id="necessities_cpi_breakdown_chart",
-                figure=charts["necessities_cpi_breakdown"],
+            dmc.Stack(
+                [
+                    dmc.Text(
+                        "Necessities",
+                        className="text-3xl font-semibold"
+                    ),
+
+                    dmc.Group(
+                        gap="lg",
+                        grow=True,
+                        children=[
+                            dmc.Text(
+                                "CPI of Necessities over Time text",
+                                className="border border-purple-500"
+                            ),
+                            graphWrapper(
+                                id="necessities_cpi_breakdown_chart",
+                                figure=charts["necessities_cpi_breakdown"]
+                            ),
+                        ],
+                    ),
+                ]
             ),
-            dcc.Graph(
-                id="necessities_cpi_vs_income_chart",
-                figure=charts["necessities_cpi_vs_income"],
+            dmc.Stack(
+                [
+                    dmc.Text(
+                        "CPI of Necessities against Income text",
+                        className="border border-orange-500"
+                    ),
+                    graphWrapper(
+                        id="necessities_cpi_vs_income_chart",
+                        figure=charts["necessities_cpi_vs_income"]
+                    ),
+                ],
+                className="mt-12"
             ),
-            dcc.Graph(
-                id="monthly_expenditure_donut_chart",
-                figure=charts["monthly_expenditure_donut"],
-            ),
-        ]
+            dmc.Group(
+                gap="lg",
+                grow=True,
+                children=[
+                    graphWrapper(
+                        id="monthly_expenditure_donut_chart",
+                        figure=charts["monthly_expenditure_donut"]
+                    ),
+                    dmc.Text(
+                        "Month Expenditure over Time text",
+                        className="border border-red-500"
+                    )
+                ],
+                className="mt-12"
+            )
+
+        ],
+        className="py-2 px-4"
     )

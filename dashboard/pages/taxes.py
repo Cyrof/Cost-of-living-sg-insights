@@ -3,6 +3,7 @@ from dash import dcc, html
 from dash.development.base_component import Component
 from plotly.graph_objects import Figure
 import dash_mantine_components as dmc
+from components.graphWrapper import graphWrapper
 
 import dashboard.utils
 
@@ -56,26 +57,14 @@ def layout() -> Component:
                                 "tax collected by IRAS text",
                                 className="border border-blue-500"
                             ),
-                            dmc.Box(
-                                [
-                                    dcc.Graph(
-                                        id="cpi_vs_gst_line_bar",
-                                        figure=charts["cpi_vs_gst_line_bar"],
-                                        className="w-[90%] h-auto"
-                                    ),
-                                ],
-                                className="rounded-xl shadow-xl flex justify-center bg-white"
+                            graphWrapper(
+                                id="cpi_vs_gst_line_bar",
+                                figure=charts["cpi_vs_gst_line_bar"]
                             ),
-                            dmc.Box(
-                                [
-                                    dcc.Graph(
-                                        id="iras_tax_collection_bar",
-                                        figure=charts["iras_tax_collection_bar"],
-                                        className="w-[90%] h-auto"
-                                    ),
-                                ],
-                                className="rounded-xl shadow-xl flex justify-center bg-white"
-                            ),
+                            graphWrapper(
+                                id="iras_tax_collection_bar",
+                                figure=charts["iras_tax_collection_bar"]
+                            )
                         ]
                     )
                 ]
@@ -94,15 +83,9 @@ def layout() -> Component:
                                 "Income Tax Rates by Yearly Income Ranges text",
                                 className="border border-purple-500"
                             ),
-                            dmc.Box(
-                                [
-                                    dcc.Graph(
-                                        id="income_tax_rates_step_line",
-                                        figure=charts["income_tax_rates_step_line"],
-                                        className="w-[90%] h-auto"
-                                    ),
-                                ],
-                                className="rounded-xl shadow-xl flex justify-center bg-white"
+                            graphWrapper(
+                                id="income_tax_rates_step_line",
+                                figure=charts["income_tax_rates_step_line"]
                             )
                         ],
                     ),
@@ -110,17 +93,10 @@ def layout() -> Component:
                         gap="lg",
                         grow=True,
                         children=[
-                            dmc.Box(
-                                [
-                                    dcc.Graph(
-                                        id="income_tax_heatmap",
-                                        figure=charts["income_tax_heatmap"],
-                                        className="w-[90%] h-auto"
-                                    ),
-                                ],
-                                className="rounded-xl shadow-xl flex justify-center bg-white"
+                            graphWrapper(
+                                id="income_tax_heatmap",
+                                figure=charts["income_tax_heatmap"]
                             ),
-
                             dmc.Text(
                                 "Percentage of Assessed Income Paid in Taxes text",
                                 className="border border-yellow-500"
@@ -144,32 +120,19 @@ def layout() -> Component:
                                 "Property Tax(Annual Value) some text here",
                                 className="border border-green-500"
                             ),
-                            dmc.Box(
-                                [
-                                    dcc.Graph(
-                                        id="property_tax_rates_step_line",
-                                        figure=charts["property_tax_rates_step_line"],
-                                        className="w-[90%] h-auto",
-                                        responsive=True
-                                    ),
-                                ],
-                                className="rounded-xl shadow-xl flex justify-center bg-white"
-                            ),
+                            graphWrapper(
+                                id="property_tax_rates_step_line",
+                                figure=charts["property_tax_rates_step_line"]
+                            )
                         ]
                     ),
                     dmc.Group(
                         gap="lg",
                         grow=True,
                         children=[
-                            dmc.Box(
-                                 [
-                                     dcc.Graph(
-                                         id="property_tax_collection_annual_value_bubble",
-                                         figure=charts["property_tax_collection_annual_value_bubble"],
-                                         className="w-[90%] h-auto"
-                                     ),
-                                 ],
-                                className="rounded-xl shadow-xl flex justify-center bg-white"
+                            graphWrapper(
+                                id="property_tax_collection_annual_value_bubble",
+                                figure=charts["property_tax_collection_annual_value_bubble"]
                             ),
                             dmc.Text(
                                 "Property Tax (Annual Value by year & HDB Types) some text here",
