@@ -2,6 +2,8 @@ import dash
 from dash import dcc, html
 from dash.development.base_component import Component
 from plotly.graph_objects import Figure
+import dash_mantine_components as dmc
+from components.graphWrapper import graphWrapper
 
 import dashboard.utils
 
@@ -20,14 +22,51 @@ def load_charts() -> dict[str, Figure]:
 
 def layout() -> Component:
     charts: dict[str, Figure] = load_charts()
-
-    return html.Div(
+    return dmc.Stack(
         [
-            html.H1("Global"),
-            dcc.Graph(id="cpi_bubble_map", figure=charts["cpi_bubble_map"]),
-            dcc.Graph(id="gdp_bubble_map", figure=charts["gdp_bubble_map"]),
-            dcc.Graph(
-                id="cpi_vs_gdp_bubble_chart", figure=charts["cpi_vs_gdp_bubble_chart"]
+            dmc.Stack(
+                [
+                    dmc.Text(
+                        "Global",
+                        className="text-3xl font-semibold"
+                    ),
+                    dmc.Stack(
+                        [
+                            dmc.Text(
+                                "cpi & gdp text",
+                                className="border border-purple-500"
+                            ),
+                            dmc.Group(
+                                gap="lg",
+                                grow=True,
+                                children=[
+                                    graphWrapper(
+                                        id="cpi_bubble_map",
+                                        figure=charts["cpi_bubble_map"]
+                                    ),
+                                    graphWrapper(
+                                        id="gdp_bubble_map",
+                                        figure=charts["gdp_bubble_map"]
+                                    )
+                                ]
+                            )
+                        ]
+                    )
+                ]
             ),
-        ]
+            dmc.Stack(
+                [
+                    dmc.Text(
+                        "cpi vs gdp text",
+                        className="border border-cyan-500"
+                    ),
+                    graphWrapper(
+                        id="cpi_vs_gdp_bubble_chart",
+                        figure=charts["cpi_vs_gdp_bubble_chart"]
+                    )
+                ],
+                className="mt-12"
+            )
+        ],
+        className="py-2 px-4"
     )
