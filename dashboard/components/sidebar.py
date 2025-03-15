@@ -3,12 +3,11 @@ from dash import (ClientsideFunction, Input, Output, State,
 
 # title: href
 LINKS: dict[str, str] = {
-    "Introduction": "/",
+    "Home": "/",
     "Taxes": "/taxes",
     "Necessities": "/necessities",
     "Healthcare": "/healthcare",
     "Global": "/global",
-    "Conclusion": "/conclusion",
 }
 
 LINK_CLASSES_DEFAULT: str = (
