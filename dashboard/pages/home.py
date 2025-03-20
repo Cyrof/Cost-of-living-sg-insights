@@ -5,6 +5,7 @@ import dash_mantine_components as dmc
 from components.hoverCard import hoverableCard
 from plotly.graph_objects import Figure
 import dashboard.utils
+from text.home_text import *
 
 dash.register_page(__name__, path="/")
 
@@ -35,19 +36,69 @@ def layout():
                     html.Section(
                         html.Article(
                             children=[
-                                html.Header(
-                                    # probably need to change the header to something else
-                                    className="flex justify-center w-full text-3xl font-semibold",
+                                # html.Header(
+                                #     # probably need to change the header to something else
+                                #     className="flex justify-center w-full text-3xl font-semibold",
+                                #     children=[
+                                #         html.H1(
+                                #             "Introduction"
+                                #         ),
+                                #     ],
+                                # ),
+                                dmc.Stack(
                                     children=[
-                                        html.H1(
-                                            "Introduction"
+                                        dmc.Group(
+                                            justify="center",
+                                            children=[
+                                                dmc.Text(
+                                                    HYPO_QNS,
+                                                    className="text-3xl font-semibold"
+                                                ),
+                                            ],
+                                            className="w-full"
                                         ),
+                                        dmc.Stack(
+                                            [
+                                                dmc.Text(
+                                                    INTRO_1,
+                                                    className="text-lg font-medium"
+                                                ),
+                                                dmc.Text(
+                                                    INTRO_2,
+                                                    className="text-lg font-medium"
+                                                ),
+                                                dmc.Text(
+                                                    "Specifically, we hypothesize that:",
+                                                    className="text-lg font-medium"
+                                                ),
+                                                dmc.List(
+                                                    [
+                                                        dmc.ListItem(
+                                                            INTRO_BULLET_1
+                                                        ),
+                                                        dmc.ListItem(
+                                                            INTRO_BULLET_2
+                                                        ),
+                                                        dmc.ListItem(
+                                                            INTRO_BULLET_3
+                                                        )
+                                                    ],
+                                                    type="ordered"
+                                                ),
+                                                dmc.Text(
+                                                    INTRO_3,
+                                                    className="text-lg font-medium"
+                                                )
+                                            ]
+                                        ),
+                                        
                                     ],
-                                ),
-                                html.P(
-                                    "Explain what we do here. List all hypothesis. Explain goal",
-                                    className="border border-red-500"
-                                ),
+                                    className="mt-4"
+                                )
+                                # html.P(
+                                #     "Explain what we do here. List all hypothesis. Explain goal",
+                                #     className="border border-red-500"
+                                # ),
                             ]
                         ),
                     ),
