@@ -36,15 +36,6 @@ def layout():
                     html.Section(
                         html.Article(
                             children=[
-                                # html.Header(
-                                #     # probably need to change the header to something else
-                                #     className="flex justify-center w-full text-3xl font-semibold",
-                                #     children=[
-                                #         html.H1(
-                                #             "Introduction"
-                                #         ),
-                                #     ],
-                                # ),
                                 dmc.Stack(
                                     children=[
                                         dmc.Group(
@@ -60,16 +51,15 @@ def layout():
                                         dmc.Stack(
                                             [
                                                 dmc.Text(
-                                                    INTRO_1,
-                                                    className="text-lg font-medium"
-                                                ),
-                                                dmc.Text(
-                                                    INTRO_2,
-                                                    className="text-lg font-medium"
+                                                    children=[
+                                                        INTRO_1,
+                                                        INTRO_2
+                                                    ],
+                                                    className="text-xl font-medium"
                                                 ),
                                                 dmc.Text(
                                                     "Specifically, we hypothesize that:",
-                                                    className="text-lg font-medium"
+                                                    className="text-xl font-medium"
                                                 ),
                                                 dmc.List(
                                                     [
@@ -83,22 +73,18 @@ def layout():
                                                             INTRO_BULLET_3
                                                         )
                                                     ],
-                                                    type="ordered"
+                                                    className="text-xl font-medium list-disc ml-8"
                                                 ),
                                                 dmc.Text(
                                                     INTRO_3,
-                                                    className="text-lg font-medium"
+                                                    className="text-xl font-medium"
                                                 )
                                             ]
                                         ),
                                         
                                     ],
-                                    className="mt-4"
+                                    className="p-4"
                                 )
-                                # html.P(
-                                #     "Explain what we do here. List all hypothesis. Explain goal",
-                                #     className="border border-red-500"
-                                # ),
                             ]
                         ),
                     ),
@@ -142,18 +128,30 @@ def layout():
                     html.Section(
                         html.Article(
                             children=[
-                                html.Header(
-                                    # should probably change this header as well
-                                    className="flex justify-center w-full text-3xl font-semibold",
-                                    children=[
-                                        html.H1(
-                                            "Conclusion"
+                                dmc.Stack(
+                                    [
+                                        dmc.Text(
+                                            "Conclusion",
+                                            className="text-3xl font-semibold"
+                                        ),
+                                        dmc.Text(
+                                            CONCLUSION_1,
+                                            className="text-xl font-medium"
+                                        ),
+                                        dmc.Text(
+                                            CONCLUSION_2,
+                                            className="text-xl font-medium"
+                                        ),
+                                        dmc.Text(
+                                            CONCLUSION_3,
+                                            className="text-xl font-medium"
+                                        ),
+                                        dmc.Text(
+                                            CONCLUSION_4,
+                                            className="text-xl font-medium"
                                         ),
                                     ],
-                                ),
-                                html.P(
-                                    "Explain our finding.",
-                                    className="border border-blue-500"
+                                    className="mt-4 p-4"
                                 )
                             ]
                         )
