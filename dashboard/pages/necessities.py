@@ -105,7 +105,7 @@ def layout() -> Component:
                 className="mt-2 w-full",
             ),
 
-            # Section 3: Monthly Expenditure
+            # Monthly Expenditure
             create_section_title("Monthly Expenditure Breakdown"),
             dmc.Group(
                 gap="xl",
