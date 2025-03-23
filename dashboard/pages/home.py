@@ -48,6 +48,14 @@ def layout():
                                         dmc.ListItem(INTRO_BULLET_1),
                                         dmc.ListItem(INTRO_BULLET_2),
                                         dmc.ListItem(INTRO_BULLET_3),
+                            # dmc.Text(
+                            #     NECESSITIES_CPI,
+                            #     className="border border-purple-500"
+                            # ),
+                            # dmc.Text(
+                            #     NECESSITIES_CPI,
+                            #     className="border border-purple-500"
+                            # ),
                                     ],
                                     className="list-disc ml-8 text-lg text-palette4"
                                 ),

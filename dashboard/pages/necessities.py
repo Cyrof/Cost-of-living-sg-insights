@@ -6,6 +6,7 @@ import dash_mantine_components as dmc
 from components.graphWrapper import graphWrapper
 
 import dashboard.utils
+from text.necessitiesText import *
 
 dash.register_page(__name__)
 
@@ -39,9 +40,16 @@ def layout() -> Component:
                         gap="lg",
                         grow=True,
                         children=[
-                            dmc.Text(
-                                "CPI of Necessities over Time text",
-                                className="border border-purple-500"
+                            dmc.Paper(
+                                dmc.Text(
+                                    NECESSITIES_CPI,
+                                    className="text-xl font-medium text-palette3 p-6"
+                                ),
+                                shadow="sm",
+                                radius="md",
+                                className="mb-8 bg-palette1 h-full",
+                                withBorder=True,
+                                style={"borderColor": "var(--palette3)"}
                             ),
                             graphWrapper(
                                 id="necessities_cpi_breakdown_chart",
