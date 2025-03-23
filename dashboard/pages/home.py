@@ -5,6 +5,7 @@ import dash_mantine_components as dmc
 from components.hoverCard import hoverableCard
 from plotly.graph_objects import Figure
 import dashboard.utils
+from text.home_text import *
 
 dash.register_page(__name__, path="/")
 
@@ -27,87 +28,239 @@ def load_charts() -> dict[str, Figure]:
 def layout():
     charts: dict[str, Figure] = load_charts()
 
-    return html.Div(
-        [
-            html.Div(
-                children=[
-                    # section for introduction
-                    html.Section(
-                        html.Article(
-                            children=[
-                                html.Header(
-                                    # probably need to change the header to something else
-                                    className="flex justify-center w-full text-3xl font-semibold",
-                                    children=[
-                                        html.H1(
-                                            "Introduction"
-                                        ),
-                                    ],
-                                ),
-                                html.P(
-                                    "Explain what we do here. List all hypothesis. Explain goal",
-                                    className="border border-red-500"
-                                ),
-                            ]
+    return dmc.Stack(
+        children=[
+            dmc.Paper(
+                dmc.Stack(
+                    [
+                        dmc.Group(
+                            [dmc.Text(HYPO_QNS, className="text-3xl font-semibold text-palette3")],
+                            justify="center",
+                            className="w-full"
                         ),
-                    ),
-                    # section for hoverable charts
-                    html.Section(
-                        dmc.SimpleGrid(
-                            cols=4,
-                            children=[
-                                hoverableCard(
-                                    chartID="percentage_change_in_healthcare_cpi_and_income",
-                                    chart=charts["percentage_change_in_healthcare_cpi_and_income"],
-                                    cardName="Healthcare",
-                                    desc="Short description for healthcare",
-                                    href="/healthcare"
-                                ),
-                                hoverableCard(
-                                    chartID="cpi_vs_gst_line_bar",
-                                    chart=charts["cpi_vs_gst_line_bar"],
-                                    cardName="Taxes",
-                                    desc="Short description for taxes",
-                                    href="/taxes"
-                                ),
-                                hoverableCard(
-                                    chartID="necessities_cpi_vs_income",
-                                    chart=charts["necessities_cpi_vs_income"],
-                                    cardName="Necessities",
-                                    desc="Short description for necessities",
-                                    href="/necessities"
-                                ),
-                                hoverableCard(
-                                    chartID="cpi_bubble_map",
-                                    chart=charts["cpi_bubble_map"],
-                                    cardName="Global",
-                                    desc="Short description for global",
-                                    href="/global"
-                                )
-                            ],
-                        )
-                    ),
-                    # conclusion
-                    html.Section(
-                        html.Article(
-                            children=[
-                                html.Header(
-                                    # should probably change this header as well
-                                    className="flex justify-center w-full text-3xl font-semibold",
-                                    children=[
-                                        html.H1(
-                                            "Conclusion"
-                                        ),
+                        dmc.Divider(className="my-2 bg-palette2"),
+                        dmc.Stack(
+                            [
+                                dmc.Text([INTRO_1, INTRO_2], className="text-lg text-palette4"),
+                                dmc.Text("Specifically, we hypothesize that:", className="text-lg font-semibold mt-4 text-palette3"),
+                                dmc.List(
+                                    [
+                                        dmc.ListItem(INTRO_BULLET_1),
+                                        dmc.ListItem(INTRO_BULLET_2),
+                                        dmc.ListItem(INTRO_BULLET_3),
                                     ],
+                                    className="list-disc ml-8 text-lg text-palette4"
                                 ),
-                                html.P(
-                                    "Explain our finding.",
-                                    className="border border-blue-500"
-                                )
-                            ]
-                        )
+                                dmc.Text(INTRO_3, className="text-lg mt-4 text-palette4")
+                            ],
+                            gap="sm"
+                        ),
+                    ],
+                    className="p-6"
+                ),
+                shadow="sm",
+                radius="md",
+                className="mb-8 bg-palette1",
+                withBorder=True,
+                style={"borderColor": "var(--palette3)"}
+            ),
+            dmc.Box(
+                [
+                    dmc.Text("Explore Key Insights", className="text-2xl font-semibold mb-4 text-palette3"),
+                    dmc.SimpleGrid(
+                        cols=4,
+                        spacing="sm",
+                        children=[
+                            hoverableCard(
+                                chartID="percentage_change_in_healthcare_cpi_and_income",
+                                chart=charts["percentage_change_in_healthcare_cpi_and_income"],
+                                cardName="Healthcare",
+                                desc="Short description for healthcare",
+                                href="/healthcare"
+                            ),
+                            hoverableCard(
+                                chartID="cpi_vs_gst_line_bar",
+                                chart=charts["cpi_vs_gst_line_bar"],
+                                cardName="Taxes",
+                                desc="Short description for taxes",
+                                href="/taxes"
+                            ),
+                            hoverableCard(
+                                chartID="necessities_cpi_vs_income",
+                                chart=charts["necessities_cpi_vs_income"],
+                                cardName="Necessities",
+                                desc="Short description for necessities",
+                                href="/necessities"
+                            ),
+                            hoverableCard(
+                                chartID="cpi_bubble_map",
+                                chart=charts["cpi_bubble_map"],
+                                cardName="Global",
+                                desc="Short description for global",
+                                href="/global"
+                            )
+                        ],
+                        className="my-6"
                     )
                 ],
+                className="mb-8"
             ),
-        ]
+            dmc.Paper(
+                dmc.Stack(
+                    [
+                        dmc.Text("Conclusion", className="text-3xl font-semibold text-palette3"),
+                        dmc.Divider(className="my-2 bg-palette2"),
+                        dmc.Text(CONCLUSION_1, className="text-lg text-palette4"),
+                        dmc.Text(CONCLUSION_2, className="text-lg mt-2 text-palette4"),
+                        dmc.Text(CONCLUSION_3, className="text-lg mt-2 text-palette4"),
+                        dmc.Text(CONCLUSION_4, className="text-lg mt-2 text-palette4"),
+                    ],
+                    className="p-6"
+                ),
+                shadow="sm",
+                radius="md",
+                className="mb-8 bg-palette1",
+                withBorder=True,
+                style={"borderColor": "var(--palette3)"}
+            )
+        ],
+        className="pb-12"
     )
+    # return html.Div(
+    #     [
+    #         dmc.Container(
+    #             dmc.Text(
+
+    #             )
+    #         )
+            # html.Div(
+            #     children=[
+            #         # section for introduction
+            #         html.Section(
+            #             html.Article(
+            #                 children=[
+            #                     dmc.Stack(
+            #                         children=[
+            #                             dmc.Group(
+            #                                 justify="center",
+            #                                 children=[
+            #                                     dmc.Text(
+            #                                         HYPO_QNS,
+            #                                         className="text-3xl font-semibold"
+            #                                     ),
+            #                                 ],
+            #                                 className="w-full"
+            #                             ),
+            #                             dmc.Stack(
+            #                                 [
+            #                                     dmc.Text(
+            #                                         children=[
+            #                                             INTRO_1,
+            #                                             INTRO_2
+            #                                         ],
+            #                                         className="text-xl font-medium"
+            #                                     ),
+            #                                     dmc.Text(
+            #                                         "Specifically, we hypothesize that:",
+            #                                         className="text-xl font-medium"
+            #                                     ),
+            #                                     dmc.List(
+            #                                         [
+            #                                             dmc.ListItem(
+            #                                                 INTRO_BULLET_1
+            #                                             ),
+            #                                             dmc.ListItem(
+            #                                                 INTRO_BULLET_2
+            #                                             ),
+            #                                             dmc.ListItem(
+            #                                                 INTRO_BULLET_3
+            #                                             )
+            #                                         ],
+            #                                         className="text-xl font-medium list-disc ml-8"
+            #                                     ),
+            #                                     dmc.Text(
+            #                                         INTRO_3,
+            #                                         className="text-xl font-medium"
+            #                                     )
+            #                                 ]
+            #                             ),
+                                        
+            #                         ],
+            #                         className="p-4"
+            #                     )
+            #                 ]
+            #             ),
+            #         ),
+            #         # section for hoverable charts
+            #         html.Section(
+            #             dmc.SimpleGrid(
+            #                 cols=4,
+            #                 children=[
+            #                     hoverableCard(
+            #                         chartID="percentage_change_in_healthcare_cpi_and_income",
+            #                         chart=charts["percentage_change_in_healthcare_cpi_and_income"],
+            #                         cardName="Healthcare",
+            #                         desc="Short description for healthcare",
+            #                         href="/healthcare"
+            #                     ),
+            #                     hoverableCard(
+            #                         chartID="cpi_vs_gst_line_bar",
+            #                         chart=charts["cpi_vs_gst_line_bar"],
+            #                         cardName="Taxes",
+            #                         desc="Short description for taxes",
+            #                         href="/taxes"
+            #                     ),
+            #                     hoverableCard(
+            #                         chartID="necessities_cpi_vs_income",
+            #                         chart=charts["necessities_cpi_vs_income"],
+            #                         cardName="Necessities",
+            #                         desc="Short description for necessities",
+            #                         href="/necessities"
+            #                     ),
+            #                     hoverableCard(
+            #                         chartID="cpi_bubble_map",
+            #                         chart=charts["cpi_bubble_map"],
+            #                         cardName="Global",
+            #                         desc="Short description for global",
+            #                         href="/global"
+            #                     )
+            #                 ],
+            #             )
+            #         ),
+            #         # conclusion
+            #         html.Section(
+            #             html.Article(
+            #                 children=[
+            #                     dmc.Stack(
+            #                         [
+            #                             dmc.Text(
+            #                                 "Conclusion",
+            #                                 className="text-3xl font-semibold"
+            #                             ),
+            #                             dmc.Text(
+            #                                 CONCLUSION_1,
+            #                                 className="text-xl font-medium"
+            #                             ),
+            #                             dmc.Text(
+            #                                 CONCLUSION_2,
+            #                                 className="text-xl font-medium"
+            #                             ),
+            #                             dmc.Text(
+            #                                 CONCLUSION_3,
+            #                                 className="text-xl font-medium"
+            #                             ),
+            #                             dmc.Text(
+            #                                 CONCLUSION_4,
+            #                                 className="text-xl font-medium"
+            #                             ),
+            #                         ],
+            #                         className="mt-4 p-4"
+            #                     )
+            #                 ]
+            #             )
+            #         )
+            #     ],
+            # ),
+    #     ],
+    #     className="p-8"
+    # )
