@@ -10,23 +10,8 @@ from text.home_text import *
 dash.register_page(__name__, path="/")
 
 
-def load_charts() -> dict[str, Figure]:
-    return {
-        "percentage_change_in_healthcare_cpi_and_income": dashboard.utils.load_chart_json(
-            "percentage_change_in_healthcare_cpi_and_income.json"
-        ),
-        "cpi_vs_gst_line_bar": dashboard.utils.load_chart_json(
-            "cpi_vs_gst_line_bar.json"
-        ),
-        "necessities_cpi_vs_income": dashboard.utils.load_chart_json(
-            "necessities_cpi_vs_income.json"
-        ),
-        "cpi_bubble_map": dashboard.utils.load_chart_json("cpi_bubble_map.json"),
-    }
-
-
 def layout():
-    charts: dict[str, Figure] = load_charts()
+    charts: dict[str, Figure] = dashboard.utils.load_home_charts()
 
     return dmc.Stack(
         children=[
