@@ -12,5 +12,5 @@ def graphWrapper(id: str, figure: Figure) -> dmc.Box:
                 responsive=True
             ),
         ],
-        className="rounded-xl shadow-xl flex justify-center bg-white"
+        className="rounded-xl flex justify-center bg-white"
     )
