@@ -148,10 +148,9 @@ def layout() -> Component:
                             color="var(--palette3)",
                             size="sm"
                         ),
-                        html.Ul(
-                            [html.Li(point, className="mb-2 text-palette3")
-                             for point in NECESSITIES_RECO.split('\n\n')],
-                            className="list-disc pl-6 text-base font-normal leading-relaxed"
+                        dmc.Text(
+                            NECESSITIES_RECO,
+                            className="pl-6 text-base font-normal leading-relaxed"
                         )
                     ],
                     className="p-6"
