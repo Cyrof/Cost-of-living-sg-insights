@@ -38,11 +38,11 @@ def layout() -> Component:
                 dmc.Stack(
                     [
                         dmc.Text(
-                            "Necessities Dashboard",
+                            "Healthcare Dashboard",
                             className="text-4xl font-extrabold text-palette4 text-center"
                         ),
                         dmc.Text(
-                            "Tracking Essential Expenses and Economic Trends",
+                            "Uncovering insights into healthcare costs and market dynamics",
                             className="text-xl font-medium text-palette3 text-center opacity-80"
                         )
                     ],
@@ -130,6 +130,8 @@ def layout() -> Component:
                     ),
                 ],
             ),
+            # healthcare percentage 
+            create_section_title("CPI and Income Growth Trends"),
             dmc.Stack(
                 [
                     dmc.Group(
