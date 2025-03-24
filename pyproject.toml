@@ -12,6 +12,7 @@ dependencies = [
     "flask>=3.0.3",
     "dash-mantine-components>=0.15.3",
     "kaleido>=0.2.1",
+    "cachetools>=5.5.2",
 ]
 
 [project.scripts]
