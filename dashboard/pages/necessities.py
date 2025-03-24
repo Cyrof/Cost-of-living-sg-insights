@@ -1,5 +1,5 @@
 import dash
-from dash import dcc, html
+from dash import html
 from dash.development.base_component import Component
 from plotly.graph_objects import Figure
 import dash_mantine_components as dmc
@@ -12,22 +12,8 @@ from components.textComponents import create_card, create_section_title
 dash.register_page(__name__)
 
 
-def load_charts() -> dict[str, Figure]:
-    return {
-        "necessities_cpi_breakdown": dashboard.utils.load_chart_json(
-            "necessities_cpi_breakdown.json"
-        ),
-        "necessities_cpi_vs_income": dashboard.utils.load_chart_json(
-            "necessities_cpi_vs_income.json"
-        ),
-        "monthly_expenditure_donut": dashboard.utils.load_chart_json(
-            "monthly_expenditure_donut.json"
-        ),
-    }
-
-
 def layout() -> Component:
-    charts: dict[str, Figure] = load_charts()
+    charts: dict[str, Figure] = dashboard.utils.load_necessities_charts()
 
     return dmc.Stack(
         [

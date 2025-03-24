@@ -1,5 +1,4 @@
 import dash
-from dash import dcc, html
 from dash.development.base_component import Component
 from plotly.graph_objects import Figure
 import dash_mantine_components as dmc
@@ -12,18 +11,8 @@ import dashboard.utils
 dash.register_page(__name__)
 
 
-def load_charts() -> dict[str, Figure]:
-    return {
-        "cpi_bubble_map": dashboard.utils.load_chart_json("cpi_bubble_map.json"),
-        "gdp_bubble_map": dashboard.utils.load_chart_json("gdp_bubble_map.json"),
-        "cpi_vs_gdp_bubble_chart": dashboard.utils.load_chart_json(
-            "cpi_vs_gdp_bubble_chart.json"
-        ),
-    }
-
-
 def layout() -> Component:
-    charts: dict[str, Figure] = load_charts()
+    charts: dict[str, Figure] = dashboard.utils.load_global_charts()
     return dmc.Stack(
         [
             # header

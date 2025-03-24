@@ -12,33 +12,8 @@ import dashboard.utils
 dash.register_page(__name__)
 
 
-def load_charts() -> dict[str, Figure]:
-    return {
-        "iras_tax_collection_bar": dashboard.utils.load_chart_json(
-            "iras_tax_collection_bar.json"
-        ),
-        "cpi_vs_gst_line_bar": dashboard.utils.load_chart_json(
-            "cpi_vs_gst_line_bar.json"
-        ),
-        "income_tax_rates_step_line": dashboard.utils.load_chart_json(
-            "income_tax_rates_step_line.json"
-        ),
-        "income_tax_heatmap": dashboard.utils.load_chart_json(
-            "income_tax_heatmap.json"
-        ),
-        "property_tax_rates_step_line": dashboard.utils.load_chart_json(
-            "property_tax_rates_step_line.json"
-        ),
-        "property_tax_collection_annual_value_bubble": (
-            dashboard.utils.load_chart_json(
-                "property_tax_collection_annual_value_bubble.json"
-            )
-        ),
-    }
-
-
 def layout() -> Component:
-    charts: dict[str, Figure] = load_charts()
+    charts: dict[str, Figure] = dashboard.utils.load_taxes_charts()
     return dmc.Stack(
         [
             # header

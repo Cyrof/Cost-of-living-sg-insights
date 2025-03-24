@@ -1,11 +1,18 @@
 import base64
+import cachetools
+from cachetools.keys import hashkey
+
+import dash_mantine_components as dmc
 import plotly.io as pio
 from dash import dcc, html
-import dash_mantine_components as dmc
 from plotly.graph_objects import Figure
 
 
-def fig_to_base64(fig: Figure, img_format="png") -> str:
+# Cache using the chartID as the key.
+@cachetools.cached(
+    cache={}, key=lambda chartID, fig, img_format="png": hashkey(chartID)
+)
+def fig_to_base64(chartID: str, fig: Figure, img_format: str = "png") -> str:
     img_bytes = pio.to_image(fig, format=img_format)
     encoded = base64.b64encode(img_bytes).decode("ascii")
     return f"data:image/{img_format};base64,{encoded}"
@@ -13,7 +20,7 @@ def fig_to_base64(fig: Figure, img_format="png") -> str:
 
 def hoverableCard(chartID: str, chart: Figure, cardName: str, desc: str, href: str) -> dmc.Card:
     # conver to based64 image
-    img_data = fig_to_base64(chart)
+    img_data = fig_to_base64(chartID, chart)
 
     return html.Div(
         className="group w-full",
@@ -23,7 +30,7 @@ def hoverableCard(chartID: str, chart: Figure, cardName: str, desc: str, href: s
                     # card image
                     dmc.CardSection(
                         html.Img(
-                            src=img_data, 
+                            src=img_data,
                             className="w-auto h-40 block mx-auto "
                         ),
                     ),

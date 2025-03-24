@@ -6,6 +6,7 @@ from components.sidebar import sidebar
 from components.topBar import topbar
 from dash import Dash, dcc, html
 import dash_mantine_components as dmc
+import dashboard.utils
 
 FA = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 TW = "https://cdn.tailwindcss.com"
@@ -46,6 +47,6 @@ app.layout = dmc.MantineProvider(
     ],
 )
 
-
 def main():
     app.run(debug=True, dev_tools_hot_reload=True)
+    dashboard.utils.warmup_cache()
