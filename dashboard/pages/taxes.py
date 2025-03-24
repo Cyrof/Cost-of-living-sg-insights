@@ -222,7 +222,7 @@ def layout() -> Component:
                     )
                 ],
             ),
-            # recommendation - FIXED SECTION
+            # recommendation
             create_section_title("Strategic Recommendations"),
             dmc.Paper(
                 dmc.Stack(
@@ -236,9 +236,9 @@ def layout() -> Component:
                             color="var(--palette3)",
                             size="sm"
                         ),
-                        html.Ul(
-                            [html.Li(point, className="mb-2 text-palette3") for point in TAX_RECO.split('\n\n')],
-                            className="list-disc pl-6 text-base font-normal leading-relaxed text-palette3"
+                        dmc.Text(
+                            TAX_RECO,
+                            className="pl-6 text-base font-nnormal leading-relaxed text-palette3"
                         )
                     ],
                     className="p-6"
