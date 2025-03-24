@@ -61,7 +61,7 @@ def layout() -> Component:
                         grow=True,
                         children=[
                             create_card(
-                                "Healthcare Component",
+                                "Breakdown of Healthcare CPI",
                                 HEALTHCARE_COM,
                                 "w-1/2"
                             ),
