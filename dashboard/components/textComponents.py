@@ -24,7 +24,7 @@ def create_card(title: str, description: str, className: str = "") -> dmc.Paper:
         ],
         shadow="sm",
         radius="lg",
-        className=f"bg-palette1 transition-all duration-300 hover:shadow-xl {className}",
+        className=f"bg-white transition-all duration-300 hover:shadow-xl {className}",
         withBorder=True,
         style={
             "borderColor": "var(--palette3)",

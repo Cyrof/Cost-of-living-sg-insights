@@ -143,7 +143,7 @@ def layout() -> Component:
                 ),
                 shadow="sm",
                 radius="lg",
-                className="bg-palette1 transition-all duration-300 hover:shadow-xl mt-2 mb-12 w-full",
+                className="bg-white transition-all duration-300 hover:shadow-xl mt-2 mb-12 w-full",
                 withBorder=True,
                 style={
                     "borderColor": "var(--palette3)",

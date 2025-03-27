@@ -6,6 +6,7 @@ from components.hoverCard import hoverableCard
 from plotly.graph_objects import Figure
 import dashboard.utils
 from text.home_text import *
+from components.textComponents import create_card, create_section_title
 
 dash.register_page(__name__, path="/")
 
@@ -15,22 +16,22 @@ def layout():
 
     return dmc.Stack(
         children=[
-            dmc.Paper(
-                dmc.Stack(
-                    [
-                        dmc.Group(
-                            [dmc.Text(
-                                HYPO_QNS, className="text-3xl font-semibold text-palette3")],
-                            justify="center",
-                            className="w-full"
-                        ),
-                        dmc.Divider(className="my-2 bg-palette2"),
+            dmc.Stack(
+                [
+                    # dmc.Group(
+                    #     [dmc.Text(
+                    #         HYPO_QNS, className="text-3xl font-semibold text-palette3")],
+                    #     justify="center",
+                    #     className="w-full"
+                    # ),
+                    create_section_title(HYPO_QNS),
+                    dmc.Paper(
                         dmc.Stack(
                             [
                                 dmc.Text([INTRO_1, INTRO_2],
-                                         className="text-lg text-palette4"),
+                                            className="text-lg text-palette4"),
                                 dmc.Text("Specifically, we hypothesize that:",
-                                         className="text-lg font-semibold mt-4 text-palette3"),
+                                            className="text-lg font-semibold mt-4 text-palette3"),
                                 dmc.List(
                                     [
                                         dmc.ListItem(INTRO_BULLET_1),
@@ -42,16 +43,22 @@ def layout():
                                 dmc.Text(
                                     INTRO_3, className="text-lg mt-4 text-palette4")
                             ],
-                            gap="sm"
+                            gap="sm",
+                            className="p-6"
                         ),
-                    ],
-                    className="p-6"
-                ),
-                shadow="sm",
-                radius="md",
-                className="mb-8 bg-palette1",
-                withBorder=True,
-                style={"borderColor": "var(--palette3)"}
+                        shadow="sm",
+                        radius="lg",
+                        className="bg-white transition-all duration-300 hover:shadow-xl",
+                        withBorder=True,
+                        style={
+                            "borderColor": "var(--palette3)",
+                            "borderWidth": "2px",
+                            "height": "100%"
+                        }
+
+                    )
+                ],
+                className="p-6"
             ),
             dmc.Box(
                 [
@@ -95,12 +102,10 @@ def layout():
                 ],
                 className="mb-8"
             ),
+            create_section_title("Our Final Thoughts"),
             dmc.Paper(
                 dmc.Stack(
                     [
-                        dmc.Text(
-                            "Conclusion", className="text-3xl font-semibold text-palette3"),
-                        dmc.Divider(className="my-2 bg-palette2"),
                         dmc.Text(CONCLUSION_1,
                                  className="text-lg text-palette4"),
                         dmc.Text(CONCLUSION_2,
@@ -113,10 +118,14 @@ def layout():
                     className="p-6"
                 ),
                 shadow="sm",
-                radius="md",
-                className="mb-8 bg-palette1",
+                radius="lg",
+                className="bg-white transition-all duration-300 hover:shadow-xl",
                 withBorder=True,
-                style={"borderColor": "var(--palette3)"}
+                style={
+                    "borderColor": "var(--palette3)",
+                    "borderWidth": "2px",
+                    "height": "100%"
+                }
             )
         ],
         className="pb-12"
