@@ -4,6 +4,7 @@ os.environ["REACT_VERSION"] = "18.2.0"
 import dash
 from components.sidebar import sidebar
 from components.topBar import topbar
+from components.footer import footer
 from dash import Dash, dcc, html
 import dash_mantine_components as dmc
 import dashboard.utils
@@ -33,7 +34,6 @@ def init_app():
                         className="flex-none h-16",
                         children=[
                             topbar(),
-                            # sidebar
                             sidebar(),
                         ]
                     ),
@@ -43,6 +43,11 @@ def init_app():
                             html.Div(dash.page_container, className="p-8 bg-palette1"),
                         ],
                     ),
+                    html.Footer(
+                        children=[
+                            footer(),
+                        ]
+                    )
                     ]
                 ),
         ],
