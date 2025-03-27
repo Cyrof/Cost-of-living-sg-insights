@@ -7,7 +7,7 @@ from components.graphWrapper import graphWrapper
 
 import dashboard.utils
 from text.necessitiesText import *
-from components.textComponents import create_card, create_section_title
+from components.textComponents import create_card, create_section_title, create_card_graph
 
 dash.register_page(__name__)
 
@@ -38,88 +38,31 @@ def layout() -> Component:
             ),
 
             create_section_title("Cost of Living Trends"),
-            dmc.Group(
-                gap="xl",
-                grow=True,
-                className="h-[28rem] w-full",
-                children=[
-                    create_card(
-                        "Breakdown CPI of Necessities Over Time",
-                        NECESSITIES_CPI,
-                        "w-2/5"
-                    ),
-                    dmc.Paper(
-                        graphWrapper(
-                            id="necessities_cpi_breakdown_chart",
-                            figure=charts["necessities_cpi_breakdown"]
-                        ),
-                        shadow="sm",
-                        radius="lg",
-                        className="w-3/5 transition-all duration-300 hover:shadow-xl",
-                        withBorder=True,
-                        style={
-                            "borderColor": "var(--palette3)",
-                            "borderWidth": "2px"
-                        }
-                    ),
-                ],
+            create_card_graph(
+                title="Breakdown Necessities CPI Over Time",
+                short_desc=NECESSITIES_CPI_Short,
+                full_desc=NECESSITIES_CPI,
+                graphs=[("necessities_cpi_breakdown_chart",
+                         charts["necessities_cpi_breakdown"])]
             ),
-
             # cpi vs income
             create_section_title("Income vs. Expenses Analysis"),
-            dmc.Stack(
-                [
-                    create_card(
-                        "CPI of Necessities Against Gross Monthly Income",
-                        CPI_AGAINST_INCOME
-                    ),
-                    dmc.Paper(
-                        graphWrapper(
-                            id="necessities_cpi_vs_income_chart",
-                            figure=charts["necessities_cpi_vs_income"]
-                        ),
-                        shadow="sm",
-                        radius="lg",
-                        className="mt-4 transition-all duration-300 hover:shadow-xl h-auto",
-                        withBorder=True,
-                        style={
-                            "borderColor": "var(--palette3)",
-                            "borderWidth": "2px"
-                        }
-                    ),
-                ],
-                className="mt-2 w-full",
+            create_card_graph(
+                title="CPI of Necessitiees Against Gross Monthly Income",
+                short_desc=CPI_AGAINST_INCOME_Short,
+                full_desc=CPI_AGAINST_INCOME,
+                graphs=[("necessities_cpi_vs_income_chart",
+                         charts["necessities_cpi_vs_income"])]
             ),
-
             # Monthly Expenditure
             create_section_title("Monthly Expenditure Breakdown"),
-            dmc.Group(
-                gap="xl",
-                grow=True,
-                children=[
-                    dmc.Paper(
-                        graphWrapper(
-                            id="monthly_expenditure_donut_chart",
-                            figure=charts["monthly_expenditure_donut"]
-                        ),
-                        shadow="sm",
-                        radius="lg",
-                        className="w-1/2 transition-all duration-300 hover:shadow-xl h-auto",
-                        withBorder=True,
-                        style={
-                            "borderColor": "var(--palette3)",
-                            "borderWidth": "2px"
-                        }
-                    ),
-                    create_card(
-                        "Breakdown of Monthly Expenditure Over Time",
-                        MONTHLY_EXPENDITURE,
-                        "w-1/2"
-                    ),
-                ],
-                className="mt-2 h-[28rem] w-full"
+            create_card_graph(
+                title="Breakdown of Monthly Expenditure Over Time",
+                short_desc=MONTHLY_EXPENDITURE_Short,
+                full_desc=MONTHLY_EXPENDITURE,
+                graphs=[("monthly_expenditure_donut_chart",
+                         charts["monthly_expenditure_donut"])]
             ),
-
             # recommendation
             create_section_title("Strategic Recommendations"),
             dmc.Paper(
