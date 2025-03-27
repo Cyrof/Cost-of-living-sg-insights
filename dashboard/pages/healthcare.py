@@ -41,8 +41,10 @@ def layout() -> Component:
                 title="Breakdown of Healthcare CPI",
                 short_desc=HEALTHCARE_COM_Short,
                 full_desc=HEALTHCARE_COM,
-                figure=charts["healthcare_cpi_breakdown"],
-                card_id="healthcare_cpi_breakdown_chart"
+                # figure=charts["healthcare_cpi_breakdown"],
+                # card_id="healthcare_cpi_breakdown_chart"
+                graphs=[("healthcare_cpi_breakdown_chart",
+                         charts["healthcare_cpi_breakdown"])]
             ),
             # life expectancy vs healthcare & healthcare vs income
             create_section_title("Health & Income Insights"),
@@ -52,15 +54,19 @@ def layout() -> Component:
                         title="Life Expectancy VS Healthcare CPI",
                         short_desc=LIFE_EXPECTANCY_HEALTHCARE_Short,
                         full_desc=LIFE_EXPECTANCY_HEALTHCARE,
-                        figure=charts["life_expectancy_vs_healthcare_cpi"],
-                        card_id="life_expectancy_vs_healthcare_cpi_chart",
+                        # figure=charts["life_expectancy_vs_healthcare_cpi"],
+                        # card_id="life_expectancy_vs_healthcare_cpi_chart",
+                        graphs=[("life_expectancy_vs_healthcare_cpi_chart",
+                                 charts["life_expectancy_vs_healthcare_cpi"])]
                     ),
                     create_card_graph(
                         title="Healthcare CPI VS Income Growth",
                         short_desc=HEALTHCARE_VS_INCOME_Short,
                         full_desc=HEALTHCARE_VS_INCOME,
-                        figure=charts["healthcare_cpi_vs_gross_monthly_income"],
-                        card_id="healthcare_cpi_vs_gross_monthly_income"
+                        # figure=charts["healthcare_cpi_vs_gross_monthly_income"],
+                        # card_id="healthcare_cpi_vs_gross_monthly_income"
+                        graphs=[("healthcare_cpi_vs_gross_monthly_income",
+                                 charts["healthcare_cpi_vs_gross_monthly_income"])]
                     )
                 ],
                 className="w-full",
@@ -73,8 +79,10 @@ def layout() -> Component:
                 title="Healthcare CPI vs Income Growth (%)",
                 short_desc=HEALTHCARE_VS_INCOME_PERCENTAGE_Short,
                 full_desc=HEALTHCARE_VS_INCOME_PERCENTAGE,
-                figure=charts["percentage_change_in_healthcare_cpi_and_income"],
-                card_id="percentage_change_in_healthcare_cpi_and_income_chart",
+                # figure=charts["percentage_change_in_healthcare_cpi_and_income"],
+                # card_id="percentage_change_in_healthcare_cpi_and_income_chart",
+                graphs=[("percentage_change_in_healthcare_cpi_and_income_chart",
+                         charts["percentage_change_in_healthcare_cpi_and_income"])]
             ),
             # recommendation
             create_section_title("Strategic Recommendations"),

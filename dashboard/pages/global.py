@@ -3,7 +3,7 @@ from dash.development.base_component import Component
 from plotly.graph_objects import Figure
 import dash_mantine_components as dmc
 from components.graphWrapper import graphWrapper
-from components.textComponents import create_card, create_section_title
+from components.textComponents import create_card, create_section_title, create_card_graph
 from text.globalText import *
 
 import dashboard.utils
@@ -36,76 +36,22 @@ def layout() -> Component:
             ),
             # CPI and GDP
             create_section_title("Regional Economic Overview on CPI & GDP"),
-            dmc.Stack(
-                [
-                    create_card(
-                        "Neighbouring Economies: CPI & GDP",
-                        CPI_GDP_OVER_TIME + GDP_OVER_TIME,
-                        "w-full"
-                    ),
-                    dmc.Group(
-                        gap="xl",
-                        grow=True,
-                        className="h-[28rem] w-full",
-                        children=[
-                            dmc.Paper(
-                                graphWrapper(
-                                    id="cpi_bubble_map",
-                                    figure=charts["cpi_bubble_map"]
-                                ),
-                                shadow="sm",
-                                radius="lg",
-                                className="w-3/5 transition-all duration-300 hover:shadow-xl",
-                                withBorder=True,
-                                style={
-                                    "borderColor": "var(--palette3)",
-                                    "borderWidth": "2px"
-                                }
-                            ),
-                            dmc.Paper(
-                                graphWrapper(
-                                    id="gdp_bubble_map",
-                                    figure=charts["gdp_bubble_map"]
-                                ),
-                                shadow="sm",
-                                radius="lg",
-                                className="w-3/5 transition-all duration-300 hvoer:shadow-xl",
-                                withBorder=True,
-                                style={
-                                    "borderColor": "var(--palette3)",
-                                    "borderWidth": "2px"
-                                }
-                            )
-                        ]
-                    )
-                ],
-                className="w-full"
+            create_card_graph(
+                title="Neighbouring Economies: CPI & GDP",
+                short_desc=CPI_OVER_TIME_Short + GDP_OVER_TIME_Short,
+                full_desc=CPI_GDP_OVER_TIME + GDP_OVER_TIME,
+                graphs=[
+                    ("cpi_bubble_map", charts["cpi_bubble_map"]),
+                    ("gdp_bubble_map", charts["gdp_bubble_map"])
+                ]
             ),
             # CPI VS GDP
             create_section_title("CPI and GDP Bubble Analysis"),
-            dmc.Stack(
-                [
-                    create_card(
-                        "Neighbouring Economies: CPI VS GDP",
-                        CPI_GDP_OVER_TIME,
-                        "w-full"
-                    ),
-                    dmc.Paper(
-                        graphWrapper(
-                            id="cpi_vs_gdp_bubble_chart",
-                            figure=charts["cpi_vs_gdp_bubble_chart"]
-                        ),
-                        shadow="sm",
-                        radius="lg",
-                        className="w-full transition-all durationn-300 hover:shadow-xl",
-                        withBorder=True,
-                        style={
-                            "borderColor": "var(--palette3)",
-                            "borderWidth": "2px"
-                        }
-                    )
-                ],
-                className="p-6"
+            create_card_graph(
+                title="Neighbouring Economies: CPI VS GDP",
+                short_desc=CPI_GDP_OVER_TIME_Short,
+                full_desc=CPI_GDP_OVER_TIME,
+                graphs=[("cpi_vs_gdp_bubble_chart", charts["cpi_vs_gdp_bubble_chart"])]
             ),
             # recommendation
             create_section_title("Strategic Recommendations"),

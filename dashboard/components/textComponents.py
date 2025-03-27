@@ -42,10 +42,20 @@ def create_card_graph(
     title: str,
     short_desc: str,
     full_desc: str,
-    figure: Figure,
-    card_id: str,
+    graphs: list[tuple[str, Figure]],
+    # figure: Figure,
+    # card_id: str,
     className: str = ""
 ) -> dmc.Paper:
+    if len(graphs) == 1:
+        graph_component = graphWrapper(graphs[0][0], graphs[0][1])
+    else:
+        graph_component = dmc.Group(
+            [graphWrapper(graph_id, fig) for graph_id, fig in graphs],
+            align="start",
+            grow=True,
+        )
+
     return dmc.Paper(
         [
             dmc.Stack(
@@ -61,11 +71,12 @@ def create_card_graph(
                         size="sm"
                     ),
                     # graph
-                    graphWrapper(card_id, figure),
+                    # graphWrapper(card_id, figure),
+                    graph_component,
                     # short description
                     dmc.Text(
                         short_desc,
-                        id=f"{card_id}-short-desc",
+                        id=f"{graphs[0][0]}-short-desc",
                         className="text-base font-normal text-palette3 loading-relaxed mt-4"
                     ),
                     # collapsible desc
@@ -78,7 +89,7 @@ def create_card_graph(
                         ],
                         id={
                             "type": "collapse-desc",
-                            "index": card_id
+                            "index": graphs[0][0]
                         }
                     ),
                     # toggle button
@@ -86,7 +97,7 @@ def create_card_graph(
                         "Read More",
                         id={
                             "type": "toggle-desc",
-                            "index": card_id
+                            "index": graphs[0][0]
                         },
                         variant="outline",
                         size="sm",
