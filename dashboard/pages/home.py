@@ -16,56 +16,47 @@ def layout():
 
     return dmc.Stack(
         children=[
-            dmc.Stack(
+            create_section_title(HYPO_QNS),
+            dmc.Group(
                 [
-                    # dmc.Group(
-                    #     [dmc.Text(
-                    #         HYPO_QNS, className="text-3xl font-semibold text-palette3")],
-                    #     justify="center",
-                    #     className="w-full"
-                    # ),
-                    create_section_title(HYPO_QNS),
-                    dmc.Paper(
-                        dmc.Stack(
-                            [
-                                dmc.Text([INTRO_1, INTRO_2],
-                                            className="text-lg text-palette4"),
-                                dmc.Text("Specifically, we hypothesize that:",
-                                            className="text-lg font-semibold mt-4 text-palette3"),
-                                dmc.List(
-                                    [
-                                        dmc.ListItem(INTRO_BULLET_1),
-                                        dmc.ListItem(INTRO_BULLET_2),
-                                        dmc.ListItem(INTRO_BULLET_3),
-                                    ],
-                                    className="list-disc ml-8 text-lg text-palette4"
-                                ),
-                                dmc.Text(
-                                    INTRO_3, className="text-lg mt-4 text-palette4")
-                            ],
-                            gap="sm",
-                            className="p-6"
-                        ),
-                        shadow="sm",
-                        radius="lg",
-                        className="bg-white transition-all duration-300 hover:shadow-xl",
-                        withBorder=True,
-                        style={
-                            "borderColor": "var(--palette3)",
-                            "borderWidth": "2px",
-                            "height": "100%"
-                        }
-
+                    # left panel text
+                    dmc.Box(
+                        [
+                            dmc.Text(
+                                "Introduction", className="text-xl font-semibold text-palette4 mb-4"),
+                            dmc.Text([INTRO_1, INTRO_2],
+                                     className="text-lg text-palette4")
+                        ],
+                        className="h-full"
+                    ),
+                    # right panel text
+                    dmc.Box(
+                        [
+                            dmc.Text("Specifically, we hypothesize that:",
+                                     className="text-xl font-semibold text-palette4 mb-4"),
+                            dmc.List(
+                                [
+                                    dmc.ListItem(INTRO_BULLET_1),
+                                    dmc.ListItem(INTRO_BULLET_2),
+                                    dmc.ListItem(INTRO_BULLET_3),
+                                ],
+                                className="list-disc text-lg text-palette4"
+                            )
+                        ],
+                        className="h-full"
                     )
                 ],
-                className="p-6"
+                className="w-full",
+                grow=True,
+                preventGrowOverflow=True
             ),
+
+            dmc.Text(INTRO_3, className="text-lg text-palette4"),
+            create_section_title("Explore Key Insights"),
             dmc.Box(
                 [
-                    dmc.Text("Explore Key Insights",
-                             className="text-2xl font-semibold mb-4 text-palette3"),
                     dmc.SimpleGrid(
-                        cols=4,
+                        cols=2,
                         spacing="sm",
                         children=[
                             hoverableCard(
@@ -100,33 +91,21 @@ def layout():
                         className="my-6"
                     )
                 ],
-                className="mb-8"
             ),
             create_section_title("Our Final Thoughts"),
-            dmc.Paper(
-                dmc.Stack(
-                    [
-                        dmc.Text(CONCLUSION_1,
-                                 className="text-lg text-palette4"),
-                        dmc.Text(CONCLUSION_2,
-                                 className="text-lg mt-2 text-palette4"),
-                        dmc.Text(CONCLUSION_3,
-                                 className="text-lg mt-2 text-palette4"),
-                        dmc.Text(CONCLUSION_4,
-                                 className="text-lg mt-2 text-palette4"),
-                    ],
-                    className="p-6"
-                ),
-                shadow="sm",
-                radius="lg",
-                className="bg-white transition-all duration-300 hover:shadow-xl",
-                withBorder=True,
-                style={
-                    "borderColor": "var(--palette3)",
-                    "borderWidth": "2px",
-                    "height": "100%"
-                }
-            )
+            dmc.Stack(
+                [
+                    dmc.Text(CONCLUSION_1,
+                             className="text-lg text-palette4"),
+                    dmc.Text(CONCLUSION_2,
+                             className="text-lg text-palette4"),
+                    dmc.Text(CONCLUSION_3,
+                             className="text-lg text-palette4"),
+                    dmc.Text(CONCLUSION_4,
+                             className="text-lg text-palette4"),
+                ],
+                className="px-6"
+            ),
         ],
         className="pb-12"
     )

@@ -31,7 +31,7 @@ def hoverableCard(chartID: str, chart: Figure, cardName: str, desc: str, href: s
                     dmc.CardSection(
                         html.Img(
                             src=img_data,
-                            className="w-auto h-40 block mx-auto "
+                            className="w-auto h-60 block mx-auto "
                         ),
                     ),
                     # card title

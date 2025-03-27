@@ -40,7 +40,7 @@ def init_app():
                     html.Main(
                         children=[
                             # page container
-                            html.Div(dash.page_container, className="p-4 bg-palette1"),
+                            html.Div(dash.page_container, className="p-8 bg-palette1"),
                         ],
                     ),
                     ]
