@@ -23,6 +23,20 @@ def init_app():
     )
     
     app.layout = dmc.MantineProvider(
+        theme={
+            "components": {
+                "Text": {
+                    "defaultProps": {
+                        "ta": "justify",
+                    },
+                },
+                "ListItem": {
+                    "defaultProps": {
+                        "ta": "justify",
+                    },
+                },
+            },
+        },
         children=[
             # dcc.location to tracks the current url
             dcc.Location(id="url", refresh=False),
