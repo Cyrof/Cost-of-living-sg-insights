@@ -54,7 +54,7 @@ def init_app():
                     html.Main(
                         children=[
                             # page container
-                            html.Div(dash.page_container, className="p-8 bg-palette1"),
+                            html.Div(dash.page_container, className="py-8 px-20 bg-palette1"),
                         ],
                     ),
                     html.Footer(
