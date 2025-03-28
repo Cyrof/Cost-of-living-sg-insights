@@ -48,7 +48,7 @@ def layout() -> Component:
                                  charts["cpi_vs_gst_line_bar"])]
                     ),
                     create_card_graph(
-                        title="Ttax Collected By IRAS",
+                        title="Tax Collected By IRAS",
                         short_desc=TAX_COLLECTED_IRAS_Short,
                         full_desc=TAX_COLLECTED_IRAS,
                         graphs=[("iras_tax_collection_bar",
