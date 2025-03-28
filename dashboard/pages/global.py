@@ -19,12 +19,13 @@ def layout() -> Component:
             dmc.Paper(
                 dmc.Stack(
                     [
-                        dmc.Text(
+                        dmc.Title(
                             "Global Dashboard",
                             className="text-4xl font-extrabold text-palette4 text-center"
                         ),
-                        dmc.Text(
+                        dmc.Title(
                             "Tracking Worldwide Economic Trends",
+                            order=2,
                             className="text-xl font-medium text-palette3 text-center opacity-80"
                         )
                     ],
@@ -69,7 +70,7 @@ def layout() -> Component:
                         ),
                         dmc.Text(
                             GLOBAL_RECO,
-                            className="pl-6 text-base font-normal leading-relaxed text-palette3"
+                            className="text-base font-normal leading-relaxed text-palette3"
                         )
                     ],
                     className="p-6"

@@ -1,4 +1,4 @@
-import dash_mantine_components as dmc 
+import dash_mantine_components as dmc
 from dash import html
 
 def topbar() -> dmc.Box:
@@ -12,10 +12,10 @@ def topbar() -> dmc.Box:
                 variant="transparent",
             ),
             # Main title in center
-            dmc.Text(
-                "An Analysis of the Cost of living in Singapore",
+            dmc.Title(
+                "An Analysis of the Cost of Living in Singapore",
                 size="xl",
-                className="flex-1 text-center text-palette1"
+                className="flex-1 text-center text-palette1",
             ),
             # right dummy data
             dmc.ActionIcon(
