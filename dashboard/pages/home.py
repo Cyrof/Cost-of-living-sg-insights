@@ -48,7 +48,8 @@ def layout():
                 ],
                 className="w-full",
                 grow=True,
-                preventGrowOverflow=True
+                preventGrowOverflow=True,
+                align="flex-start",
             ),
 
             dmc.Text(INTRO_3, className="text-lg text-palette4"),
