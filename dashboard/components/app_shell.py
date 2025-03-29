@@ -24,7 +24,6 @@ def _id_from_title(title: str) -> str:
 def DashboardAppShell() -> dmc.AppShell:
     return dmc.AppShell(
         id="appshell",
-        layout="alt",
         header={"height": 80},
         navbar={
             "width": 300,
@@ -38,16 +37,18 @@ def DashboardAppShell() -> dmc.AppShell:
             DashboardNavbar(),
             dmc.AppShellMain(
                 children=[
+                    dmc.Space(h="lg"),
                     # Page content
                     dmc.Group(
                         dmc.Box(
                             dash.page_container,
                             w=1000,
-                            p="md",
+                            p="lg",
                         ),
                         align="center",
                         justify="center",
                     ),
+                    dmc.Space(h="lg"),
                     DashboardFooter(),
                 ],
             ),
@@ -58,19 +59,21 @@ def DashboardAppShell() -> dmc.AppShell:
 def DashboardHeader() -> dmc.AppShellHeader:
     return dmc.AppShellHeader(
         id="header",
+        bg="indigo.6",
+        c="white",
         children=dmc.Group(
             h="100%",
             px="md",
             children=[
                 dmc.Burger(
                     id="mobile-burger",
-                    size="sm",
+                    color="white",
                     hiddenFrom="sm",
                     opened=False,
                 ),
                 dmc.Burger(
                     id="desktop-burger",
-                    size="sm",
+                    color="white",
                     visibleFrom="sm",
                     opened=False,
                 ),
@@ -87,6 +90,7 @@ def DashboardNavbar() -> dmc.AppShellNavbar:
     return dmc.AppShellNavbar(
         id="navbar",
         p="xl",
+        bg="gray.0",
         children=[
             dcc.Location(id="url", refresh=False),
             dmc.Stack(
@@ -117,7 +121,9 @@ def DashboardFooter() -> dmc.Stack:
     ]
     return dmc.Stack(
         id="footer",
-        p="md",
+        p="xl",
+        bg="indigo.6",
+        c="white",
         children=[
             dmc.Title("Project Team", ta="center", order=4),
             dmc.Group(
