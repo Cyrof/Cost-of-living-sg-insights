@@ -3,15 +3,19 @@ import os
 os.environ["REACT_VERSION"] = "18.2.0"
 
 import dash
+import dash_mantine_components as dmc
+from components.footer import footer
 from components.sidebar import sidebar
 from components.topBar import topbar
-from components.footer import footer
 from dash import Dash, dcc, html
-import dash_mantine_components as dmc
+
 import dashboard.utils
 
 FA = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 TW = "https://cdn.tailwindcss.com"
+
+# Add Mantine templates for styling Plotly figures.
+dmc.add_figure_templates(default="mantine_dark")
 
 
 def init_app():
