@@ -55,8 +55,14 @@ def init_app():
                     html.Main(
                         children=[
                             # page container
-                            html.Div(
-                                dash.page_container, className="py-8 px-20 bg-palette1"
+                            dmc.Group(
+                                dmc.Box(
+                                    dash.page_container,
+                                    w=1000,
+                                ),
+                                className="py-8 px-20 bg-palette1",
+                                align="center",
+                                justify="center",
                             ),
                         ],
                     ),
