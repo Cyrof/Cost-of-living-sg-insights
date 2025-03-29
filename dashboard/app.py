@@ -2,12 +2,9 @@ import os
 
 os.environ["REACT_VERSION"] = "18.2.0"
 
-import dash
 import dash_mantine_components as dmc
-from components.footer import footer
-from components.sidebar import sidebar
-from components.topBar import topbar
-from dash import Dash, dcc, html
+from components.app_shell import DashboardAppShell
+from dash import Dash
 
 import dashboard.utils
 
@@ -44,41 +41,7 @@ def init_app():
                 },
             },
         },
-        children=[
-            # dcc.location to tracks the current url
-            dcc.Location(id="url", refresh=False),
-            html.Div(
-                className="min-h-screen flex flex-col",
-                children=[
-                    html.Header(
-                        className="flex-none h-16",
-                        children=[
-                            topbar(),
-                            sidebar(),
-                        ],
-                    ),
-                    html.Main(
-                        children=[
-                            # page container
-                            dmc.Group(
-                                dmc.Box(
-                                    dash.page_container,
-                                    w=1000,
-                                ),
-                                className="py-8 px-20",
-                                align="center",
-                                justify="center",
-                            ),
-                        ],
-                    ),
-                    html.Footer(
-                        children=[
-                            footer(),
-                        ]
-                    ),
-                ],
-            ),
-        ],
+        children=DashboardAppShell(),
     )
 
     with app.server.app_context():
