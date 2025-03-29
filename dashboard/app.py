@@ -25,6 +25,7 @@ def init_app():
     )
 
     app.layout = dmc.MantineProvider(
+        forceColorScheme="dark",
         theme={
             "components": {
                 "Text": {
@@ -60,9 +61,10 @@ def init_app():
                                     dash.page_container,
                                     w=1000,
                                 ),
-                                className="py-8 px-20 bg-palette1",
+                                className="py-8 px-20",
                                 align="center",
                                 justify="center",
+                                bg="dark.8",  # Use Mantine theme color for background
                             ),
                         ],
                     ),

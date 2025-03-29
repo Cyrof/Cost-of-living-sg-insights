@@ -7,12 +7,6 @@
     --palette4: #111012;
 }
 
-/* default background color */
-body {
-    background-color: var(--palette1);
-    color: var(--palette4);
-}
-
 /* Background utility classes */
 .bg-palette1 { background-color: var(--palette1); }
 .bg-palette2 { background-color: var(--palette2); }
