@@ -3,7 +3,11 @@ from dash.development.base_component import Component
 from plotly.graph_objects import Figure
 import dash_mantine_components as dmc
 from components.graphWrapper import graphWrapper
-from components.textComponents import create_card, create_section_title, create_card_graph
+from components.textComponents import (
+    create_card,
+    create_section_title,
+    create_card_graph,
+)
 from text.globalText import *
 
 import dashboard.utils
@@ -21,16 +25,16 @@ def layout() -> Component:
                     [
                         dmc.Title(
                             "Global Dashboard",
-                            className="text-4xl font-extrabold text-palette4 text-center"
+                            className="text-4xl font-extrabold text-palette4 text-center",
                         ),
                         dmc.Title(
                             "Tracking Worldwide Economic Trends",
                             order=2,
-                            className="text-xl font-medium text-palette3 text-center opacity-80"
-                        )
+                            className="text-xl font-medium text-palette3 text-center opacity-80",
+                        ),
                     ],
                     gap="xs",
-                    className="py-6"
+                    className="py-6",
                 ),
                 className="bg-palette1 rounded-xl mb-8 shadow-lg w-full",
                 withBorder=False,
@@ -43,8 +47,8 @@ def layout() -> Component:
                 full_desc=CPI_GDP_OVER_TIME + GDP_OVER_TIME,
                 graphs=[
                     ("cpi_bubble_map", charts["cpi_bubble_map"]),
-                    ("gdp_bubble_map", charts["gdp_bubble_map"])
-                ]
+                    ("gdp_bubble_map", charts["gdp_bubble_map"]),
+                ],
             ),
             # CPI VS GDP
             create_section_title("CPI and GDP Bubble Analysis"),
@@ -52,7 +56,7 @@ def layout() -> Component:
                 title="Neighbouring Economies: CPI VS GDP",
                 short_desc=CPI_GDP_OVER_TIME_Short,
                 full_desc=CPI_GDP_OVER_TIME,
-                graphs=[("cpi_vs_gdp_bubble_chart", charts["cpi_vs_gdp_bubble_chart"])]
+                graphs=[("cpi_vs_gdp_bubble_chart", charts["cpi_vs_gdp_bubble_chart"])],
             ),
             # recommendation
             create_section_title("Strategic Recommendations"),
@@ -61,30 +65,25 @@ def layout() -> Component:
                     [
                         dmc.Text(
                             "Expert Recommendation",
-                            className="text-2xl font-bold text-palette3"
+                            className="text-2xl font-bold text-palette3",
                         ),
                         dmc.Divider(
-                            className="my-2",
-                            color="var(--palette3)",
-                            size="sm"
+                            className="my-2", color="var(--palette3)", size="sm"
                         ),
                         dmc.Text(
                             GLOBAL_RECO,
-                            className="text-base font-normal leading-relaxed text-palette3"
-                        )
+                            className="text-base font-normal leading-relaxed text-palette3",
+                        ),
                     ],
-                    className="p-6"
+                    className="p-6",
                 ),
                 shadow="sm",
                 radius="lg",
                 className="bg-white transition-all duration-300 hover:shadow-xl mt-2 mb-12 w-full",
                 withBorder=True,
-                style={
-                    "borderColor": "var(--palette3)",
-                    "borderWidth": "2px"
-                }
-            )
+                style={"borderColor": "var(--palette3)", "borderWidth": "2px"},
+            ),
         ],
         className="p-8 w-full",
-        gap="md"
+        gap="md",
     )

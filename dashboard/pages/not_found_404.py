@@ -7,16 +7,13 @@ dash.register_page(__name__)
 
 
 def layout():
-    return  dmc.Center(
+    return dmc.Center(
         children=[
             dmc.Stack(
                 align="center",
                 gap="md",
                 children=[
-                    dmc.Text(
-                        "404",
-                        className="font-semibold text-8xl text-gray-800"
-                    ),
+                    dmc.Text("404", className="font-semibold text-8xl text-gray-800"),
                     dmc.Image(
                         src="/assets/images/oia-uia.gif",
                         alt="uiia",
@@ -24,19 +21,19 @@ def layout():
                     ),
                     dmc.Text(
                         "Page Not Found",
-                        className="font-semibold text-3xl text-gray-800"
+                        className="font-semibold text-3xl text-gray-800",
                     ),
                     dmc.Anchor(
                         href="/",
                         children=[
                             dmc.Button(
                                 "Go Home",
-                                className="bg-purple-600 hover:bg-purple-500 rounded-lg"
+                                className="bg-purple-600 hover:bg-purple-500 rounded-lg",
                             )
-                        ]
-                    )
-                ]
+                        ],
+                    ),
+                ],
             )
         ],
-        className="fixed left-0 top-0 min-h-screen w-screen z-[9999] bg-[#f2f0eb]"
+        className="fixed left-0 top-0 min-h-screen w-screen z-[9999] bg-[#f2f0eb]",
     )

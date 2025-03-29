@@ -1,5 +1,12 @@
-from dash import (ClientsideFunction, Input, Output, State,
-                  clientside_callback, dcc, html)
+from dash import (
+    ClientsideFunction,
+    Input,
+    Output,
+    State,
+    clientside_callback,
+    dcc,
+    html,
+)
 
 # title: href
 LINKS: dict[str, str] = {

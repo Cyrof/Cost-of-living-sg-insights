@@ -4,7 +4,11 @@ from dash.development.base_component import Component
 from plotly.graph_objects import Figure
 import dash_mantine_components as dmc
 from components.graphWrapper import graphWrapper
-from components.textComponents import create_card, create_section_title, create_card_graph
+from components.textComponents import (
+    create_card,
+    create_section_title,
+    create_card_graph,
+)
 from text.healthcareText import *
 
 import dashboard.utils
@@ -22,16 +26,16 @@ def layout() -> Component:
                     [
                         dmc.Title(
                             "Healthcare Dashboard",
-                            className="text-4xl font-extrabold text-palette4 text-center"
+                            className="text-4xl font-extrabold text-palette4 text-center",
                         ),
                         dmc.Title(
                             "Uncovering insights into healthcare costs and market dynamics",
                             order=2,
-                            className="text-xl font-medium text-palette3 text-center opacity-80"
-                        )
+                            className="text-xl font-medium text-palette3 text-center opacity-80",
+                        ),
                     ],
                     gap="xs",
-                    className="py-6"
+                    className="py-6",
                 ),
                 className="bg-palette1 rounded-xl mb-8 shadow-lg w-full",
                 withBorder=False,
@@ -44,8 +48,12 @@ def layout() -> Component:
                 full_desc=HEALTHCARE_COM,
                 # figure=charts["healthcare_cpi_breakdown"],
                 # card_id="healthcare_cpi_breakdown_chart"
-                graphs=[("healthcare_cpi_breakdown_chart",
-                         charts["healthcare_cpi_breakdown"])]
+                graphs=[
+                    (
+                        "healthcare_cpi_breakdown_chart",
+                        charts["healthcare_cpi_breakdown"],
+                    )
+                ],
             ),
             # life expectancy vs healthcare & healthcare vs income
             create_section_title("Health & Income Insights"),
@@ -57,8 +65,12 @@ def layout() -> Component:
                         full_desc=LIFE_EXPECTANCY_HEALTHCARE,
                         # figure=charts["life_expectancy_vs_healthcare_cpi"],
                         # card_id="life_expectancy_vs_healthcare_cpi_chart",
-                        graphs=[("life_expectancy_vs_healthcare_cpi_chart",
-                                 charts["life_expectancy_vs_healthcare_cpi"])]
+                        graphs=[
+                            (
+                                "life_expectancy_vs_healthcare_cpi_chart",
+                                charts["life_expectancy_vs_healthcare_cpi"],
+                            )
+                        ],
                     ),
                     create_card_graph(
                         title="Healthcare CPI VS Income Growth",
@@ -66,13 +78,17 @@ def layout() -> Component:
                         full_desc=HEALTHCARE_VS_INCOME,
                         # figure=charts["healthcare_cpi_vs_gross_monthly_income"],
                         # card_id="healthcare_cpi_vs_gross_monthly_income"
-                        graphs=[("healthcare_cpi_vs_gross_monthly_income",
-                                 charts["healthcare_cpi_vs_gross_monthly_income"])]
-                    )
+                        graphs=[
+                            (
+                                "healthcare_cpi_vs_gross_monthly_income",
+                                charts["healthcare_cpi_vs_gross_monthly_income"],
+                            )
+                        ],
+                    ),
                 ],
                 className="w-full",
                 grow=True,
-                align="start"
+                align="start",
             ),
             # healthcare percentage
             create_section_title("CPI and Income Growth Trends"),
@@ -82,8 +98,12 @@ def layout() -> Component:
                 full_desc=HEALTHCARE_VS_INCOME_PERCENTAGE,
                 # figure=charts["percentage_change_in_healthcare_cpi_and_income"],
                 # card_id="percentage_change_in_healthcare_cpi_and_income_chart",
-                graphs=[("percentage_change_in_healthcare_cpi_and_income_chart",
-                         charts["percentage_change_in_healthcare_cpi_and_income"])]
+                graphs=[
+                    (
+                        "percentage_change_in_healthcare_cpi_and_income_chart",
+                        charts["percentage_change_in_healthcare_cpi_and_income"],
+                    )
+                ],
             ),
             # recommendation
             create_section_title("Strategic Recommendations"),
@@ -95,27 +115,22 @@ def layout() -> Component:
                             className="text-2xl font-bold text-palette3",
                         ),
                         dmc.Divider(
-                            className="my-2",
-                            color="var(--palette3)",
-                            size="sm"
+                            className="my-2", color="var(--palette3)", size="sm"
                         ),
                         dmc.Text(
                             HEALTHCARE_RECO,
-                            className="text-base font-normal leading-relaxed text-palette3"
-                        )
+                            className="text-base font-normal leading-relaxed text-palette3",
+                        ),
                     ],
-                    className="p-6"
+                    className="p-6",
                 ),
                 shadow="sm",
                 radius="lg",
                 className="bg-white transition-all duration-300 hover:shadow-xl mt-2 mb-12 w-full",
                 withBorder=True,
-                style={
-                    "borderColor": "var(--palette3)",
-                    "borderWidth": "2px"
-                }
-            )
+                style={"borderColor": "var(--palette3)", "borderWidth": "2px"},
+            ),
         ],
         className="p-8 w-full",
-        gap="md"
+        gap="md",
     )

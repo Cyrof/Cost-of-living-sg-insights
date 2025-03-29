@@ -1,4 +1,5 @@
 import os
+
 os.environ["REACT_VERSION"] = "18.2.0"
 
 import dash
@@ -12,16 +13,17 @@ import dashboard.utils
 FA = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 TW = "https://cdn.tailwindcss.com"
 
+
 def init_app():
     app = Dash(
-        __name__, 
-        use_pages=True, 
-        pages_folder="pages", 
+        __name__,
+        use_pages=True,
+        pages_folder="pages",
         suppress_callback_exceptions=True,
         external_stylesheets=[FA] + dmc.styles.ALL,
-        external_scripts=[TW]
+        external_scripts=[TW],
     )
-    
+
     app.layout = dmc.MantineProvider(
         theme={
             "components": {
@@ -40,7 +42,6 @@ def init_app():
         children=[
             # dcc.location to tracks the current url
             dcc.Location(id="url", refresh=False),
-    
             html.Div(
                 className="min-h-screen flex flex-col",
                 children=[
@@ -49,21 +50,23 @@ def init_app():
                         children=[
                             topbar(),
                             sidebar(),
-                        ]
+                        ],
                     ),
                     html.Main(
                         children=[
                             # page container
-                            html.Div(dash.page_container, className="py-8 px-20 bg-palette1"),
+                            html.Div(
+                                dash.page_container, className="py-8 px-20 bg-palette1"
+                            ),
                         ],
                     ),
                     html.Footer(
                         children=[
                             footer(),
                         ]
-                    )
-                    ]
-                ),
+                    ),
+                ],
+            ),
         ],
     )
 
@@ -72,7 +75,9 @@ def init_app():
 
     return app
 
+
 app = init_app()
+
 
 def main():
     app.run(debug=True, dev_tools_hot_reload=True)

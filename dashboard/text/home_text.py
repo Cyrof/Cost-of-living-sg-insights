@@ -8,7 +8,7 @@ INTRO_BULLET_3 = "While incomes have generally increased, the rate of growth has
 INTRO_3 = "To confirm the validity of these hypotheses and provide a more comprehensive understanding of the intricate dynamics affecting Singapore's cost of living, this study will examine these topics in further detail by analyzing a range of economic indicators and policy initiatives."
 
 
-# conclusion 
+# conclusion
 CONCLUSION_1 = "In summary, while Singapore has experienced a measurable increase in the cost of living, our analysis demonstrates that the situation is less alarming than commonly perceived. Despite upward trends in the Consumer Price Index (CPI), resident purchasing power has consistently increased, indicating that average income growth has generally outpaced price inflation."
 CONCLUSION_2 = "Furthermore, taxation policies, including the Goods and Services Tax (GST), have been implemented with a focus on gradual adjustments, minimizing the impact on affordability. Progressive income and property tax structures ensure that lower and middle-income earners are not disproportionately burdened. While healthcare costs have risen, wage growth has largely kept pace, mitigating affordability concerns for a significant portion of the population."
 CONCLUSION_3 = "Therefore, although financial strain remains a valid concern for some residents, the overall economic landscape suggests a successful balancing act between economic growth, social equity, and affordability. Singapore's economic policies and social support systems have demonstrably mitigated the impact of rising costs for the majority of its population, contributing to a relatively stable and sustainable standard of living."
