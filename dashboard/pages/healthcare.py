@@ -1,14 +1,14 @@
 import dash
-from dash import dcc, html
-from dash.development.base_component import Component
-from plotly.graph_objects import Figure
 import dash_mantine_components as dmc
 from components.graphWrapper import graphWrapper
 from components.textComponents import (
     create_card,
-    create_section_title,
     create_card_graph,
+    create_section_title,
 )
+from dash import dcc, html
+from dash.development.base_component import Component
+from plotly.graph_objects import Figure
 from text.healthcareText import *
 
 import dashboard.utils
@@ -74,8 +74,6 @@ def layout() -> Component:
                 title="Healthcare CPI VS Income Growth",
                 short_desc=HEALTHCARE_VS_INCOME_Short,
                 full_desc=HEALTHCARE_VS_INCOME,
-                # figure=charts["healthcare_cpi_vs_gross_monthly_income"],
-                # card_id="healthcare_cpi_vs_gross_monthly_income"
                 graphs=[
                     (
                         "healthcare_cpi_vs_gross_monthly_income",

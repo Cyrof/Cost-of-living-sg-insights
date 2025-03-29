@@ -1,14 +1,14 @@
 import dash
-from dash import dcc, html
-from dash.development.base_component import Component
-from plotly.graph_objects import Figure
 import dash_mantine_components as dmc
 from components.graphWrapper import graphWrapper
 from components.textComponents import (
     create_card,
-    create_section_title,
     create_card_graph,
+    create_section_title,
 )
+from dash import dcc, html
+from dash.development.base_component import Component
+from plotly.graph_objects import Figure
 from text.taxesText import *
 
 import dashboard.utils
@@ -46,7 +46,12 @@ def layout() -> Component:
                 title="CPI against GST",
                 short_desc=CPI_AGAINST_GST_Short,
                 full_desc=CPI_AGAINST_GST,
-                graphs=[("cpi_vs_gst_line_bar", charts["cpi_vs_gst_line_bar"])],
+                graphs=[
+                    (
+                        "cpi_vs_gst_line_bar",
+                        charts["cpi_vs_gst_line_bar"],
+                    ),
+                ],
             ),
             create_card_graph(
                 title="Tax Collected By IRAS",

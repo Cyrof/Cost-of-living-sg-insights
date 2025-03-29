@@ -1,7 +1,9 @@
+from typing import Any
+
 import dash_mantine_components as dmc
 from components.graphWrapper import graphWrapper
+from dash import MATCH, Input, Output, State, callback
 from plotly.graph_objects import Figure
-from dash import Input, Output, State, MATCH, callback
 
 
 def create_card(title: str, description: str, className: str = "") -> dmc.Paper:
@@ -35,18 +37,25 @@ def create_card_graph(
     title: str,
     short_desc: str,
     full_desc: str,
-    graphs: list[tuple[str, Figure]],
-    # figure: Figure,
-    # card_id: str,
+    graphs: list[tuple[str, Figure] | tuple[str, Figure, dict[str, Any]]],
     className: str = "",
 ) -> dmc.Paper:
     if len(graphs) == 1:
-        graph_component = graphWrapper(graphs[0][0], graphs[0][1])
+        kwargs = graphs[0][2] if len(graphs[0]) > 2 else dict()
+        graph_component = graphWrapper(graphs[0][0], graphs[0][1], **kwargs)
     else:
-        graph_component = dmc.Group(
-            [graphWrapper(graph_id, fig) for graph_id, fig in graphs],
-            align="start",
-            grow=True,
+        graph_component = dmc.Stack(
+            [
+                graphWrapper(graph_id, fig, **kwargs)
+                for graph_id, fig, kwargs in (
+                    (
+                        graph_tuple
+                        if len(graph_tuple) > 2
+                        else (graph_tuple[0], graph_tuple[1], dict())
+                    )
+                    for graph_tuple in graphs
+                )
+            ],
         )
 
     return dmc.Paper(
@@ -57,7 +66,6 @@ def create_card_graph(
                     dmc.Text(title, className="text-2xl font-bold text-palette3"),
                     dmc.Divider(className="my-2", color="var(--palette3)", size="sm"),
                     # graph
-                    # graphWrapper(card_id, figure),
                     graph_component,
                     # short description
                     dmc.Text(
