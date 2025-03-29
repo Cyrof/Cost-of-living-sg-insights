@@ -1,7 +1,7 @@
 import dash
 import dash_mantine_components as dmc
-from components.graphWrapper import graphWrapper
-from components.textComponents import (
+from dashboard.components.graphWrapper import graphWrapper
+from dashboard.components.textComponents import (
     create_card,
     create_card_graph,
     create_section_title,

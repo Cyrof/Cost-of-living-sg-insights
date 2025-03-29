@@ -1,12 +1,11 @@
 import dash
-import plotly.express as px
-from dash import dcc, html
 import dash_mantine_components as dmc
-from components.hoverCard import hoverableCard
+from dashboard.components.hoverCard import hoverableCard
+from dashboard.components.textComponents import create_section_title
 from plotly.graph_objects import Figure
-import dashboard.utils
 from text.home_text import *
-from components.textComponents import create_card, create_section_title
+
+import dashboard.utils
 
 dash.register_page(__name__, path="/")
 
@@ -26,9 +25,7 @@ def layout():
                                 "Introduction",
                                 className="text-xl font-semibold mb-4",
                             ),
-                            dmc.Text(
-                                [INTRO_1, INTRO_2], className="text-lg"
-                            ),
+                            dmc.Text([INTRO_1, INTRO_2], className="text-lg"),
                         ],
                         className="h-full",
                     ),

@@ -3,11 +3,11 @@ from dash import html
 from dash.development.base_component import Component
 from plotly.graph_objects import Figure
 import dash_mantine_components as dmc
-from components.graphWrapper import graphWrapper
+from dashboard.components.graphWrapper import graphWrapper
 
 import dashboard.utils
 from text.necessitiesText import *
-from components.textComponents import (
+from dashboard.components.textComponents import (
     create_card,
     create_section_title,
     create_card_graph,

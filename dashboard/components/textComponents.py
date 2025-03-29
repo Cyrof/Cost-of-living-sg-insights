@@ -1,9 +1,10 @@
 from typing import Any
 
 import dash_mantine_components as dmc
-from components.graphWrapper import graphWrapper
 from dash import MATCH, Input, Output, State, callback
 from plotly.graph_objects import Figure
+
+from dashboard.components.graphWrapper import graphWrapper
 
 
 def create_card(title: str, description: str, className: str = "") -> dmc.Paper:
