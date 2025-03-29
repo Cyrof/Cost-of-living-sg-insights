@@ -15,7 +15,7 @@ FA = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 TW = "https://cdn.tailwindcss.com"
 
 # Add Mantine templates for styling Plotly figures.
-dmc.add_figure_templates(default="mantine_dark")
+dmc.add_figure_templates(default="mantine_light")
 
 
 def init_app():
@@ -29,7 +29,7 @@ def init_app():
     )
 
     app.layout = dmc.MantineProvider(
-        forceColorScheme="dark",
+        forceColorScheme="light",
         theme={
             "components": {
                 "Text": {
@@ -68,7 +68,6 @@ def init_app():
                                 className="py-8 px-20",
                                 align="center",
                                 justify="center",
-                                bg="dark.8",  # Use Mantine theme color for background
                             ),
                         ],
                     ),
