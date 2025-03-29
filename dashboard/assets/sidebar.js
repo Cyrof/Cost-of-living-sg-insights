@@ -7,9 +7,9 @@ window.dash_clientside = Object.assign({}, window.dash_clientside, {
     clientside: {
         toggleSidebar: function() {
             if (dash_clientside.callback_context.triggered_id === "open-sidebar") {
-                return BASE_SIDEBAR_CLASSES + "bg-[#403f52] translate-x-0";
+                return BASE_SIDEBAR_CLASSES + "translate-x-0";
             }
-            return BASE_SIDEBAR_CLASSES + "bg-[#403f52] -translate-x-full";
+            return BASE_SIDEBAR_CLASSES + "-translate-x-full";
         },
         updateSidebarLinkColours: function(pathname, ...hrefs) {
             "block px-5 py-3  text-xl  font-semibold ";

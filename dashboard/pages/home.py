@@ -24,10 +24,10 @@ def layout():
                         [
                             dmc.Text(
                                 "Introduction",
-                                className="text-xl font-semibold text-palette4 mb-4",
+                                className="text-xl font-semibold mb-4",
                             ),
                             dmc.Text(
-                                [INTRO_1, INTRO_2], className="text-lg text-palette4"
+                                [INTRO_1, INTRO_2], className="text-lg"
                             ),
                         ],
                         className="h-full",
@@ -37,7 +37,7 @@ def layout():
                         [
                             dmc.Text(
                                 "Specifically, we hypothesize that:",
-                                className="text-xl font-semibold text-palette4 mb-4",
+                                className="text-xl font-semibold mb-4",
                             ),
                             dmc.List(
                                 [
@@ -45,7 +45,7 @@ def layout():
                                     dmc.ListItem(INTRO_BULLET_2),
                                     dmc.ListItem(INTRO_BULLET_3),
                                 ],
-                                className="list-disc text-lg text-palette4",
+                                className="list-disc text-lg",
                             ),
                         ],
                         className="h-full",
@@ -56,7 +56,7 @@ def layout():
                 preventGrowOverflow=True,
                 align="flex-start",
             ),
-            dmc.Text(INTRO_3, className="text-lg text-palette4"),
+            dmc.Text(INTRO_3, className="text-lg"),
             create_section_title("Explore Key Insights"),
             dmc.Box(
                 [
@@ -102,10 +102,10 @@ def layout():
             create_section_title("Our Final Thoughts"),
             dmc.Stack(
                 [
-                    dmc.Text(CONCLUSION_1, className="text-lg text-palette4"),
-                    dmc.Text(CONCLUSION_2, className="text-lg text-palette4"),
-                    dmc.Text(CONCLUSION_3, className="text-lg text-palette4"),
-                    dmc.Text(CONCLUSION_4, className="text-lg text-palette4"),
+                    dmc.Text(CONCLUSION_1, className="text-lg"),
+                    dmc.Text(CONCLUSION_2, className="text-lg"),
+                    dmc.Text(CONCLUSION_3, className="text-lg"),
+                    dmc.Text(CONCLUSION_4, className="text-lg"),
                 ],
                 className="px-6",
             ),

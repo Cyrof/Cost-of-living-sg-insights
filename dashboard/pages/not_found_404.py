@@ -28,12 +28,12 @@ def layout():
                         children=[
                             dmc.Button(
                                 "Go Home",
-                                className="bg-purple-600 hover:bg-purple-500 rounded-lg",
+                                className="rounded-lg",
                             )
                         ],
                     ),
                 ],
             )
         ],
-        className="fixed left-0 top-0 min-h-screen w-screen z-[9999] bg-[#f2f0eb]",
+        className="fixed left-0 top-0 min-h-screen w-screen z-[9999]",
     )

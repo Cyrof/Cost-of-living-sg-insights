@@ -11,11 +11,11 @@ def create_card(title: str, description: str, className: str = "") -> dmc.Paper:
         [
             dmc.Stack(
                 [
-                    dmc.Text(title, className="text-2xl font-bold text-palette3"),
-                    dmc.Divider(className="my-2", color="var(--palette3)", size="sm"),
+                    dmc.Text(title, className="text-2xl font-bold"),
+                    dmc.Divider(className="my-2", size="sm"),
                     dmc.Text(
                         description,
-                        className="text-base font-normal text-palette3 leading-relaxed",
+                        className="text-base font-normal leading-relaxed",
                     ),
                 ],
                 className="p-6",
@@ -23,10 +23,9 @@ def create_card(title: str, description: str, className: str = "") -> dmc.Paper:
         ],
         shadow="sm",
         radius="lg",
-        className=f"bg-white transition-all duration-300 hover:shadow-xl {className}",
+        className=f"transition-all duration-300 hover:shadow-xl {className}",
         withBorder=True,
         style={
-            "borderColor": "var(--palette3)",
             "borderWidth": "2px",
             "height": "100%",
         },
@@ -63,22 +62,22 @@ def create_card_graph(
             dmc.Stack(
                 [
                     # title
-                    dmc.Text(title, className="text-2xl font-bold text-palette3"),
-                    dmc.Divider(className="my-2", color="var(--palette3)", size="sm"),
+                    dmc.Text(title, className="text-2xl font-bold"),
+                    dmc.Divider(className="my-2", size="sm"),
                     # graph
                     graph_component,
                     # short description
                     dmc.Text(
                         short_desc,
                         id=f"{graphs[0][0]}-short-desc",
-                        className="text-base font-normal text-palette3 loading-relaxed mt-4",
+                        className="text-base font-normal loading-relaxed mt-4",
                     ),
                     # collapsible desc
                     dmc.Collapse(
                         [
                             dmc.Text(
                                 full_desc,
-                                className="text-base font-normal text-palette3 loading-relaxed",
+                                className="text-base font-normal loading-relaxed",
                             ),
                         ],
                         id={"type": "collapse-desc", "index": graphs[0][0]},
@@ -97,10 +96,9 @@ def create_card_graph(
         ],
         shadow="sm",
         radius="lg",
-        className=f"bg-white transition-all duration-300 hover:shadow-xl {className}",
+        className=f"transition-all duration-300 hover:shadow-xl {className}",
         withBorder=True,
         style={
-            "borderColor": "var(--palette3)",
             "borderWidth": "2px",
             "height": "100%",
         },
@@ -110,9 +108,9 @@ def create_card_graph(
 def create_section_title(title: str) -> dmc.Group:
     return dmc.Group(
         [
-            dmc.Divider(className="flex-grow", color="var(--palette2)", size="xs"),
-            dmc.Text(title, className="text-3xl font-bold mx-4 text-palette4"),
-            dmc.Divider(className="flex-grow", color="var(--palette2)", size="xs"),
+            dmc.Divider(className="flex-grow", size="xs"),
+            dmc.Text(title, className="text-3xl font-bold mx-4"),
+            dmc.Divider(className="flex-grow", size="xs"),
         ],
         justify="center",
         className="my-6",

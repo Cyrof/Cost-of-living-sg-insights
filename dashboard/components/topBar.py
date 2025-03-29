@@ -4,12 +4,12 @@ from dash import html
 
 def topbar() -> dmc.Box:
     return dmc.Box(
-        className="fixed top-0 left-0 right-0 h-16 bg-palette2 z-50 flex items-center px-4",
+        className="fixed top-0 left-0 right-0 h-16 z-50 flex items-center px-4",
         children=[
             # hamburger icon on left side
             dmc.ActionIcon(
                 html.I(
-                    className="fa-solid fa-bars text-3xl text-palette1 hover:text-gray-400"
+                    className="fa-solid fa-bars text-3xl hover:text-gray-400"
                 ),
                 id="open-sidebar",
                 variant="transparent",
@@ -18,7 +18,7 @@ def topbar() -> dmc.Box:
             dmc.Title(
                 "An Analysis of the Cost of Living in Singapore",
                 size="xl",
-                className="flex-1 text-center text-palette1",
+                className="flex-1 text-center",
             ),
             # right dummy data
             dmc.ActionIcon(

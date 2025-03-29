@@ -27,18 +27,18 @@ def layout() -> Component:
                     [
                         dmc.Title(
                             "Necessities Dashboard",
-                            className="text-4xl font-extrabold text-palette4 text-center",
+                            className="text-4xl font-extrabold text-center",
                         ),
                         dmc.Title(
                             "Tracking essential expenses and economic indicators",
                             order=2,
-                            className="text-xl font-medium text-palette3 text-center opacity-80",
+                            className="text-xl font-medium text-center opacity-80",
                         ),
                     ],
                     gap="xs",
                     className="py-6",
                 ),
-                className="bg-palette1 rounded-xl mb-8 shadow-lg w-full",
+                className="rounded-xl mb-8 shadow-lg w-full",
                 withBorder=False,
             ),
             create_section_title("Cost of Living Trends"),
@@ -86,10 +86,10 @@ def layout() -> Component:
                     [
                         dmc.Text(
                             "Expert Recommendations",
-                            className="text-2xl font-bold text-palette3",
+                            className="text-2xl font-bold",
                         ),
                         dmc.Divider(
-                            className="my-2", color="var(--palette3)", size="sm"
+                            className="my-2", size="sm"
                         ),
                         dmc.Text(
                             NECESSITIES_RECO,
@@ -100,9 +100,9 @@ def layout() -> Component:
                 ),
                 shadow="sm",
                 radius="lg",
-                className="bg-white transition-all duration-300 hover:shadow-xl mt-2 mb-12 w-full",
+                className="transition-all duration-300 hover:shadow-xl mt-2 mb-12 w-full",
                 withBorder=True,
-                style={"borderColor": "var(--palette3)", "borderWidth": "2px"},
+                style={"borderWidth": "2px"},
             ),
         ],
         className="p-8 w-full",

@@ -38,6 +38,6 @@ def footer() -> dmc.Stack:
                 ta="center",
             ),
         ],
-        className="bg-gray-800 py-8",
+        className="py-8",
         gap="lg",
     )
