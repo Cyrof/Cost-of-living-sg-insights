@@ -42,28 +42,22 @@ def layout() -> Component:
             ),
             # gst section
             create_section_title("Goods and Service Tax (GST) Overview"),
-            dmc.Group(
-                [
-                    create_card_graph(
-                        title="CPI against GST",
-                        short_desc=CPI_AGAINST_GST_Short,
-                        full_desc=CPI_AGAINST_GST,
-                        graphs=[("cpi_vs_gst_line_bar", charts["cpi_vs_gst_line_bar"])],
-                    ),
-                    create_card_graph(
-                        title="Tax Collected By IRAS",
-                        short_desc=TAX_COLLECTED_IRAS_Short,
-                        full_desc=TAX_COLLECTED_IRAS,
-                        graphs=[
-                            (
-                                "iras_tax_collection_bar",
-                                charts["iras_tax_collection_bar"],
-                            )
-                        ],
-                    ),
+            create_card_graph(
+                title="CPI against GST",
+                short_desc=CPI_AGAINST_GST_Short,
+                full_desc=CPI_AGAINST_GST,
+                graphs=[("cpi_vs_gst_line_bar", charts["cpi_vs_gst_line_bar"])],
+            ),
+            create_card_graph(
+                title="Tax Collected By IRAS",
+                short_desc=TAX_COLLECTED_IRAS_Short,
+                full_desc=TAX_COLLECTED_IRAS,
+                graphs=[
+                    (
+                        "iras_tax_collection_bar",
+                        charts["iras_tax_collection_bar"],
+                    )
                 ],
-                grow=True,
-                align="start",
             ),
             # income tax
             create_section_title("Income Tax Trends & Analysis"),

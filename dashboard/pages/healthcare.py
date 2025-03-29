@@ -57,38 +57,31 @@ def layout() -> Component:
             ),
             # life expectancy vs healthcare & healthcare vs income
             create_section_title("Health & Income Insights"),
-            dmc.Group(
-                [
-                    create_card_graph(
-                        title="Life Expectancy VS Healthcare CPI",
-                        short_desc=LIFE_EXPECTANCY_HEALTHCARE_Short,
-                        full_desc=LIFE_EXPECTANCY_HEALTHCARE,
-                        # figure=charts["life_expectancy_vs_healthcare_cpi"],
-                        # card_id="life_expectancy_vs_healthcare_cpi_chart",
-                        graphs=[
-                            (
-                                "life_expectancy_vs_healthcare_cpi_chart",
-                                charts["life_expectancy_vs_healthcare_cpi"],
-                            )
-                        ],
-                    ),
-                    create_card_graph(
-                        title="Healthcare CPI VS Income Growth",
-                        short_desc=HEALTHCARE_VS_INCOME_Short,
-                        full_desc=HEALTHCARE_VS_INCOME,
-                        # figure=charts["healthcare_cpi_vs_gross_monthly_income"],
-                        # card_id="healthcare_cpi_vs_gross_monthly_income"
-                        graphs=[
-                            (
-                                "healthcare_cpi_vs_gross_monthly_income",
-                                charts["healthcare_cpi_vs_gross_monthly_income"],
-                            )
-                        ],
-                    ),
+            create_card_graph(
+                title="Life Expectancy VS Healthcare CPI",
+                short_desc=LIFE_EXPECTANCY_HEALTHCARE_Short,
+                full_desc=LIFE_EXPECTANCY_HEALTHCARE,
+                # figure=charts["life_expectancy_vs_healthcare_cpi"],
+                # card_id="life_expectancy_vs_healthcare_cpi_chart",
+                graphs=[
+                    (
+                        "life_expectancy_vs_healthcare_cpi_chart",
+                        charts["life_expectancy_vs_healthcare_cpi"],
+                    )
                 ],
-                className="w-full",
-                grow=True,
-                align="start",
+            ),
+            create_card_graph(
+                title="Healthcare CPI VS Income Growth",
+                short_desc=HEALTHCARE_VS_INCOME_Short,
+                full_desc=HEALTHCARE_VS_INCOME,
+                # figure=charts["healthcare_cpi_vs_gross_monthly_income"],
+                # card_id="healthcare_cpi_vs_gross_monthly_income"
+                graphs=[
+                    (
+                        "healthcare_cpi_vs_gross_monthly_income",
+                        charts["healthcare_cpi_vs_gross_monthly_income"],
+                    )
+                ],
             ),
             # healthcare percentage
             create_section_title("CPI and Income Growth Trends"),
