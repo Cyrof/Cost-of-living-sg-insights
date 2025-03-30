@@ -3,10 +3,10 @@ import os
 os.environ["REACT_VERSION"] = "18.2.0"
 
 import dash_mantine_components as dmc
-from components.app_shell import DashboardAppShell
 from dash import Dash
 
 import dashboard.utils
+from dashboard.components.app_shell import DashboardAppShell
 
 FA = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 TW = "https://cdn.tailwindcss.com"
@@ -31,7 +31,15 @@ def init_app():
             "components": {
                 "Text": {
                     "defaultProps": {
+                        "size": "lg",
                         "ta": "justify",
+                    },
+                },
+                "List": {
+                    "defaultProps": {
+                        "size": "lg",
+                        "spacing": "md",
+                        "withPadding": True,
                     },
                 },
                 "ListItem": {

@@ -107,14 +107,12 @@ def create_card_graph(
 
 
 def create_section_title(title: str) -> dmc.Group:
-    return dmc.Group(
-        [
-            dmc.Divider(className="flex-grow", size="xs"),
-            dmc.Text(title, className="text-3xl font-bold mx-4"),
-            dmc.Divider(className="flex-grow", size="xs"),
+    return dmc.Stack(
+        children=[
+            dmc.Divider(),
+            dmc.Title(title, order=1),
+            dmc.Divider(),
         ],
-        justify="center",
-        className="my-6",
     )
 
 
