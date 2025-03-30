@@ -59,15 +59,6 @@ def layout():
                         spacing="md",
                         children=[
                             hoverableCard(
-                                chartID="percentage_change_in_healthcare_cpi_and_income",
-                                chart=charts[
-                                    "percentage_change_in_healthcare_cpi_and_income"
-                                ],
-                                cardName="Healthcare",
-                                desc="Are healthcare costs rising and impacting affordability and access?",
-                                href="/healthcare",
-                            ),
-                            hoverableCard(
                                 chartID="iras_tax_collection_bar",
                                 chart=charts["iras_tax_collection_bar"],
                                 cardName="Taxes",
@@ -80,6 +71,15 @@ def layout():
                                 cardName="Necessities",
                                 desc="Are the costs of essential goods and services, such as housing, food, healthcare and transportation, become less affordable?",
                                 href="/necessities",
+                            ),
+                            hoverableCard(
+                                chartID="percentage_change_in_healthcare_cpi_and_income",
+                                chart=charts[
+                                    "percentage_change_in_healthcare_cpi_and_income"
+                                ],
+                                cardName="Healthcare",
+                                desc="Are healthcare costs rising and impacting affordability and access?",
+                                href="/healthcare",
                             ),
                             hoverableCard(
                                 chartID="cpi_bubble_map",
