@@ -17,6 +17,11 @@ HEADER_FOOTER_BG: str = "indigo.6"
 HEADER_FOOTER_C: str = "white"
 
 SIDEBAR_BG: str = "gray.0"
+NAVLINK_COLOR: str = "indigo"
+
+# This is applied using Tailwind, so it must be a valid colour string,
+# not Mantine's colour names / shades.
+NAVLINK_HOVER_BG: str = dmc.DEFAULT_THEME["colors"]["gray"][1]
 
 
 def _id_from_title(title: str) -> str:
@@ -104,7 +109,11 @@ def DashboardNavbar() -> dmc.AppShellNavbar:
                             id=_id_from_title(title),
                             label=title,
                             href=href,
-                            classNames={"label": "text-xl"},
+                            color=NAVLINK_COLOR,
+                            classNames={
+                                "root": f"hover:bg-[{NAVLINK_HOVER_BG}]",
+                                "label": "text-xl",
+                            },
                         )
                         for title, href in LINKS.items()
                     ),
