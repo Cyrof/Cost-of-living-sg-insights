@@ -1,6 +1,4 @@
 import dash
-import plotly.express as px
-from dash import dcc, html
 import dash_mantine_components as dmc
 
 dash.register_page(__name__)
@@ -8,6 +6,7 @@ dash.register_page(__name__)
 
 def layout():
     return dmc.Center(
+        bg="pink.4",
         children=[
             dmc.Stack(
                 align="center",
@@ -28,12 +27,12 @@ def layout():
                         children=[
                             dmc.Button(
                                 "Go Home",
-                                className="bg-purple-600 hover:bg-purple-500 rounded-lg",
+                                className="rounded-lg",
                             )
                         ],
                     ),
                 ],
             )
         ],
-        className="fixed left-0 top-0 min-h-screen w-screen z-[9999] bg-[#f2f0eb]",
+        className="fixed left-0 top-0 min-h-screen w-screen z-[9999]",
     )

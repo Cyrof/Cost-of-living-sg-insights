@@ -13,6 +13,8 @@ def graphWrapper(id: str, figure: Figure, scale: float = 1.0) -> dmc.Box:
             wrapped_name_list = textwrap.wrap(original_name.strip(), width=20)
             trace.name = "<br>".join(wrapped_name_list)
 
+    figure.update_layout(template="mantine_light")
+
     return dmc.Box(
         children=[
             dcc.Graph(

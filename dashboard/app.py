@@ -2,16 +2,17 @@ import os
 
 os.environ["REACT_VERSION"] = "18.2.0"
 
-import dash
-from components.sidebar import sidebar
-from components.topBar import topbar
-from components.footer import footer
-from dash import Dash, dcc, html
 import dash_mantine_components as dmc
+from dash import Dash
+
 import dashboard.utils
+from dashboard.components.app_shell import DashboardAppShell
 
 FA = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 TW = "https://cdn.tailwindcss.com"
+
+# Add Mantine templates for styling Plotly figures.
+dmc.add_figure_templates(default="mantine_light")
 
 
 def init_app():
@@ -25,11 +26,20 @@ def init_app():
     )
 
     app.layout = dmc.MantineProvider(
+        forceColorScheme="light",
         theme={
             "components": {
                 "Text": {
                     "defaultProps": {
+                        "size": "lg",
                         "ta": "justify",
+                    },
+                },
+                "List": {
+                    "defaultProps": {
+                        "size": "lg",
+                        "spacing": "md",
+                        "withPadding": True,
                     },
                 },
                 "ListItem": {
@@ -37,43 +47,20 @@ def init_app():
                         "ta": "justify",
                     },
                 },
+                "Divider": {
+                    "defaultProps": {
+                        "size": "sm",
+                        "my": "lg",
+                    },
+                },
+                "Button": {
+                    "defaultProps": {
+                        "color": "pink",
+                    },
+                },
             },
         },
-        children=[
-            # dcc.location to tracks the current url
-            dcc.Location(id="url", refresh=False),
-            html.Div(
-                className="min-h-screen flex flex-col",
-                children=[
-                    html.Header(
-                        className="flex-none h-16",
-                        children=[
-                            topbar(),
-                            sidebar(),
-                        ],
-                    ),
-                    html.Main(
-                        children=[
-                            # page container
-                            dmc.Group(
-                                dmc.Box(
-                                    dash.page_container,
-                                    w=1000,
-                                ),
-                                className="py-8 px-20 bg-palette1",
-                                align="center",
-                                justify="center",
-                            ),
-                        ],
-                    ),
-                    html.Footer(
-                        children=[
-                            footer(),
-                        ]
-                    ),
-                ],
-            ),
-        ],
+        children=DashboardAppShell(),
     )
 
     with app.server.app_context():

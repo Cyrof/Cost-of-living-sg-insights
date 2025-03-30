@@ -1,12 +1,13 @@
 import dash
-import plotly.express as px
-from dash import dcc, html
 import dash_mantine_components as dmc
-from components.hoverCard import hoverableCard
 from plotly.graph_objects import Figure
-import dashboard.utils
 from text.home_text import *
-from components.textComponents import create_card, create_section_title
+
+import dashboard.utils
+from dashboard.components.hoverCard import hoverableCard
+from dashboard.components.textComponents import (create_card,
+                                                 create_page_title,
+                                                 create_section_title)
 
 dash.register_page(__name__, path="/")
 
@@ -16,82 +17,112 @@ def layout():
 
     return dmc.Stack(
         children=[
-            create_section_title(HYPO_QNS),
+            create_page_title(HYPO_QNS),
+            create_section_title("Introduction"),
             dmc.Group(
-                [
+                className="w-full",
+                grow=True,
+                gap="xl",
+                preventGrowOverflow=True,
+                align="flex-start",
+                children=[
                     # left panel text
-                    dmc.Box(
-                        [
-                            dmc.Text(
-                                "Introduction",
-                                className="text-xl font-semibold text-palette4 mb-4",
-                            ),
-                            dmc.Text(
-                                [INTRO_1, INTRO_2], className="text-lg text-palette4"
-                            ),
+                    dmc.Stack(
+                        children=[
+                            dmc.Text(INTRO_1),
+                            dmc.Text(INTRO_2),
                         ],
-                        className="h-full",
                     ),
                     # right panel text
-                    dmc.Box(
-                        [
-                            dmc.Text(
-                                "Specifically, we hypothesize that:",
-                                className="text-xl font-semibold text-palette4 mb-4",
-                            ),
+                    dmc.Stack(
+                        children=[
+                            dmc.Text("Specifically, we hypothesize that:"),
                             dmc.List(
-                                [
+                                listStyleType="disc",
+                                children=[
                                     dmc.ListItem(INTRO_BULLET_1),
                                     dmc.ListItem(INTRO_BULLET_2),
                                     dmc.ListItem(INTRO_BULLET_3),
                                 ],
-                                className="list-disc text-lg text-palette4",
                             ),
                         ],
-                        className="h-full",
                     ),
                 ],
-                className="w-full",
-                grow=True,
-                preventGrowOverflow=True,
-                align="flex-start",
             ),
-            dmc.Text(INTRO_3, className="text-lg text-palette4"),
-            create_section_title("Explore Key Insights"),
+            dmc.Text(INTRO_3),
+            dmc.Divider(),
+            create_section_title("Terminology"),
             dmc.Box(
                 [
                     dmc.SimpleGrid(
                         cols=2,
-                        spacing="sm",
+                        spacing="md",
+                        children=[
+                            create_card(
+                                "Good Service Tax (GST)",
+                                GST_DEF,
+                                stackGap=0,
+                                dividerKwargs={"size": "sm"},
+                            ),
+                            create_card(
+                                "Gross Domestic Product (GDP) per Capita",
+                                GDP_DEF,
+                                stackGap=0,
+                                dividerKwargs={"size": "sm"},
+                            ),
+                            create_card(
+                                "Consumer Price Index (CPI)",
+                                CPI_DEF,
+                                stackGap=0,
+                                dividerKwargs={"size": "sm"},
+                            ),
+                            create_card(
+                                "Purchasing Power Parity (PPP)",
+                                PPP_DEF,
+                                stackGap=0,
+                                dividerKwargs={"size": "sm"},
+                            ),
+                        ],
+                        className="my-6",
+                    )
+                ],
+            ),
+            dmc.Divider(),
+            create_section_title("Explore Insights"),
+            dmc.Box(
+                [
+                    dmc.SimpleGrid(
+                        cols=2,
+                        spacing="md",
                         children=[
                             hoverableCard(
-                                chartID="percentage_change_in_healthcare_cpi_and_income",
-                                chart=charts[
-                                    "percentage_change_in_healthcare_cpi_and_income"
-                                ],
-                                cardName="Healthcare",
-                                desc="Short description for healthcare",
-                                href="/healthcare",
-                            ),
-                            hoverableCard(
-                                chartID="cpi_vs_gst_line_bar",
-                                chart=charts["cpi_vs_gst_line_bar"],
+                                chartID="iras_tax_collection_bar",
+                                chart=charts["iras_tax_collection_bar"],
                                 cardName="Taxes",
-                                desc="Short description for taxes",
+                                desc="Is Singapore's tax system effective? How does it affect different income levels and property values?",
                                 href="/taxes",
                             ),
                             hoverableCard(
                                 chartID="necessities_cpi_vs_income",
                                 chart=charts["necessities_cpi_vs_income"],
                                 cardName="Necessities",
-                                desc="Short description for necessities",
+                                desc="Are the costs of essential goods and services, such as housing, food, healthcare and transportation, become less affordable?",
                                 href="/necessities",
+                            ),
+                            hoverableCard(
+                                chartID="percentage_change_in_healthcare_cpi_and_income",
+                                chart=charts[
+                                    "percentage_change_in_healthcare_cpi_and_income"
+                                ],
+                                cardName="Healthcare",
+                                desc="Are healthcare costs rising and impacting affordability and access?",
+                                href="/healthcare",
                             ),
                             hoverableCard(
                                 chartID="cpi_bubble_map",
                                 chart=charts["cpi_bubble_map"],
                                 cardName="Global",
-                                desc="Short description for global",
+                                desc="How does Singapore's economic situation compare with other countries?",
                                 href="/global",
                             ),
                         ],
@@ -99,16 +130,15 @@ def layout():
                     )
                 ],
             ),
+            dmc.Divider(),
             create_section_title("Our Final Thoughts"),
             dmc.Stack(
                 [
-                    dmc.Text(CONCLUSION_1, className="text-lg text-palette4"),
-                    dmc.Text(CONCLUSION_2, className="text-lg text-palette4"),
-                    dmc.Text(CONCLUSION_3, className="text-lg text-palette4"),
-                    dmc.Text(CONCLUSION_4, className="text-lg text-palette4"),
+                    dmc.Text(CONCLUSION_1),
+                    dmc.Text(CONCLUSION_2),
+                    dmc.Text(CONCLUSION_3),
+                    dmc.Text(CONCLUSION_4),
                 ],
-                className="px-6",
             ),
         ],
-        className="pb-12",
     )

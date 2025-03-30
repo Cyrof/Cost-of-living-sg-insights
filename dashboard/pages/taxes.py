@@ -1,17 +1,12 @@
 import dash
 import dash_mantine_components as dmc
-from components.graphWrapper import graphWrapper
-from components.textComponents import (
-    create_card,
-    create_card_graph,
-    create_section_title,
-)
-from dash import dcc, html
 from dash.development.base_component import Component
 from plotly.graph_objects import Figure
 from text.taxesText import *
 
 import dashboard.utils
+from dashboard.components.textComponents import (create_card_graph,
+                                                 create_page_title)
 
 dash.register_page(__name__)
 
@@ -19,29 +14,30 @@ dash.register_page(__name__)
 def layout() -> Component:
     charts: dict[str, Figure] = dashboard.utils.load_taxes_charts()
     return dmc.Stack(
-        [
+        className="w-full",
+        gap="md",
+        children=[
             # header
-            dmc.Paper(
-                dmc.Stack(
-                    [
-                        dmc.Title(
-                            "Taxes Dashboard",
-                            className="text-4xl font-extrabold text-palette4 text-center",
-                        ),
-                        dmc.Title(
-                            "Tracking tax policies and financial impacts",
-                            order=2,
-                            className="text-xl font-medium text-palette3 text-center opacity-80",
-                        ),
-                    ],
-                    gap="xs",
-                    className="py-6",
-                ),
-                className="bg-palette1 rounded-xl mb-8 shadow-lg w-full",
-                withBorder=False,
+            create_page_title(
+                "Taxes",
+                "Analysing tax policies and financial impacts",
             ),
+            # overview
+            dmc.Title("How much tax does the IRAS collect?", order=2),
+            create_card_graph(
+                title="Tax Collected by the IRAS",
+                short_desc=TAX_COLLECTED_IRAS_Short,
+                full_desc=TAX_COLLECTED_IRAS,
+                graphs=[
+                    (
+                        "iras_tax_collection_bar",
+                        charts["iras_tax_collection_bar"],
+                    )
+                ],
+            ),
+            dmc.Divider(),
             # gst section
-            create_section_title("Goods and Service Tax (GST) Overview"),
+            dmc.Title("How does the goods and service tax (GST) affect CPI?", order=2),
             create_card_graph(
                 title="CPI against GST",
                 short_desc=CPI_AGAINST_GST_Short,
@@ -53,19 +49,9 @@ def layout() -> Component:
                     ),
                 ],
             ),
-            create_card_graph(
-                title="Tax Collected By IRAS",
-                short_desc=TAX_COLLECTED_IRAS_Short,
-                full_desc=TAX_COLLECTED_IRAS,
-                graphs=[
-                    (
-                        "iras_tax_collection_bar",
-                        charts["iras_tax_collection_bar"],
-                    )
-                ],
-            ),
+            dmc.Divider(),
             # income tax
-            create_section_title("Income Tax Trends & Analysis"),
+            dmc.Title("What are the income tax trends?", order=2),
             create_card_graph(
                 title="Income Tax Rates Step Line",
                 short_desc=INCOME_TAX_STEP_Short,
@@ -80,8 +66,9 @@ def layout() -> Component:
                 full_desc=INCOME_TAX_HEATMAP,
                 graphs=[("income_tax_heatmap", charts["income_tax_heatmap"])],
             ),
+            dmc.Divider(),
             # property tax
-            create_section_title("Property Tax Insights"),
+            dmc.Title("What are the property tax trends?", order=2),
             create_card_graph(
                 title="Property Tax (Annual Value)",
                 short_desc=PROPERTY_TAX_ANNUAL_Short,
@@ -104,32 +91,9 @@ def layout() -> Component:
                     )
                 ],
             ),
+            dmc.Divider(),
             # recommendation
-            create_section_title("Strategic Recommendations"),
-            dmc.Paper(
-                dmc.Stack(
-                    [
-                        dmc.Text(
-                            "Expert Recommendations",
-                            className="text-2xl font-bold text-palette3",
-                        ),
-                        dmc.Divider(
-                            className="my-2", color="var(--palette3)", size="sm"
-                        ),
-                        dmc.Text(
-                            TAX_RECO,
-                            className="text-base font-nnormal leading-relaxed text-palette3",
-                        ),
-                    ],
-                    className="p-6",
-                ),
-                shadow="sm",
-                radius="lg",
-                className="bg-white transition-all duration-300 hover:shadow-xl mt-2 mb-12 w-full",
-                withBorder=True,
-                style={"borderColor": "var(--palette3)", "borderWidth": "2px"},
-            ),
+            dmc.Title("Our Recommendations", order=2),
+            dmc.Text(TAX_RECO),
         ],
-        className="p-8 w-full",
-        gap="md",
     )

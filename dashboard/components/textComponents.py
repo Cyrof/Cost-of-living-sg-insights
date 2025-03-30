@@ -1,32 +1,41 @@
 from typing import Any
 
 import dash_mantine_components as dmc
-from components.graphWrapper import graphWrapper
-from dash import MATCH, Input, Output, State, callback
+from dash import (MATCH, ClientsideFunction, Input, Output, State,
+                  clientside_callback)
 from plotly.graph_objects import Figure
 
+from dashboard.components.graphWrapper import graphWrapper
 
-def create_card(title: str, description: str, className: str = "") -> dmc.Paper:
+
+def create_card(
+    title: str,
+    description: str,
+    className: str = "",
+    stackGap: str | int = "md",
+    dividerKwargs: dict[str, Any] | None = None,
+) -> dmc.Paper:
+    dividerKwargs = dividerKwargs or {"className": "my-2", "size": "sm"}
     return dmc.Paper(
         [
             dmc.Stack(
-                [
-                    dmc.Text(title, className="text-2xl font-bold text-palette3"),
-                    dmc.Divider(className="my-2", color="var(--palette3)", size="sm"),
+                gap=stackGap,
+                className="p-6",
+                children=[
+                    dmc.Text(title, className="text-2xl font-bold"),
+                    dmc.Divider(**dividerKwargs),
                     dmc.Text(
                         description,
-                        className="text-base font-normal text-palette3 leading-relaxed",
+                        className="text-base font-normal leading-relaxed",
                     ),
                 ],
-                className="p-6",
             )
         ],
         shadow="sm",
         radius="lg",
-        className=f"bg-white transition-all duration-300 hover:shadow-xl {className}",
+        className=f"transition-all duration-300 hover:shadow-xl {className}",
         withBorder=True,
         style={
-            "borderColor": "var(--palette3)",
             "borderWidth": "2px",
             "height": "100%",
         },
@@ -63,22 +72,22 @@ def create_card_graph(
             dmc.Stack(
                 [
                     # title
-                    dmc.Text(title, className="text-2xl font-bold text-palette3"),
-                    dmc.Divider(className="my-2", color="var(--palette3)", size="sm"),
+                    dmc.Title(title, order=3),
+                    dmc.Divider(my="sm"),
                     # graph
                     graph_component,
                     # short description
                     dmc.Text(
                         short_desc,
                         id=f"{graphs[0][0]}-short-desc",
-                        className="text-base font-normal text-palette3 loading-relaxed mt-4",
+                        className="text-base font-normal loading-relaxed mt-4",
                     ),
                     # collapsible desc
                     dmc.Collapse(
                         [
                             dmc.Text(
                                 full_desc,
-                                className="text-base font-normal text-palette3 loading-relaxed",
+                                className="text-base font-normal loading-relaxed",
                             ),
                         ],
                         id={"type": "collapse-desc", "index": graphs[0][0]},
@@ -97,41 +106,55 @@ def create_card_graph(
         ],
         shadow="sm",
         radius="lg",
-        className=f"bg-white transition-all duration-300 hover:shadow-xl {className}",
+        mb="md",
+        className=f"transition-all duration-300 hover:shadow-xl {className}",
         withBorder=True,
         style={
-            "borderColor": "var(--palette3)",
             "borderWidth": "2px",
             "height": "100%",
         },
     )
 
 
-def create_section_title(title: str) -> dmc.Group:
-    return dmc.Group(
-        [
-            dmc.Divider(className="flex-grow", color="var(--palette2)", size="xs"),
-            dmc.Text(title, className="text-3xl font-bold mx-4 text-palette4"),
-            dmc.Divider(className="flex-grow", color="var(--palette2)", size="xs"),
+def create_page_title(
+    title: str, subtitle: str | None = None, centered: bool = True
+) -> dmc.Group:
+    content_children = [
+        dmc.Title(title, order=1, ta="center" if centered else "left"),
+    ]
+
+    if subtitle:
+        content_children.append(
+            dmc.Title(
+                subtitle, order=3, opacity="70%", ta="center" if centered else "left"
+            )
+        )
+
+    content = dmc.Stack(
+        gap=2,
+        align="center" if centered else "flex-start",
+        children=content_children,
+    )
+
+    return dmc.Stack(
+        mb="lg",
+        children=[
+            dmc.Divider(my=0),
+            content,
+            dmc.Divider(my=0),
         ],
-        justify="center",
-        className="my-6",
     )
 
 
-@callback(
-    [
-        Output({"type": "collapse-desc", "index": MATCH}, "in"),
-        Output({"type": "toggle-desc", "index": MATCH}, "children"),
-    ],
+def create_section_title(title: str) -> dmc.Group:
+    return dmc.Title(title, order=2)
+
+
+# For toggling "Read more".
+clientside_callback(
+    ClientsideFunction(namespace="clientside", function_name="toggleCard"),
+    Output({"type": "collapse-desc", "index": MATCH}, "in"),
+    Output({"type": "toggle-desc", "index": MATCH}, "children"),
     Input({"type": "toggle-desc", "index": MATCH}, "n_clicks"),
     State({"type": "collapse-desc", "index": MATCH}, "in"),
 )
-def toggle_card_ssr(n_clicks, is_open):
-    if not n_clicks:
-        return False, "Read More"
-    # Toggle based on the click count: odd -> open, even -> closed.
-    if n_clicks % 2 == 1:
-        return True, "Show Less"
-    else:
-        return False, "Read More"

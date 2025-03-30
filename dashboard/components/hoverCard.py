@@ -1,9 +1,9 @@
 import base64
-import cachetools
-from cachetools.keys import hashkey
 
+import cachetools
 import dash_mantine_components as dmc
 import plotly.io as pio
+from cachetools.keys import hashkey
 from dash import dcc, html
 from plotly.graph_objects import Figure
 
@@ -24,39 +24,52 @@ def hoverableCard(
     # conver to based64 image
     img_data = fig_to_base64(chartID, chart)
 
-    return html.Div(
+    return dmc.Box(
         className="group w-full",
         children=[
-            dmc.Card(
-                children=[
-                    # card image
-                    dmc.CardSection(
-                        html.Img(src=img_data, className="w-auto h-60 block mx-auto "),
-                    ),
-                    # card title
-                    dmc.Group(
-                        children=[
-                            dmc.Text(
-                                cardName, className="text-xl font-semibold text-center"
-                            )
-                        ],
-                        className="justify-center",
-                    ),
-                    # on hover context1
-                    html.Div(
-                        children=[
-                            dmc.Text(desc),
-                            dcc.Link(dmc.Button("Explore More"), href=href),
-                        ],
-                        className=(
-                            "transition-all duration-300 opacity-0 max-h-0 overflow-hidden p-4 text-center "
-                            "group-hover:opacity-100 group-hover:max-h-[200px]"
-                        ),
-                    ),
-                ],
+            dmc.Paper(
+                p=30,
+                h="auto",
+                radius="md",
                 className=(
-                    "border rounded-xl overflow-hidden transition-all duration-300 p-4 m-4 w-full h-auto mx-auto "
+                    "border transition-all duration-300 "
                     "transform group-hover:scale-105 shadow-xl"
+                ),
+                children=dmc.Stack(
+                    gap="xs",
+                    children=[
+                        # card image
+                        dmc.Stack(
+                            p=0,
+                            h=300,
+                            justify="center",
+                            children=html.Img(
+                                className="h-auto w-full object-contain",
+                                src=img_data,
+                            ),
+                        ),
+                        # card title
+                        dmc.Title(
+                            cardName,
+                            order=4,
+                            ta="center",
+                        ),
+                        # On-hover context
+                        dmc.Stack(
+                            gap="md",
+                            className=(
+                                "transition-all duration-300 opacity-0 max-h-0 overflow-hidden "
+                                "group-hover:opacity-100 group-hover:max-h-[200px]"
+                            ),
+                            children=[
+                                dmc.Text(desc),
+                                dmc.Group(
+                                    dcc.Link(dmc.Button("Explore More"), href=href),
+                                    justify="center",
+                                ),
+                            ],
+                        ),
+                    ],
                 ),
             )
         ],

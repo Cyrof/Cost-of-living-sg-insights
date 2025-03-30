@@ -88,7 +88,7 @@ def load_home_charts() -> dict[str, Figure]:
         "percentage_change_in_healthcare_cpi_and_income": load_chart_json(
             "percentage_change_in_healthcare_cpi_and_income.json"
         ),
-        "cpi_vs_gst_line_bar": load_chart_json("cpi_vs_gst_line_bar.json"),
+        "iras_tax_collection_bar": load_chart_json("iras_tax_collection_bar.json"),
         "necessities_cpi_vs_income": load_chart_json("necessities_cpi_vs_income.json"),
         "cpi_bubble_map": load_chart_json("cpi_bubble_map.json"),
     }
