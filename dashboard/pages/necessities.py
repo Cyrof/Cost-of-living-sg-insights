@@ -21,7 +21,7 @@ def layout() -> Component:
         children=[
             # Header
             create_page_title(
-                "Necessities Dashboard",
+                "Necessities",
                 "Analysing essential expenses and economic indicators",
             ),
             create_section_title("What are the cost of living trends?"),

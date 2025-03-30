@@ -20,7 +20,7 @@ def layout() -> Component:
         children=[
             # header
             create_page_title(
-                "Healthcare Dashboard",
+                "Healthcare",
                 "Analysing healthcare costs and market dynamics",
             ),
             # healthcare breakdown
