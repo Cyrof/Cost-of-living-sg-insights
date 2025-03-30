@@ -53,6 +53,11 @@ def init_app():
                         "my": "lg",
                     },
                 },
+                "Button": {
+                    "defaultProps": {
+                        "color": "pink",
+                    },
+                },
             },
         },
         children=DashboardAppShell(),

@@ -13,11 +13,11 @@ LINKS: dict[str, str] = {
 }
 
 
-HEADER_FOOTER_BG: str = "indigo.6"
+HEADER_FOOTER_BG: str = "pink"
 HEADER_FOOTER_C: str = "white"
 
 SIDEBAR_BG: str = "gray.0"
-NAVLINK_COLOR: str = "indigo"
+NAVLINK_COLOR: str = "pink"
 
 # This is applied using Tailwind, so it must be a valid colour string,
 # not Mantine's colour names / shades.
