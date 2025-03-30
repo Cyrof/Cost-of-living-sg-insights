@@ -37,7 +37,7 @@ def DashboardAppShell() -> dmc.AppShell:
             DashboardNavbar(),
             dmc.AppShellMain(
                 children=[
-                    dmc.Space(h="lg"),
+                    dmc.Space(h="xl"),
                     # Page content
                     dmc.Group(
                         dmc.Box(
@@ -48,7 +48,7 @@ def DashboardAppShell() -> dmc.AppShell:
                         align="center",
                         justify="center",
                     ),
-                    dmc.Space(h="lg"),
+                    dmc.Space(h="xl"),
                     DashboardFooter(),
                 ],
             ),
