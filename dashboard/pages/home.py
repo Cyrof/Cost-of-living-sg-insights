@@ -5,7 +5,9 @@ from text.home_text import *
 
 import dashboard.utils
 from dashboard.components.hoverCard import hoverableCard
-from dashboard.components.textComponents import create_page_title, create_section_title
+from dashboard.components.textComponents import (create_card,
+                                                 create_page_title,
+                                                 create_section_title)
 
 dash.register_page(__name__, path="/")
 
@@ -48,6 +50,43 @@ def layout():
                 ],
             ),
             dmc.Text(INTRO_3),
+            dmc.Divider(),
+            create_section_title("Terminology"),
+            dmc.Box(
+                [
+                    dmc.SimpleGrid(
+                        cols=2,
+                        spacing="md",
+                        children=[
+                            create_card(
+                                "Good Service Tax (GST)",
+                                GST_DEF,
+                                stackGap=0,
+                                dividerKwargs={"size": "sm"},
+                            ),
+                            create_card(
+                                "Gross Domestic Product (GDP) per Capita",
+                                GDP_DEF,
+                                stackGap=0,
+                                dividerKwargs={"size": "sm"},
+                            ),
+                            create_card(
+                                "Consumer Price Index (CPI)",
+                                CPI_DEF,
+                                stackGap=0,
+                                dividerKwargs={"size": "sm"},
+                            ),
+                            create_card(
+                                "Purchasing Power Parity (PPP)",
+                                PPP_DEF,
+                                stackGap=0,
+                                dividerKwargs={"size": "sm"},
+                            ),
+                        ],
+                        className="my-6",
+                    )
+                ],
+            ),
             dmc.Divider(),
             create_section_title("Explore Insights"),
             dmc.Box(

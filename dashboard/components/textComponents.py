@@ -1,26 +1,34 @@
 from typing import Any
 
 import dash_mantine_components as dmc
-from dash import (MATCH, ClientsideFunction, Input, Output, State, callback,
-                  clientside_callback, dcc)
+from dash import (MATCH, ClientsideFunction, Input, Output, State,
+                  clientside_callback)
 from plotly.graph_objects import Figure
 
 from dashboard.components.graphWrapper import graphWrapper
 
 
-def create_card(title: str, description: str, className: str = "") -> dmc.Paper:
+def create_card(
+    title: str,
+    description: str,
+    className: str = "",
+    stackGap: str | int = "md",
+    dividerKwargs: dict[str, Any] | None = None,
+) -> dmc.Paper:
+    dividerKwargs = dividerKwargs or {"className": "my-2", "size": "sm"}
     return dmc.Paper(
         [
             dmc.Stack(
-                [
+                gap=stackGap,
+                className="p-6",
+                children=[
                     dmc.Text(title, className="text-2xl font-bold"),
-                    dmc.Divider(className="my-2", size="sm"),
+                    dmc.Divider(**dividerKwargs),
                     dmc.Text(
                         description,
                         className="text-base font-normal leading-relaxed",
                     ),
                 ],
-                className="p-6",
             )
         ],
         shadow="sm",
