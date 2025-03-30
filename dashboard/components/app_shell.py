@@ -96,7 +96,7 @@ def DashboardNavbar() -> dmc.AppShellNavbar:
             dmc.Stack(
                 children=[
                     dmc.Title("Dashboard Navigation", order=3),
-                    dmc.Divider(),
+                    dmc.Divider(my=0),
                     *(
                         dmc.NavLink(
                             id=_id_from_title(title),

@@ -47,6 +47,12 @@ def init_app():
                         "ta": "justify",
                     },
                 },
+                "Divider": {
+                    "defaultProps": {
+                        "size": "sm",
+                        "my": "lg",
+                    },
+                },
             },
         },
         children=DashboardAppShell(),

@@ -63,8 +63,8 @@ def create_card_graph(
             dmc.Stack(
                 [
                     # title
-                    dmc.Text(title, className="text-2xl font-bold"),
-                    dmc.Divider(className="my-2", size="sm"),
+                    dmc.Title(title, order=3),
+                    dmc.Divider(my="sm"),
                     # graph
                     graph_component,
                     # short description
@@ -97,6 +97,7 @@ def create_card_graph(
         ],
         shadow="sm",
         radius="lg",
+        mb="md",
         className=f"transition-all duration-300 hover:shadow-xl {className}",
         withBorder=True,
         style={
@@ -106,14 +107,38 @@ def create_card_graph(
     )
 
 
-def create_section_title(title: str) -> dmc.Group:
+def create_page_title(
+    title: str, subtitle: str | None = None, centered: bool = True
+) -> dmc.Group:
+    content_children = [
+        dmc.Title(title, order=1, ta="center" if centered else "left"),
+    ]
+
+    if subtitle:
+        content_children.append(
+            dmc.Title(
+                subtitle, order=3, opacity="70%", ta="center" if centered else "left"
+            )
+        )
+
+    content = dmc.Stack(
+        gap=2,
+        align="center" if centered else "flex-start",
+        children=content_children,
+    )
+
     return dmc.Stack(
+        mb="lg",
         children=[
-            dmc.Divider(),
-            dmc.Title(title, order=1),
-            dmc.Divider(),
+            dmc.Divider(my=0),
+            content,
+            dmc.Divider(my=0),
         ],
     )
+
+
+def create_section_title(title: str) -> dmc.Group:
+    return dmc.Title(title, order=2)
 
 
 @callback(

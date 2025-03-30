@@ -5,7 +5,7 @@ from text.home_text import *
 
 import dashboard.utils
 from dashboard.components.hoverCard import hoverableCard
-from dashboard.components.textComponents import create_section_title
+from dashboard.components.textComponents import create_page_title, create_section_title
 
 dash.register_page(__name__, path="/")
 
@@ -15,11 +15,8 @@ def layout():
 
     return dmc.Stack(
         children=[
-            create_section_title(HYPO_QNS),
-            dmc.Title(
-                "Introduction",
-                order=2,
-            ),
+            create_page_title(HYPO_QNS),
+            create_section_title("Introduction"),
             dmc.Group(
                 className="w-full",
                 grow=True,
@@ -51,6 +48,7 @@ def layout():
                 ],
             ),
             dmc.Text(INTRO_3),
+            dmc.Divider(),
             create_section_title("Explore Insights"),
             dmc.Box(
                 [
@@ -93,6 +91,7 @@ def layout():
                     )
                 ],
             ),
+            dmc.Divider(),
             create_section_title("Our Final Thoughts"),
             dmc.Stack(
                 [
