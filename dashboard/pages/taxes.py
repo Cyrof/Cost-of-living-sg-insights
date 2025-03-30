@@ -1,10 +1,14 @@
 import dash
+import dash_mantine_components as dmc
+from components.graphWrapper import graphWrapper
+from components.textComponents import (
+    create_card,
+    create_card_graph,
+    create_section_title,
+)
 from dash import dcc, html
 from dash.development.base_component import Component
 from plotly.graph_objects import Figure
-import dash_mantine_components as dmc
-from components.graphWrapper import graphWrapper
-from components.textComponents import create_card, create_section_title
 from text.taxesText import *
 
 import dashboard.utils
@@ -20,180 +24,83 @@ def layout() -> Component:
             dmc.Paper(
                 dmc.Stack(
                     [
-                        dmc.Text(
+                        dmc.Title(
                             "Taxes Dashboard",
-                            className="text-4xl font-extrabold text-palette4 text-center"
+                            className="text-4xl font-extrabold text-palette4 text-center",
                         ),
-                        dmc.Text(
+                        dmc.Title(
                             "Tracking tax policies and financial impacts",
-                            className="text-xl font-medium text-palette3 text-center opacity-80"
-                        )
+                            order=2,
+                            className="text-xl font-medium text-palette3 text-center opacity-80",
+                        ),
                     ],
                     gap="xs",
-                    className="py-6"
+                    className="py-6",
                 ),
                 className="bg-palette1 rounded-xl mb-8 shadow-lg w-full",
                 withBorder=False,
             ),
             # gst section
             create_section_title("Goods and Service Tax (GST) Overview"),
-            dmc.SimpleGrid(
-                cols=2,
-                spacing="lg",
-                children=[
-                    create_card(
-                        "CPI against GST",
-                        CPI_AGAINST_GST,
-                        "w-full"
+            create_card_graph(
+                title="CPI against GST",
+                short_desc=CPI_AGAINST_GST_Short,
+                full_desc=CPI_AGAINST_GST,
+                graphs=[
+                    (
+                        "cpi_vs_gst_line_bar",
+                        charts["cpi_vs_gst_line_bar"],
                     ),
-                    create_card(
-                        "Tax Collected By IRAS",
-                        TAX_COLLECTED_IRAS,
-                        "w-full"
-                    ),
-                    dmc.Paper(
-                        graphWrapper(
-                            id="cpi_vs_gst_line_bar",
-                            figure=charts["cpi_vs_gst_line_bar"]
-                        ),
-                        shadow="sm",
-                        radius="lg",
-                        className="w-full transition-all duration-300 hover:shadow-xl",
-                        withBorder=True,
-                        style={
-                            "borderColor": "var(--palette3)",
-                            "borderWidth": "2px"
-                        }
-                    ),
-                    dmc.Paper(
-                        graphWrapper(
-                            id="iras_tax_collection_bar",
-                            figure=charts["iras_tax_collection_bar"]
-                        ),
-                        shadow="sm",
-                        radius="lg",
-                        className="w-full transition-all duration-300 hover:shadow-xl",
-                        withBorder=True,
-                        style={
-                            "borderColor": "var(--palette3)",
-                            "borderWidth": "2px"
-                        }
-                    ),
+                ],
+            ),
+            create_card_graph(
+                title="Tax Collected By IRAS",
+                short_desc=TAX_COLLECTED_IRAS_Short,
+                full_desc=TAX_COLLECTED_IRAS,
+                graphs=[
+                    (
+                        "iras_tax_collection_bar",
+                        charts["iras_tax_collection_bar"],
+                    )
                 ],
             ),
             # income tax
             create_section_title("Income Tax Trends & Analysis"),
-            dmc.Stack(
-                [
-                    dmc.Group(
-                        gap="xl",
-                        grow=True,
-                        children=[
-                            create_card(
-                                "Income Tax Rates Step Line",
-                                INCOME_TAX_STEP,
-                                "w-1/2"
-                            ),
-                            dmc.Paper(
-                                graphWrapper(
-                                    id="income_tax_rates_step_line",
-                                    figure=charts["income_tax_rates_step_line"]
-                                ),
-                                shadow="sm",
-                                radius="lg",
-                                className="w-1/2 transition-all duration-300 hover:shadow-xl h-auto",
-                                withBorder=True,
-                                style={
-                                    "borderColor": "var(--palette3)",
-                                    "borderWidth": "2px"
-                                }
-                            ),
-                        ],
-                        className="mt-2 h-[28rem] w-full"
-                    ),
-                    dmc.Group(
-                        gap="xl",
-                        grow=True,
-                        children=[
-                            dmc.Paper(
-                                graphWrapper(
-                                    id="income_tax_heatmap",
-                                    figure=charts["income_tax_heatmap"]
-                                ),
-                                shadow="sm",
-                                radius="lg",
-                                className="w-1/2 transition-all duration-300 hover:shadow-xl h-auto",
-                                withBorder=True,
-                                style={
-                                    "borderColor": "var(--palette3)",
-                                    "borderWidth": "2px"
-                                }
-                            ),
-                            create_card(
-                                "Percentage of Assessed Income Paid in Taxes",
-                                INCOME_TAX_HEATMAP,
-                                "w-1/2"
-                            )
-                        ],
-                        className="mt-2 h-[28rem] w-full"
-                    )
+            create_card_graph(
+                title="Income Tax Rates Step Line",
+                short_desc=INCOME_TAX_STEP_Short,
+                full_desc=INCOME_TAX_STEP,
+                graphs=[
+                    ("income_tax_rates_step_line", charts["income_tax_rates_step_line"])
                 ],
+            ),
+            create_card_graph(
+                title="Percentage of Assessed Income Paid in Taxes",
+                short_desc=INCOME_TAX_HEATMAP_Short,
+                full_desc=INCOME_TAX_HEATMAP,
+                graphs=[("income_tax_heatmap", charts["income_tax_heatmap"])],
             ),
             # property tax
             create_section_title("Property Tax Insights"),
-            dmc.Stack(
-                [
-                    dmc.Group(
-                        gap="lg",
-                        grow=True,
-                        children=[
-                            create_card(
-                                "Property Tax (Annual Value)",
-                                PROPERTY_TAX_ANNUAL,
-                                "w-1/2"
-                            ),
-                            dmc.Paper(
-                                graphWrapper(
-                                    id="property_tax_rates_step_line",
-                                    figure=charts["property_tax_rates_step_line"]
-                                ),
-                                shadow="sm",
-                                radius="lg",
-                                className="w-1/2 transition-all duration-300 hover:shadow-xl h-auto",
-                                withBorder=True,
-                                style={
-                                    "borderColor": "var(--palette3)",
-                                    "borderWidth": "2px"
-                                }
-                            )
-                        ],
-                        className="mt-2 h-[28rem] w-full"
-                    ),
-                    dmc.Group(
-                        gap="lg",
-                        grow=True,
-                        children=[
-                            dmc.Paper(
-                                graphWrapper(
-                                    id="property_tax_collection_annual_value_bubble",
-                                    figure=charts["property_tax_collection_annual_value_bubble"]
-                                ),
-                                shadow="sm",
-                                radius="lg",
-                                className="w-1/2 transition-all duration-300 hover:shadow-xl h-auto",
-                                withBorder=True,
-                                style={
-                                    "borderColor": "var(--palette3)",
-                                    "borderWidth": "2px"
-                                }
-                            ),
-                            create_card(
-                                "Property Tax (Annual Value by Year & HDB Types)",
-                                PROPERTY_TAX_ANNUAL_HDB,
-                                "w-1/2"
-                            )
-                        ],
-                        className="mt-2 h-[28rem] w-full"
+            create_card_graph(
+                title="Property Tax (Annual Value)",
+                short_desc=PROPERTY_TAX_ANNUAL_Short,
+                full_desc=PROPERTY_TAX_ANNUAL,
+                graphs=[
+                    (
+                        "property_tax_rates_step_line",
+                        charts["property_tax_rates_step_line"],
+                    )
+                ],
+            ),
+            create_card_graph(
+                title="Property Tax (Annual Value by Year & HDB Types)",
+                short_desc=PROPERTY_TAX_ANNUAL_HDB_Short,
+                full_desc=PROPERTY_TAX_ANNUAL_HDB,
+                graphs=[
+                    (
+                        "property_tax_collection_annual_value_bubble",
+                        charts["property_tax_collection_annual_value_bubble"],
                     )
                 ],
             ),
@@ -207,27 +114,22 @@ def layout() -> Component:
                             className="text-2xl font-bold text-palette3",
                         ),
                         dmc.Divider(
-                            className="my-2",
-                            color="var(--palette3)",
-                            size="sm"
+                            className="my-2", color="var(--palette3)", size="sm"
                         ),
                         dmc.Text(
                             TAX_RECO,
-                            className="pl-6 text-base font-nnormal leading-relaxed text-palette3"
-                        )
+                            className="text-base font-nnormal leading-relaxed text-palette3",
+                        ),
                     ],
-                    className="p-6"
+                    className="p-6",
                 ),
                 shadow="sm",
                 radius="lg",
                 className="bg-white transition-all duration-300 hover:shadow-xl mt-2 mb-12 w-full",
                 withBorder=True,
-                style={
-                    "borderColor": "var(--palette3)",
-                    "borderWidth": "2px"
-                }
-            )
+                style={"borderColor": "var(--palette3)", "borderWidth": "2px"},
+            ),
         ],
         className="p-8 w-full",
-        gap="md"
+        gap="md",
     )
