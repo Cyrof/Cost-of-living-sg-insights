@@ -42,10 +42,7 @@ def layout() -> Component:
             ),
             dmc.Divider(),
             # recommendation
-            create_section_title("Strategic Recommendations"),
-            dmc.Text(
-                GLOBAL_RECO,
-                className="text-base font-normal leading-relaxed",
-            ),
+            create_section_title("Our Recommendations"),
+            dmc.Text(GLOBAL_RECO),
         ],
     )

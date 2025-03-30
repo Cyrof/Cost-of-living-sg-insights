@@ -67,9 +67,6 @@ def layout() -> Component:
             dmc.Divider(),
             # recommendation
             create_section_title("Our Recommendations"),
-            dmc.Text(
-                NECESSITIES_RECO,
-                className="text-base font-normal leading-relaxed",
-            ),
+            dmc.Text(NECESSITIES_RECO),
         ],
     )

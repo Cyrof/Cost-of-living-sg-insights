@@ -81,8 +81,6 @@ def layout() -> Component:
             dmc.Divider(),
             # recommendation
             create_section_title("Our Recommendations"),
-            dmc.Text(
-                HEALTHCARE_RECO,
-            ),
+            dmc.Text(HEALTHCARE_RECO),
         ],
     )

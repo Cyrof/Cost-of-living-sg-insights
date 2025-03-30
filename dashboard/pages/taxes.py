@@ -94,8 +94,6 @@ def layout() -> Component:
             dmc.Divider(),
             # recommendation
             dmc.Title("Our Recommendations", order=2),
-            dmc.Text(
-                TAX_RECO,
-            ),
+            dmc.Text(TAX_RECO),
         ],
     )
