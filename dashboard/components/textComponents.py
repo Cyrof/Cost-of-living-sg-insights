@@ -1,7 +1,8 @@
 from typing import Any
 
 import dash_mantine_components as dmc
-from dash import MATCH, Input, Output, State, callback
+from dash import (MATCH, ClientsideFunction, Input, Output, State, callback,
+                  clientside_callback, dcc)
 from plotly.graph_objects import Figure
 
 from dashboard.components.graphWrapper import graphWrapper
@@ -141,19 +142,11 @@ def create_section_title(title: str) -> dmc.Group:
     return dmc.Title(title, order=2)
 
 
-@callback(
-    [
-        Output({"type": "collapse-desc", "index": MATCH}, "in"),
-        Output({"type": "toggle-desc", "index": MATCH}, "children"),
-    ],
+# For toggling "Read more".
+clientside_callback(
+    ClientsideFunction(namespace="clientside", function_name="toggleCard"),
+    Output({"type": "collapse-desc", "index": MATCH}, "in"),
+    Output({"type": "toggle-desc", "index": MATCH}, "children"),
     Input({"type": "toggle-desc", "index": MATCH}, "n_clicks"),
     State({"type": "collapse-desc", "index": MATCH}, "in"),
 )
-def toggle_card_ssr(n_clicks, is_open):
-    if not n_clicks:
-        return False, "Read More"
-    # Toggle based on the click count: odd -> open, even -> closed.
-    if n_clicks % 2 == 1:
-        return True, "Show Less"
-    else:
-        return False, "Read More"
