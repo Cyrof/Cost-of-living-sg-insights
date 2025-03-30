@@ -12,9 +12,11 @@ LINKS: dict[str, str] = {
     "Global": "/global",
 }
 
-LINK_CLASSES_DEFAULT: str = "hover:text-[#00ff88]"
 
-LINK_CLASSES_CURRENT_PATH: str = "block px-5 py-3 text-[#00ff88] text-xl font-semibold "
+HEADER_FOOTER_BG: str = "indigo.6"
+HEADER_FOOTER_C: str = "white"
+
+SIDEBAR_BG: str = "gray.0"
 
 
 def _id_from_title(title: str) -> str:
@@ -59,8 +61,8 @@ def DashboardAppShell() -> dmc.AppShell:
 def DashboardHeader() -> dmc.AppShellHeader:
     return dmc.AppShellHeader(
         id="header",
-        bg="indigo.6",
-        c="white",
+        bg=HEADER_FOOTER_BG,
+        c=HEADER_FOOTER_C,
         children=dmc.Group(
             h="100%",
             px="md",
@@ -90,7 +92,7 @@ def DashboardNavbar() -> dmc.AppShellNavbar:
     return dmc.AppShellNavbar(
         id="navbar",
         p="xl",
-        bg="gray.0",
+        bg=SIDEBAR_BG,
         children=[
             dcc.Location(id="url", refresh=False),
             dmc.Stack(
@@ -122,8 +124,8 @@ def DashboardFooter() -> dmc.Stack:
     return dmc.Stack(
         id="footer",
         p="xl",
-        bg="indigo.6",
-        c="white",
+        bg=HEADER_FOOTER_BG,
+        c=HEADER_FOOTER_C,
         children=[
             dmc.Title("Project Team", ta="center", order=4),
             dmc.Group(
