@@ -1,13 +1,13 @@
 import dash
 import dash_mantine_components as dmc
 from plotly.graph_objects import Figure
-from text.home_text import *
 
 import dashboard.utils
 from dashboard.components.hoverCard import hoverableCard
 from dashboard.components.textComponents import (create_card,
                                                  create_page_title,
                                                  create_section_title)
+from dashboard.text.home_text import *
 
 dash.register_page(__name__, path="/")
 
