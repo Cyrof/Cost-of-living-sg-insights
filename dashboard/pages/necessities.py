@@ -2,12 +2,12 @@ import dash
 import dash_mantine_components as dmc
 from dash.development.base_component import Component
 from plotly.graph_objects import Figure
-from text.necessitiesText import *
 
 import dashboard.utils
 from dashboard.components.textComponents import (create_card_graph,
                                                  create_page_title,
                                                  create_section_title)
+from dashboard.text.necessitiesText import *
 
 dash.register_page(__name__)
 
@@ -40,10 +40,12 @@ def layout() -> Component:
                         ),
                     ],
                 ),
-                full_desc=dmc.Stack([
-                    dmc.Text(NECESSITIES_CPI_1),
-                    dmc.Text(NECESSITIES_CPI_2),
-                ]),
+                full_desc=dmc.Stack(
+                    [
+                        dmc.Text(NECESSITIES_CPI_1),
+                        dmc.Text(NECESSITIES_CPI_2),
+                    ]
+                ),
                 graphs=[
                     (
                         "necessities_cpi_breakdown_chart",
@@ -68,10 +70,12 @@ def layout() -> Component:
                         ),
                     ],
                 ),
-                full_desc=dmc.Stack([
-                    dmc.Text(CPI_AGAINST_INCOME_1),
-                    dmc.Text(CPI_AGAINST_INCOME_2),
-                ]),
+                full_desc=dmc.Stack(
+                    [
+                        dmc.Text(CPI_AGAINST_INCOME_1),
+                        dmc.Text(CPI_AGAINST_INCOME_2),
+                    ]
+                ),
                 graphs=[
                     (
                         "necessities_cpi_vs_income_chart",
@@ -96,10 +100,12 @@ def layout() -> Component:
                         ),
                     ],
                 ),
-                full_desc=dmc.Stack([
-                    dmc.Text(MONTHLY_EXPENDITURE_1),
-                    dmc.Text(MONTHLY_EXPENDITURE_2),
-                ]),
+                full_desc=dmc.Stack(
+                    [
+                        dmc.Text(MONTHLY_EXPENDITURE_1),
+                        dmc.Text(MONTHLY_EXPENDITURE_2),
+                    ]
+                ),
                 graphs=[
                     (
                         "monthly_expenditure_donut_chart",

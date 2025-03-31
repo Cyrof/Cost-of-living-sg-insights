@@ -2,12 +2,12 @@ import dash
 import dash_mantine_components as dmc
 from dash.development.base_component import Component
 from plotly.graph_objects import Figure
-from text.globalText import *
 
 import dashboard.utils
 from dashboard.components.textComponents import (create_card_graph,
                                                  create_page_title,
                                                  create_section_title)
+from dashboard.text.globalText import *
 
 dash.register_page(__name__)
 
