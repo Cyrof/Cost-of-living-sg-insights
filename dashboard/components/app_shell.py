@@ -1,7 +1,8 @@
 import dash
 import dash_mantine_components as dmc
 from dash import (ClientsideFunction, Input, Output, State,
-                  clientside_callback, dcc)
+                  clientside_callback, dcc, html)
+
 
 # title: href
 LINKS: dict[str, str] = {
@@ -59,6 +60,11 @@ def DashboardAppShell() -> dmc.AppShell:
                     DashboardFooter(),
                 ],
             ),
+            html.Div(
+                id="sidebar-overlay",
+                className="hidden fixed top-0 left-0 w-screen h-screen bg-gray-500 opacity-50 z-40",
+                n_clicks=0
+            )
         ],
     )
 
@@ -71,6 +77,7 @@ def DashboardHeader() -> dmc.AppShellHeader:
         children=dmc.Group(
             h="100%",
             px="md",
+            className="z-50",
             children=[
                 dmc.Burger(
                     id="mobile-burger",
@@ -150,19 +157,28 @@ def DashboardFooter() -> dmc.Stack:
         gap="lg",
     )
 
-
-# Client-side callback for toggling the sidebar.
 clientside_callback(
-    ClientsideFunction(namespace="clientside", function_name="toggleSidebar"),
-    Output("appshell", "navbar"),
-    Input("mobile-burger", "opened"),
-    Input("desktop-burger", "opened"),
+    ClientsideFunction(namespace="clientside",
+                       function_name="updateSidebarState"),
+    [
+        Output("appshell", "navbar"), 
+        Output("sidebar-overlay", "style"),
+        Output("mobile-burger", "opened"),
+        Output("desktop-burger", "opened")
+    ],
+    [
+        Input("mobile-burger", "opened"),
+        Input("desktop-burger", "opened"),
+        Input("url", "pathname"),
+        Input("sidebar-overlay", "n_clicks")
+    ],
     State("appshell", "navbar"),
 )
 
 # Update the sidebar link colours based on the current URL.
 clientside_callback(
-    ClientsideFunction(namespace="clientside", function_name="setActiveNavLink"),
+    ClientsideFunction(namespace="clientside",
+                       function_name="setActiveNavLink"),
     *(Output(_id_from_title(title), "active") for title in LINKS.keys()),
     Input("url", "pathname"),
     *(State(_id_from_title(title), "href") for title in LINKS.keys()),
