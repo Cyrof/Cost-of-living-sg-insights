@@ -73,6 +73,7 @@ def init_app():
 
 
 app = init_app()
+server = app.server
 
 
 def main():
