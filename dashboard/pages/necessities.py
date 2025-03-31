@@ -26,9 +26,24 @@ def layout() -> Component:
             ),
             create_section_title("What are the cost of living trends?"),
             create_card_graph(
-                title="Breakdown Necessities CPI Over Time",
-                short_desc=NECESSITIES_CPI_Short,
-                full_desc=NECESSITIES_CPI,
+                title="Breakdown of Necessities CPI Over Time",
+                short_desc=dmc.Stack(
+                    children=[
+                        dmc.Text("Summary:"),
+                        dmc.List(
+                            children=[
+                                dmc.ListItem(NECESSITIES_CPI_SHORT_1),
+                                dmc.ListItem(NECESSITIES_CPI_SHORT_2),
+                                dmc.ListItem(NECESSITIES_CPI_SHORT_3),
+                                dmc.ListItem(NECESSITIES_CPI_SHORT_4),
+                            ]
+                        ),
+                    ],
+                ),
+                full_desc=dmc.Stack([
+                    dmc.Text(NECESSITIES_CPI_1),
+                    dmc.Text(NECESSITIES_CPI_2),
+                ]),
                 graphs=[
                     (
                         "necessities_cpi_breakdown_chart",
@@ -40,9 +55,23 @@ def layout() -> Component:
             # cpi vs income
             create_section_title("How do our incomes measure against our expenses?"),
             create_card_graph(
-                title="CPI of Necessitiees Against Gross Monthly Income",
-                short_desc=CPI_AGAINST_INCOME_Short,
-                full_desc=CPI_AGAINST_INCOME,
+                title="CPI of Necessities Against Gross Monthly Income",
+                short_desc=dmc.Stack(
+                    children=[
+                        dmc.Text("Summary:"),
+                        dmc.List(
+                            children=[
+                                dmc.ListItem(CPI_AGAINST_INCOME_SHORT_1),
+                                dmc.ListItem(CPI_AGAINST_INCOME_SHORT_2),
+                                dmc.ListItem(CPI_AGAINST_INCOME_SHORT_3),
+                            ]
+                        ),
+                    ],
+                ),
+                full_desc=dmc.Stack([
+                    dmc.Text(CPI_AGAINST_INCOME_1),
+                    dmc.Text(CPI_AGAINST_INCOME_2),
+                ]),
                 graphs=[
                     (
                         "necessities_cpi_vs_income_chart",
@@ -55,8 +84,22 @@ def layout() -> Component:
             create_section_title("How are Singaporeans spending their money?"),
             create_card_graph(
                 title="Breakdown of Monthly Expenditure Over Time",
-                short_desc=MONTHLY_EXPENDITURE_Short,
-                full_desc=MONTHLY_EXPENDITURE,
+                short_desc=dmc.Stack(
+                    children=[
+                        dmc.Text("Summary:"),
+                        dmc.List(
+                            children=[
+                                dmc.ListItem(MONTHLY_EXPENDITURE_SHORT_1),
+                                dmc.ListItem(MONTHLY_EXPENDITURE_SHORT_2),
+                                dmc.ListItem(MONTHLY_EXPENDITURE_SHORT_3),
+                            ]
+                        ),
+                    ],
+                ),
+                full_desc=dmc.Stack([
+                    dmc.Text(MONTHLY_EXPENDITURE_1),
+                    dmc.Text(MONTHLY_EXPENDITURE_2),
+                ]),
                 graphs=[
                     (
                         "monthly_expenditure_donut_chart",

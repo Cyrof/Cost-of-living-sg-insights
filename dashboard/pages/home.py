@@ -36,13 +36,13 @@ def layout():
                     # right panel text
                     dmc.Stack(
                         children=[
-                            dmc.Text("Specifically, we hypothesize that:"),
+                            dmc.Text(INTRO_BULLET_HEADING),
                             dmc.List(
-                                listStyleType="disc",
                                 children=[
                                     dmc.ListItem(INTRO_BULLET_1),
                                     dmc.ListItem(INTRO_BULLET_2),
                                     dmc.ListItem(INTRO_BULLET_3),
+                                    dmc.ListItem(INTRO_BULLET_4),
                                 ],
                             ),
                         ],
@@ -52,6 +52,7 @@ def layout():
             dmc.Text(INTRO_3),
             dmc.Divider(),
             create_section_title("Terminology"),
+            dmc.Text(TERMINOLOGY_INTRO),
             dmc.Box(
                 [
                     dmc.SimpleGrid(
@@ -106,7 +107,7 @@ def layout():
                                 chartID="necessities_cpi_vs_income",
                                 chart=charts["necessities_cpi_vs_income"],
                                 cardName="Necessities",
-                                desc="Are the costs of essential goods and services, such as housing, food, healthcare and transportation, become less affordable?",
+                                desc="Are the costs of essential goods and services, such as housing, food, healthcare and transportation, becoming less affordable?",
                                 href="/necessities",
                             ),
                             hoverableCard(
@@ -122,7 +123,7 @@ def layout():
                                 chartID="cpi_bubble_map",
                                 chart=charts["cpi_bubble_map"],
                                 cardName="Global",
-                                desc="How does Singapore's economic situation compare with other countries?",
+                                desc="How does Singapore's economic situation compare to other countries?",
                                 href="/global",
                             ),
                         ],
@@ -134,10 +135,17 @@ def layout():
             create_section_title("Our Final Thoughts"),
             dmc.Stack(
                 [
-                    dmc.Text(CONCLUSION_1),
-                    dmc.Text(CONCLUSION_2),
-                    dmc.Text(CONCLUSION_3),
-                    dmc.Text(CONCLUSION_4),
+                    dmc.Text(CONCLUSION_BULLET_HEADING),
+                    dmc.List(
+                        children=[
+                            dmc.ListItem(CONCLUSION_BULLET_1),
+                            dmc.ListItem(CONCLUSION_BULLET_2),
+                            dmc.ListItem(CONCLUSION_BULLET_3),
+                            dmc.ListItem(CONCLUSION_BULLET_4),
+                        ],
+                    ),
+                    dmc.Text(CONCLUSION_CLOSING_1),
+                    dmc.Text(CONCLUSION_CLOSING_2),
                 ],
             ),
         ],

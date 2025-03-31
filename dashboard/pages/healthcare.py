@@ -27,10 +27,24 @@ def layout() -> Component:
             create_section_title("Are the costs of healthcare services increasing?"),
             create_card_graph(
                 title="Breakdown of Healthcare CPI",
-                short_desc=HEALTHCARE_COM_Short,
-                full_desc=HEALTHCARE_COM,
-                # figure=charts["healthcare_cpi_breakdown"],
-                # card_id="healthcare_cpi_breakdown_chart"
+                short_desc=dmc.Stack(
+                    children=[
+                        dmc.Text("Summary:"),
+                        dmc.List(
+                            children=[
+                                dmc.ListItem(HEALTHCARE_COM_SHORT_1),
+                                dmc.ListItem(HEALTHCARE_COM_SHORT_2),
+                                dmc.ListItem(HEALTHCARE_COM_SHORT_3),
+                            ]
+                        ),
+                    ],
+                ),
+                full_desc=dmc.Stack(
+                    [
+                        dmc.Text(HEALTHCARE_COM_1),
+                        dmc.Text(HEALTHCARE_COM_2),
+                    ]
+                ),
                 graphs=[
                     (
                         "healthcare_cpi_breakdown_chart",
@@ -43,8 +57,25 @@ def layout() -> Component:
             create_section_title("How do healthcare costs compare with income?"),
             create_card_graph(
                 title="Life Expectancy VS Healthcare CPI",
-                short_desc=LIFE_EXPECTANCY_HEALTHCARE_Short,
-                full_desc=LIFE_EXPECTANCY_HEALTHCARE,
+                short_desc=dmc.Stack(
+                    children=[
+                        dmc.Text("Summary:"),
+                        dmc.List(
+                            children=[
+                                dmc.ListItem(LIFE_EXPECTANCY_HEALTHCARE_SHORT_1),
+                                dmc.ListItem(LIFE_EXPECTANCY_HEALTHCARE_SHORT_2),
+                                dmc.ListItem(LIFE_EXPECTANCY_HEALTHCARE_SHORT_3),
+                            ]
+                        ),
+                    ],
+                ),
+                full_desc=dmc.Stack(
+                    [
+                        dmc.Text(LIFE_EXPECTANCY_HEALTHCARE_1),
+                        dmc.Text(LIFE_EXPECTANCY_HEALTHCARE_2),
+                        dmc.Text(LIFE_EXPECTANCY_HEALTHCARE_3),
+                    ]
+                ),
                 # figure=charts["life_expectancy_vs_healthcare_cpi"],
                 # card_id="life_expectancy_vs_healthcare_cpi_chart",
                 graphs=[
@@ -56,8 +87,25 @@ def layout() -> Component:
             ),
             create_card_graph(
                 title="Healthcare CPI VS Income Growth",
-                short_desc=HEALTHCARE_VS_INCOME_Short,
-                full_desc=HEALTHCARE_VS_INCOME,
+                short_desc=dmc.Stack(
+                    children=[
+                        dmc.Text("Summary:"),
+                        dmc.List(
+                            children=[
+                                dmc.ListItem(HEALTHCARE_VS_INCOME_SHORT_1),
+                                dmc.ListItem(HEALTHCARE_VS_INCOME_SHORT_2),
+                                dmc.ListItem(HEALTHCARE_VS_INCOME_SHORT_3),
+                            ]
+                        ),
+                    ],
+                ),
+                full_desc=dmc.Stack(
+                    [
+                        dmc.Text(HEALTHCARE_VS_INCOME_1),
+                        dmc.Text(HEALTHCARE_VS_INCOME_2),
+                        dmc.Text(HEALTHCARE_VS_INCOME_3),
+                    ]
+                ),
                 graphs=[
                     (
                         "healthcare_cpi_vs_gross_monthly_income",
@@ -67,8 +115,23 @@ def layout() -> Component:
             ),
             create_card_graph(
                 title="Healthcare CPI vs Income Growth (%)",
-                short_desc=HEALTHCARE_VS_INCOME_PERCENTAGE_Short,
-                full_desc=HEALTHCARE_VS_INCOME_PERCENTAGE,
+                short_desc=dmc.Stack(
+                    children=[
+                        dmc.Text("Summary:"),
+                        dmc.List(
+                            children=[
+                                dmc.ListItem(HEALTHCARE_VS_INCOME_PERCENTAGE_SHORT_1),
+                                dmc.ListItem(HEALTHCARE_VS_INCOME_PERCENTAGE_SHORT_2),
+                            ]
+                        ),
+                    ],
+                ),
+                full_desc=dmc.Stack(
+                    [
+                        dmc.Text(HEALTHCARE_VS_INCOME_PERCENTAGE_1),
+                        dmc.Text(HEALTHCARE_VS_INCOME_PERCENTAGE_2),
+                    ]
+                ),
                 # figure=charts["percentage_change_in_healthcare_cpi_and_income"],
                 # card_id="percentage_change_in_healthcare_cpi_and_income_chart",
                 graphs=[
@@ -81,6 +144,11 @@ def layout() -> Component:
             dmc.Divider(),
             # recommendation
             create_section_title("Our Recommendations"),
-            dmc.Text(HEALTHCARE_RECO),
+            dmc.Stack(
+                [
+                    dmc.Text(HEALTHCARE_RECO_1),
+                    dmc.Text(HEALTHCARE_RECO_2),
+                ]
+            ),
         ],
     )

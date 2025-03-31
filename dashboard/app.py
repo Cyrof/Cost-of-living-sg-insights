@@ -37,14 +37,17 @@ def init_app():
                 },
                 "List": {
                     "defaultProps": {
+                        "listStyleType": "disc",
                         "size": "lg",
                         "spacing": "md",
+                        "className": "list-outside",
                         "withPadding": True,
                     },
                 },
                 "ListItem": {
                     "defaultProps": {
                         "ta": "justify",
+                        "className": "ml-[1rem]",
                     },
                 },
                 "Divider": {

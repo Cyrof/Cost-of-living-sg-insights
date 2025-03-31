@@ -44,8 +44,8 @@ def create_card(
 
 def create_card_graph(
     title: str,
-    short_desc: str,
-    full_desc: str,
+    short_desc: str | Any,
+    full_desc: str | Any,
     graphs: list[tuple[str, Figure] | tuple[str, Figure, dict[str, Any]]],
     className: str = "",
 ) -> dmc.Paper:
@@ -68,51 +68,51 @@ def create_card_graph(
         )
 
     return dmc.Paper(
-        [
-            dmc.Stack(
-                [
-                    # title
-                    dmc.Title(title, order=3),
-                    dmc.Divider(my="sm"),
-                    # graph
-                    graph_component,
-                    # short description
-                    dmc.Text(
-                        short_desc,
-                        id=f"{graphs[0][0]}-short-desc",
-                        className="text-base font-normal loading-relaxed mt-4",
-                    ),
-                    # collapsible desc
-                    dmc.Collapse(
-                        [
-                            dmc.Text(
-                                full_desc,
-                                className="text-base font-normal loading-relaxed",
-                            ),
-                        ],
-                        id={"type": "collapse-desc", "index": graphs[0][0]},
-                    ),
-                    # toggle button
-                    dmc.Button(
-                        "Read More",
-                        id={"type": "toggle-desc", "index": graphs[0][0]},
-                        variant="outline",
-                        size="sm",
-                        className="mt-4",
-                    ),
-                ],
-                className="p-6",
-            )
-        ],
         shadow="sm",
         radius="lg",
         mb="md",
+        p="xl",
         className=f"transition-all duration-300 hover:shadow-xl {className}",
         withBorder=True,
         style={
             "borderWidth": "2px",
             "height": "100%",
         },
+        children=dmc.Stack(
+            children=[
+                # title
+                dmc.Title(title, order=3),
+                dmc.Divider(my="sm"),
+                # graph
+                graph_component,
+                # short description
+                (
+                    dmc.Text(
+                        id=f"{graphs[0][0]}-short-desc",
+                        children=short_desc,
+                    )
+                    if isinstance(short_desc, str)
+                    else short_desc
+                ),
+                # collapsible desc
+                dmc.Collapse(
+                    id={"type": "collapse-desc", "index": graphs[0][0]},
+                    children=(
+                        [dmc.Text(full_desc)]
+                        if isinstance(full_desc, str)
+                        else full_desc
+                    ),
+                ),
+                # toggle button
+                dmc.Button(
+                    "Read More",
+                    id={"type": "toggle-desc", "index": graphs[0][0]},
+                    variant="outline",
+                    size="sm",
+                    className="mt-4",
+                ),
+            ],
+        ),
     )
 
 

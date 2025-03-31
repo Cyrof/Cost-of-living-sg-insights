@@ -27,8 +27,29 @@ def layout() -> Component:
             ),
             create_card_graph(
                 title="Geographical Plot of CPI and GDP",
-                short_desc=CPI_OVER_TIME_Short + GDP_OVER_TIME_Short,
-                full_desc=CPI_GDP_OVER_TIME + GDP_OVER_TIME,
+                short_desc=dmc.Stack(
+                    children=[
+                        dmc.Text("Summary:"),
+                        dmc.List(
+                            children=[
+                                dmc.ListItem(CPI_OVER_TIME_SHORT_1),
+                                dmc.ListItem(CPI_OVER_TIME_SHORT_2),
+                                dmc.ListItem(CPI_OVER_TIME_SHORT_3),
+                                dmc.ListItem(GDP_OVER_TIME_SHORT_1),
+                                dmc.ListItem(GDP_OVER_TIME_SHORT_2),
+                                dmc.ListItem(GDP_OVER_TIME_SHORT_3),
+                            ]
+                        ),
+                    ],
+                ),
+                full_desc=dmc.Stack(
+                    [
+                        dmc.Text(CPI_OVER_TIME_1),
+                        dmc.Text(CPI_OVER_TIME_2),
+                        dmc.Text(GDP_OVER_TIME_1),
+                        dmc.Text(GDP_OVER_TIME_2),
+                    ]
+                ),
                 graphs=[
                     ("cpi_bubble_map", charts["cpi_bubble_map"]),
                     ("gdp_bubble_map", charts["gdp_bubble_map"]),
@@ -36,13 +57,35 @@ def layout() -> Component:
             ),
             create_card_graph(
                 title="Bubble Chart of CPI and GDP",
-                short_desc=CPI_GDP_OVER_TIME_Short,
-                full_desc=CPI_GDP_OVER_TIME,
+                short_desc=dmc.Stack(
+                    children=[
+                        dmc.Text("Summary:"),
+                        dmc.List(
+                            children=[
+                                dmc.ListItem(CPI_GDP_OVER_TIME_SHORT_1),
+                                dmc.ListItem(CPI_GDP_OVER_TIME_SHORT_2),
+                                dmc.ListItem(CPI_GDP_OVER_TIME_SHORT_3),
+                            ]
+                        ),
+                    ],
+                ),
+                full_desc=dmc.Stack(
+                    [
+                        dmc.Text(CPI_GDP_OVER_TIME_1),
+                        dmc.Text(CPI_GDP_OVER_TIME_2),
+                        dmc.Text(CPI_GDP_OVER_TIME_3),
+                    ]
+                ),
                 graphs=[("cpi_vs_gdp_bubble_chart", charts["cpi_vs_gdp_bubble_chart"])],
             ),
             dmc.Divider(),
             # recommendation
             create_section_title("Our Recommendations"),
-            dmc.Text(GLOBAL_RECO),
+            dmc.Stack(
+                [
+                    dmc.Text(GLOBAL_RECO_1),
+                    dmc.Text(GLOBAL_RECO_2),
+                ]
+            ),
         ],
     )
