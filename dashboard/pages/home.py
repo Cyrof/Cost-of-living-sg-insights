@@ -38,7 +38,6 @@ def layout():
                         children=[
                             dmc.Text(INTRO_BULLET_HEADING),
                             dmc.List(
-                                listStyleType="disc",
                                 children=[
                                     dmc.ListItem(INTRO_BULLET_1),
                                     dmc.ListItem(INTRO_BULLET_2),
@@ -138,7 +137,6 @@ def layout():
                 [
                     dmc.Text(CONCLUSION_BULLET_HEADING),
                     dmc.List(
-                        listStyleType="disc",
                         children=[
                             dmc.ListItem(CONCLUSION_BULLET_1),
                             dmc.ListItem(CONCLUSION_BULLET_2),
