@@ -26,7 +26,19 @@ def layout() -> Component:
             dmc.Title("How much tax does the IRAS collect?", order=2),
             create_card_graph(
                 title="Tax Collected by the IRAS",
-                short_desc=TAX_COLLECTED_IRAS_Short,
+                short_desc=dmc.Stack(
+                    children=[
+                        dmc.Text("Summary:"),
+                        dmc.List(
+                            children=[
+                                dmc.ListItem(TAX_COLLECTED_IRAS_SHORT_BULLET_1),
+                                dmc.ListItem(TAX_COLLECTED_IRAS_SHORT_BULLET_2),
+                                dmc.ListItem(TAX_COLLECTED_IRAS_SHORT_BULLET_3),
+                                dmc.ListItem(TAX_COLLECTED_IRAS_SHORT_BULLET_4),
+                            ]
+                        ),
+                    ],
+                ),
                 full_desc=TAX_COLLECTED_IRAS,
                 graphs=[
                     (
@@ -37,11 +49,27 @@ def layout() -> Component:
             ),
             dmc.Divider(),
             # gst section
-            dmc.Title("How does the goods and service tax (GST) affect CPI?", order=2),
+            dmc.Title("How does GST correlate with CPI?", order=2),
             create_card_graph(
                 title="CPI against GST",
-                short_desc=CPI_AGAINST_GST_Short,
-                full_desc=CPI_AGAINST_GST,
+                short_desc=dmc.Stack(
+                    children=[
+                        dmc.Text("Summary:"),
+                        dmc.List(
+                            children=[
+                                dmc.ListItem(CPI_VS_GST_SHORT_BULLET_1),
+                                dmc.ListItem(CPI_VS_GST_SHORT_BULLET_2),
+                                dmc.ListItem(CPI_VS_GST_SHORT_BULLET_3),
+                            ]
+                        ),
+                    ],
+                ),
+                full_desc=dmc.Stack(
+                    children=[
+                        dmc.Text(CPI_VS_GST_1),
+                        dmc.Text(CPI_VS_GST_2),
+                    ]
+                ),
                 graphs=[
                     (
                         "cpi_vs_gst_line_bar",
@@ -54,7 +82,19 @@ def layout() -> Component:
             dmc.Title("What are the income tax trends?", order=2),
             create_card_graph(
                 title="Income Tax Rates Step Line",
-                short_desc=INCOME_TAX_STEP_Short,
+                short_desc=dmc.Stack(
+                    children=[
+                        dmc.Text("Summary:"),
+                        dmc.List(
+                            children=[
+                                dmc.ListItem(INCOME_TAX_STEP_SHORT_BULLET_1),
+                                dmc.ListItem(INCOME_TAX_STEP_SHORT_BULLET_2),
+                                dmc.ListItem(INCOME_TAX_STEP_SHORT_BULLET_3),
+                                dmc.ListItem(INCOME_TAX_STEP_SHORT_BULLET_4),
+                            ]
+                        ),
+                    ],
+                ),
                 full_desc=INCOME_TAX_STEP,
                 graphs=[
                     ("income_tax_rates_step_line", charts["income_tax_rates_step_line"])
@@ -62,8 +102,24 @@ def layout() -> Component:
             ),
             create_card_graph(
                 title="Percentage of Assessed Income Paid in Taxes",
-                short_desc=INCOME_TAX_HEATMAP_Short,
-                full_desc=INCOME_TAX_HEATMAP,
+                short_desc=dmc.Stack(
+                    children=[
+                        dmc.Text("Summary:"),
+                        dmc.List(
+                            children=[
+                                dmc.ListItem(INCOME_TAX_HEATMAP_SHORT_BULLET_1),
+                                dmc.ListItem(INCOME_TAX_HEATMAP_SHORT_BULLET_2),
+                                dmc.ListItem(INCOME_TAX_HEATMAP_SHORT_BULLET_3),
+                            ]
+                        ),
+                    ],
+                ),
+                full_desc=dmc.Stack(
+                    children=[
+                        dmc.Text(INCOME_TAX_HEATMAP_1),
+                        dmc.Text(INCOME_TAX_HEATMAP_2),
+                    ]
+                ),
                 graphs=[("income_tax_heatmap", charts["income_tax_heatmap"])],
             ),
             dmc.Divider(),
@@ -71,8 +127,24 @@ def layout() -> Component:
             dmc.Title("What are the property tax trends?", order=2),
             create_card_graph(
                 title="Property Tax (Annual Value)",
-                short_desc=PROPERTY_TAX_ANNUAL_Short,
-                full_desc=PROPERTY_TAX_ANNUAL,
+                short_desc=dmc.Stack(
+                    children=[
+                        dmc.Text("Summary:"),
+                        dmc.List(
+                            children=[
+                                dmc.ListItem(PROPERTY_TAX_ANNUAL_SHORT_BULLET_1),
+                                dmc.ListItem(PROPERTY_TAX_ANNUAL_SHORT_BULLET_2),
+                                dmc.ListItem(PROPERTY_TAX_ANNUAL_SHORT_BULLET_3),
+                            ]
+                        ),
+                    ],
+                ),
+                full_desc=dmc.Stack(
+                    children=[
+                        dmc.Text(PROPERTY_TAX_ANNUAL_1),
+                        dmc.Text(PROPERTY_TAX_ANNUAL_2),
+                    ]
+                ),
                 graphs=[
                     (
                         "property_tax_rates_step_line",
@@ -82,8 +154,24 @@ def layout() -> Component:
             ),
             create_card_graph(
                 title="Property Tax (Annual Value by Year & HDB Types)",
-                short_desc=PROPERTY_TAX_ANNUAL_HDB_Short,
-                full_desc=PROPERTY_TAX_ANNUAL_HDB,
+                short_desc=dmc.Stack(
+                    children=[
+                        dmc.Text("Summary:"),
+                        dmc.List(
+                            children=[
+                                dmc.ListItem(PROPERTY_TAX_ANNUAL_HDB_SHORT_BULLET_1),
+                                dmc.ListItem(PROPERTY_TAX_ANNUAL_HDB_SHORT_BULLET_2),
+                                dmc.ListItem(PROPERTY_TAX_ANNUAL_HDB_SHORT_BULLET_3),
+                            ]
+                        ),
+                    ],
+                ),
+                full_desc=dmc.Stack(
+                    children=[
+                        dmc.Text(PROPERTY_TAX_ANNUAL_HDB_1),
+                        dmc.Text(PROPERTY_TAX_ANNUAL_HDB_2),
+                    ]
+                ),
                 graphs=[
                     (
                         "property_tax_collection_annual_value_bubble",
@@ -94,6 +182,11 @@ def layout() -> Component:
             dmc.Divider(),
             # recommendation
             dmc.Title("Our Recommendations", order=2),
-            dmc.Text(TAX_RECO),
+            dmc.Title("GST", order=3),
+            dmc.Text(TAX_RECO_GST),
+            dmc.Title("Income Tax", order=3),
+            dmc.Text(TAX_RECO_INCOME_TAX),
+            dmc.Title("Property Tax", order=3),
+            dmc.Text(TAX_RECO_PROPERTY_TAX),
         ],
     )
