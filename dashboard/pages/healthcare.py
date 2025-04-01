@@ -5,6 +5,7 @@ from plotly.graph_objects import Figure
 
 import dashboard.utils
 from dashboard.components.textComponents import (create_card_graph,
+                                                 create_data_sources,
                                                  create_page_title,
                                                  create_section_title)
 from dashboard.text.healthcareText import *
@@ -27,6 +28,14 @@ def layout() -> Component:
             create_section_title("Are the costs of healthcare services increasing?"),
             create_card_graph(
                 title="Breakdown of Healthcare CPI",
+                sources=create_data_sources(
+                    [
+                        (
+                            "Consumer Price Index (CPI), 2019 As Base Year, Annual",
+                            "https://data.gov.sg/datasets/d_dcb352661fb449c4a4c0ab23aa8d6399/view",
+                        ),
+                    ]
+                ),
                 short_desc=dmc.Stack(
                     children=[
                         dmc.Text("Summary:"),
@@ -57,6 +66,18 @@ def layout() -> Component:
             create_section_title("How do healthcare costs compare with income?"),
             create_card_graph(
                 title="Life Expectancy VS Healthcare CPI",
+                sources=create_data_sources(
+                    [
+                        (
+                            "Consumer Price Index (CPI), 2019 As Base Year, Annual",
+                            "https://data.gov.sg/datasets/d_dcb352661fb449c4a4c0ab23aa8d6399/view",
+                        ),
+                        (
+                            "Life Expectancy",
+                            "https://tablebuilder.singstat.gov.sg/table/TS/M810501#!",
+                        ),
+                    ]
+                ),
                 short_desc=dmc.Stack(
                     children=[
                         dmc.Text("Summary:"),
@@ -87,6 +108,18 @@ def layout() -> Component:
             ),
             create_card_graph(
                 title="Healthcare CPI VS Income Growth",
+                sources=create_data_sources(
+                    [
+                        (
+                            "Consumer Price Index (CPI), 2019 As Base Year, Annual",
+                            "https://data.gov.sg/datasets/d_dcb352661fb449c4a4c0ab23aa8d6399/view",
+                        ),
+                        (
+                            "Gross Monthly Income From Employment (Including Employer CPF) Of Full-Time Employed Residents, Annual",
+                            "https://data.gov.sg/datasets/d_52760e82e8786bac11cca40eb29d1a93/view",
+                        ),
+                    ]
+                ),
                 short_desc=dmc.Stack(
                     children=[
                         dmc.Text("Summary:"),
@@ -115,6 +148,18 @@ def layout() -> Component:
             ),
             create_card_graph(
                 title="Healthcare CPI vs Income Growth (%)",
+                sources=create_data_sources(
+                    [
+                        (
+                            "Consumer Price Index (CPI), 2019 As Base Year, Annual",
+                            "https://data.gov.sg/datasets/d_dcb352661fb449c4a4c0ab23aa8d6399/view",
+                        ),
+                        (
+                            "Gross Monthly Income From Employment (Including Employer CPF) of Full-Time Employed Residents, Annual",
+                            "https://data.gov.sg/datasets/d_52760e82e8786bac11cca40eb29d1a93/view",
+                        ),
+                    ]
+                ),
                 short_desc=dmc.Stack(
                     children=[
                         dmc.Text("Summary:"),
