@@ -6,6 +6,7 @@ from dash import (MATCH, ClientsideFunction, Input, Output, State,
 from plotly.graph_objects import Figure
 
 from dashboard.components.graphWrapper import graphWrapper
+from dashboard.utils import intersperse
 
 
 def create_card(
@@ -47,6 +48,7 @@ def create_card_graph(
     short_desc: str | Any,
     full_desc: str | Any,
     graphs: list[tuple[str, Figure] | tuple[str, Figure, dict[str, Any]]],
+    sources: Any = None,
     className: str = "",
 ) -> dmc.Paper:
     if len(graphs) == 1:
@@ -85,6 +87,8 @@ def create_card_graph(
                 dmc.Divider(my="sm"),
                 # graph
                 graph_component,
+                # sources
+                *([sources] if sources else []),
                 # short description
                 (
                     dmc.Text(
@@ -148,6 +152,30 @@ def create_page_title(
 
 def create_section_title(title: str) -> dmc.Group:
     return dmc.Title(title, order=2)
+
+
+def create_data_sources(sources: list[tuple[str, str]]):
+    return dmc.Group(
+        w="100%",
+        justify="center",
+        children=dmc.Text(
+            ta="center",
+            w="75%",
+            children=[
+                "Data source: " if len(sources) == 1 else "Data sources: ",
+                *intersperse(
+                    [
+                        dmc.Anchor(
+                            label,
+                            href=href,
+                        )
+                        for label, href in sources
+                    ],
+                    ", ",
+                ),
+            ],
+        ),
+    )
 
 
 # For toggling "Read more".
