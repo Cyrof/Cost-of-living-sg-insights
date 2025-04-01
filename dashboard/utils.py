@@ -1,5 +1,6 @@
 import functools
 import os.path
+from typing import Any
 
 import plotly.io
 from flask import current_app as flask_app
@@ -101,3 +102,9 @@ def warmup_cache() -> None:
     load_taxes_charts()
     # No need to call `load_home_charts()` because all charts should already
     # have been cached by the above.
+
+
+def intersperse(lst: list, item: Any):
+    result = [item] * (len(lst) * 2 - 1)
+    result[0::2] = lst
+    return result
