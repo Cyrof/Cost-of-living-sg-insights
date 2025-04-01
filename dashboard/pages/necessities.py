@@ -5,6 +5,7 @@ from plotly.graph_objects import Figure
 
 import dashboard.utils
 from dashboard.components.textComponents import (create_card_graph,
+                                                 create_data_sources,
                                                  create_page_title,
                                                  create_section_title)
 from dashboard.text.necessitiesText import *
@@ -27,6 +28,14 @@ def layout() -> Component:
             create_section_title("What are the cost of living trends?"),
             create_card_graph(
                 title="Breakdown of Necessities CPI Over Time",
+                sources=create_data_sources(
+                    [
+                        (
+                            "Consumer Price Index (CPI), 2019 As Base Year, Annual",
+                            "https://data.gov.sg/datasets/d_dcb352661fb449c4a4c0ab23aa8d6399/view",
+                        ),
+                    ]
+                ),
                 short_desc=dmc.Stack(
                     children=[
                         dmc.Text("Summary:"),
@@ -58,6 +67,18 @@ def layout() -> Component:
             create_section_title("How do our incomes measure against our expenses?"),
             create_card_graph(
                 title="CPI of Necessities Against Gross Monthly Income",
+                sources=create_data_sources(
+                    [
+                        (
+                            "Consumer Price Index (CPI), 2019 As Base Year, Annual",
+                            "https://data.gov.sg/datasets/d_dcb352661fb449c4a4c0ab23aa8d6399/view",
+                        ),
+                        (
+                            "Gross Monthly Income From Employment (Including Employer CPF) of Full-Time Employed Residents, Annual",
+                            "https://data.gov.sg/datasets/d_52760e82e8786bac11cca40eb29d1a93/view",
+                        ),
+                    ]
+                ),
                 short_desc=dmc.Stack(
                     children=[
                         dmc.Text("Summary:"),
@@ -88,6 +109,14 @@ def layout() -> Component:
             create_section_title("How are Singaporeans spending their money?"),
             create_card_graph(
                 title="Breakdown of Monthly Expenditure Over Time",
+                sources=create_data_sources(
+                    [
+                        (
+                            "Monthly Household Expenditure Among Resident Households 2002/03, 2007/08, 2012/13, 2017/18, 2023",
+                            "https://tablebuilder.singstat.gov.sg/table/DC/D10072",
+                        )
+                    ]
+                ),
                 short_desc=dmc.Stack(
                     children=[
                         dmc.Text("Summary:"),
