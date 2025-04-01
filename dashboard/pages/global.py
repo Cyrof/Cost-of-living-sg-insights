@@ -5,6 +5,7 @@ from plotly.graph_objects import Figure
 
 import dashboard.utils
 from dashboard.components.textComponents import (create_card_graph,
+                                                 create_data_sources,
                                                  create_page_title,
                                                  create_section_title)
 from dashboard.text.globalText import *
@@ -27,6 +28,18 @@ def layout() -> Component:
             ),
             create_card_graph(
                 title="Geographical Plot of CPI and GDP",
+                sources=create_data_sources(
+                    [
+                        (
+                            "Global CPI data from the Global Economic Monitor (GEM)",
+                            "https://databank.worldbank.org/reports.aspx?source=1179",
+                        ),
+                        (
+                            "GDP per capita, PPP (constant 2021 international $)",
+                            "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD",
+                        ),
+                    ]
+                ),
                 short_desc=dmc.Stack(
                     children=[
                         dmc.Text("Summary:"),
@@ -57,6 +70,22 @@ def layout() -> Component:
             ),
             create_card_graph(
                 title="Bubble Chart of CPI and GDP",
+                sources=create_data_sources(
+                    [
+                        (
+                            "Global CPI data from the Global Economic Monitor (GEM)",
+                            "https://databank.worldbank.org/reports.aspx?source=1179",
+                        ),
+                        (
+                            "GDP per capita, PPP (constant 2021 international $)",
+                            "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD",
+                        ),
+                        (
+                            "Real effective exchange rate index (2010 = 100)",
+                            "https://data.worldbank.org/indicator/PX.REX.REER",
+                        ),
+                    ]
+                ),
                 short_desc=dmc.Stack(
                     children=[
                         dmc.Text("Summary:"),
