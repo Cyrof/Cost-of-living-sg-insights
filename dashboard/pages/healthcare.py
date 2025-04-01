@@ -115,7 +115,7 @@ def layout() -> Component:
                             "https://data.gov.sg/datasets/d_dcb352661fb449c4a4c0ab23aa8d6399/view",
                         ),
                         (
-                            "Gross Monthly Income From Employment (Including Employer CPF) Of Full-Time Employed Residents, Annual",
+                            "Gross Monthly Income From Employment (Including Employer CPF) of Full-Time Employed Residents, Annual",
                             "https://data.gov.sg/datasets/d_52760e82e8786bac11cca40eb29d1a93/view",
                         ),
                     ]
