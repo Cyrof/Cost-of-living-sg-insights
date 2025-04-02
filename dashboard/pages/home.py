@@ -98,30 +98,28 @@ def layout():
                         children=[
                             hoverableCard(
                                 chartID="iras_tax_collection_bar",
-                                chart=charts["iras_tax_collection_bar"],
+                                image_src=dash.get_asset_url("images/tax_preview.png"),
                                 cardName="Taxes",
                                 desc="Is Singapore's tax system effective? How does it affect different income levels and property values?",
                                 href="/taxes",
                             ),
                             hoverableCard(
                                 chartID="necessities_cpi_vs_income",
-                                chart=charts["necessities_cpi_vs_income"],
+                                image_src=dash.get_asset_url("images/necessities_preview.png"),
                                 cardName="Necessities",
                                 desc="Are the costs of essential goods and services, such as housing, food, healthcare and transportation, becoming less affordable?",
                                 href="/necessities",
                             ),
                             hoverableCard(
                                 chartID="percentage_change_in_healthcare_cpi_and_income",
-                                chart=charts[
-                                    "percentage_change_in_healthcare_cpi_and_income"
-                                ],
+                                image_src=dash.get_asset_url("images/healthcare_preview.png"),
                                 cardName="Healthcare",
                                 desc="Are healthcare costs rising and impacting affordability and access?",
                                 href="/healthcare",
                             ),
                             hoverableCard(
                                 chartID="cpi_bubble_map",
-                                chart=charts["cpi_bubble_map"],
+                                image_src=dash.get_asset_url("images/global_preview.png"),
                                 cardName="Global",
                                 desc="How does Singapore's economic situation compare to other countries?",
                                 href="/global",

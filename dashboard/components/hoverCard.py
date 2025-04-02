@@ -19,11 +19,12 @@ def fig_to_base64(chartID: str, fig: Figure, img_format: str = "png") -> str:
 
 
 def hoverableCard(
-    chartID: str, chart: Figure, cardName: str, desc: str, href: str
+    chartID: str,
+    image_src: str,
+    cardName: str,
+    desc: str,
+    href: str,
 ) -> dmc.Card:
-    # conver to based64 image
-    img_data = fig_to_base64(chartID, chart)
-
     return dmc.Box(
         className="group w-full",
         children=[
@@ -45,7 +46,7 @@ def hoverableCard(
                             justify="center",
                             children=html.Img(
                                 className="h-auto w-full object-contain",
-                                src=img_data,
+                                src=image_src,
                             ),
                         ),
                         # card title
