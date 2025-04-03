@@ -44,6 +44,28 @@ def hoverableCard(
                             p=0,
                             h=300,
                             justify="center",
+                            visibleFrom="sm",
+                            children=html.Img(
+                                className="h-auto w-full object-contain",
+                                src=image_src,
+                            ),
+                        ),
+                        dmc.Stack(
+                            p=0,
+                            h=425,
+                            justify="center",
+                            hiddenFrom="sm",
+                            visibleFrom="xs",
+                            children=html.Img(
+                                className="h-auto w-full object-contain",
+                                src=image_src,
+                            ),
+                        ),
+                        dmc.Stack(
+                            p=0,
+                            h=350,
+                            justify="center",
+                            hiddenFrom="xs",
                             children=html.Img(
                                 className="h-auto w-full object-contain",
                                 src=image_src,

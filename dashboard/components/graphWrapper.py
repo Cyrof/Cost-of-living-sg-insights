@@ -13,6 +13,13 @@ def graphWrapper(id: str, figure: Figure, scale: float = 1.0) -> dmc.Box:
             wrapped_name_list = textwrap.wrap(original_name.strip(), width=20)
             trace.name = "<br>".join(wrapped_name_list)
 
+        # Wrap heatmap colorbar title.
+        if "colorbar" in trace:
+            original_colorbar_title = trace.colorbar.title.text
+            trace.colorbar.title.text = "<br>".join(
+                textwrap.wrap(original_colorbar_title.strip(), width=20)
+            )
+
     figure.update_layout(template="mantine_light")
 
     return dmc.Box(
