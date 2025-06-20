@@ -64,3 +64,5 @@ Through this analysis, we aim to:
 - Benchmark affordability against international standards
 - Support informed dialogue and policy decisions with data-driven insights
 
+## License
+This project is licensed under the Apache 2.0 License. See the [LICENSE](https://github.com/Cyrof/Cost-of-living-sg-insights/blob/dev/LICENSE) file for details.
