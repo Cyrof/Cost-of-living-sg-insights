@@ -1,0 +1,23 @@
+[project]
+name = "ict305-project-fetcher"
+version = "0.1.0"
+description = "Command-line tool to fetch datasets for the analysis."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "wbdata>=1.0.0",
+    "pandas>=2.2.3",
+    "aiohttp>=3.11.12",
+    "aiofiles>=24.1.0",
+]
+
+[project.scripts]
+fetch = "fetcher.run:entry"
+
+[tool.uv]
+package = true
+
+[dependency-groups]
+dev = [
+    "types-aiofiles>=24.1.0.20241221",
+]
